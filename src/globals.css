@@ -1,1 +1,10 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-green-400: #158277;
+    --color-green-500: #0B5B53;
+
+    /* Fonts */
+     --font-inter: "Inter"
+}
