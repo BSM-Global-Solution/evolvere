@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './globals.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './routes/Home/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: "erro",
     children: [
-      {}
+      {path: "/", element: <Home />}
   ]}
 ])
 
