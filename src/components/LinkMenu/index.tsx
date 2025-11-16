@@ -11,7 +11,11 @@ export default function LinkMenu({to, title, children, classname}: LinkMenuProps
         <Link 
         to={to}
         title={title}
-        className={` text-xl ${classname ?? ""}`}
+        className={` 
+            text-xl 
+            max-[1091px]:text-[16px]
+            max-[975px]:text-[14px]
+            ${classname ?? ""}`}
         >
             {children}
         </Link>
