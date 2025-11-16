@@ -1,13 +1,24 @@
 import { MdMenuOpen } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../Menu";
 import EntrarCriarConta from "../EntrarCriarConta";
 
 export default function Header() {
   
   const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 862) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
   return (
     <header className={`
