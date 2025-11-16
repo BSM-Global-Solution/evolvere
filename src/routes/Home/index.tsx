@@ -1,4 +1,6 @@
+
 import { Link } from "react-router-dom";
+import CardIASobre from "../../components/CardIASobre";
 
 export default function Home() {
   return (
@@ -61,8 +63,8 @@ export default function Home() {
       </section>
 
       {/* sobre */}
-      <section className="h-screen" id="sobre">
-          
+      <section className="px-10 h-screen" id="sobre">
+          <CardIASobre />
       </section>
     </section>
   );
