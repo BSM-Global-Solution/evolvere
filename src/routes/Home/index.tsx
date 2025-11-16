@@ -6,6 +6,8 @@ import CardsSobreEvolvere from "../../components/CardsSobreEvolvere";
 import { RiRobot2Line } from "react-icons/ri";
 import { FaHandsHelping } from "react-icons/fa";
 import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
+import { IoIosArrowDropright } from "react-icons/io";
+import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
 
 export default function Home() {
   return (
@@ -68,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* sobre */}
-      <section className="flex flex-col gap-10 px-10 min-h-screen" id="sobre">
+      <section className="flex flex-col gap-10 px-10 min-h-screen mb-30" id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
@@ -129,6 +131,10 @@ export default function Home() {
               <CardConstruindoFuturo />
             </li>
           </ul>
+
+          <div className="mt-20">
+              <CardConhecendoEquipe />
+          </div>
 
       </section>
     </section>
