@@ -65,6 +65,40 @@ export default function Home() {
       {/* sobre */}
       <section className="px-10 h-screen" id="sobre">
           <CardIASobre />
+
+          <div className="flex flex-col items-center gap-14 mt-20">
+             <h2 className="
+             text-7xl font-instrument-sans font-bold text-green-600
+             max-[560px]:text-5xl
+             max-[500px]:text-4xl
+             max-[400px]:text-3xl
+             ">
+                Sobre o Evolvere
+              </h2>
+             <p className="
+             w-300 text-4xl font-inter
+             max-[1210px]:w-full
+             max-[560px]:text-3xl
+             max-[500px]:text-xl
+             ">
+              Unimos <span className="text-green-600 font-bold">Inteligência Artificial </span>
+              e <span className="text-green-600 font-bold">mentoria humana </span>para ajudar o usuário a 
+              evoluir suas hard e soft skills, acompanhando seu progresso e conectando-o 
+              a mentores de forma dinâmica e <span className="text-green-600 font-bold">personalizada.</span>
+              </p>
+              <p className="
+                 w-300 text-4xl font-inter
+                 max-[1210px]:w-full
+                 max-[560px]:text-3xl
+                 max-[500px]:text-xl
+             ">
+              Nosso objetivo é: destravar habilidades, abrir portas e 
+              <span className="text-green-600 font-bold"> impulsionar carreiras </span>
+              de verdade para o <span className="text-green-600 font-bold">futuro.</span>
+              </p>
+          </div>
+
+          
       </section>
     </section>
   );
