@@ -4,7 +4,7 @@ import LinkMenu from "../LinkMenu";
 
 export default function Header() {
   return (
-    <header className="fixed w-full px-17 pt-7 text-white font-inter">
+    <header className="fixed w-full px-17 pt-7 text-white font-inter z-1000">
       <nav className="
       bg-green-400 pl-6 pr-5 py-3 
       border-green-500 border-b-5 border-r-2 border-l-2
