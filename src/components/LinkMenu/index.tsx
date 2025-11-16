@@ -5,11 +5,13 @@ interface LinkMenuProps {
     title: string
     children: React.ReactNode
     classname?: string
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
-export default function LinkMenu({to, title, children, classname}: LinkMenuProps) {
+export default function LinkMenu({to, title, children, classname, onClick}: LinkMenuProps) {
     return (
         <Link 
         to={to}
+        onClick={onClick}
         title={title}
         className={` 
             text-xl 
