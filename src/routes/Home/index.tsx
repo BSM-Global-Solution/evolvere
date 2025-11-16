@@ -15,13 +15,20 @@ export default function Home() {
       <div className="inset-0 bg-black/40 absolute"></div>
     
       <div className="relative z-10 flex flex-col items-center justify-end h-full text-center">
-            <h1 className="text-7xl font-instrument-sans">
+            <h1 className="
+            text-7xl font-instrument-sans
+            max-[895px]:text-6xl
+            max-[770px]:text-5xl
+            max-[645px]:text-4xl
+            max-[473px]:text-3xl
+            max-[390px]:text-2xl
+            ">
             Evoluir é o primeiro passo <br />
             para transformar o futuro.
             </h1>
 
             <nav className="mt-50 mb-20">
-            <ul className="flex gap-15">
+            <ul className="flex gap-15 max-[396px]:flex-col">
                 <li>
                     <Link 
                     to=""
