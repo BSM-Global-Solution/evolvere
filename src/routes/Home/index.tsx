@@ -6,7 +6,6 @@ import CardsSobreEvolvere from "../../components/CardsSobreEvolvere";
 import { RiRobot2Line } from "react-icons/ri";
 import { FaHandsHelping } from "react-icons/fa";
 import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
-import { IoIosArrowDropright } from "react-icons/io";
 import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
 
 export default function Home() {
@@ -46,6 +45,7 @@ export default function Home() {
                       className="
                       py-2 px-4 bg-green-400 rounded-[20px]
                       border-3 border-green-500 text-2xl
+                      hover:bg-green-500/80 duration-200
                       "
                       >
                           Saber Mais!
@@ -58,6 +58,7 @@ export default function Home() {
                       className="
                       py-2 px-4 bg-none rounded-[20px]
                       border-3 border-white text-2xl
+                      hover:bg-white/30 duration-200
                       "
                       >
                           Fazer login
