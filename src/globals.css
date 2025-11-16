@@ -2,8 +2,15 @@
 
 @theme {
     /* Colors */
+    --color-green-300: #318B82;
     --color-green-400: #158277;
     --color-green-500: #0B5B53;
+    --color-green-600: #043732;
+    --color-green-700: #011714;
+
+    --color-tertiary: #E8FFFC;
+
+    --color-cyan-100: #66FEEC;
 
     /* Fonts */
      --font-inter: "Inter";
