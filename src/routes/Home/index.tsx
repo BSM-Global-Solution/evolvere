@@ -1,6 +1,11 @@
 
 import { Link } from "react-router-dom";
 import CardIASobre from "../../components/CardIASobre";
+import { IoSettingsOutline } from "react-icons/io5";
+import CardsSobreEvolvere from "../../components/CardsSobreEvolvere";
+import { RiRobot2Line } from "react-icons/ri";
+import { FaHandsHelping } from "react-icons/fa";
+import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
 
 export default function Home() {
   return (
@@ -63,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* sobre */}
-      <section className="px-10 h-screen" id="sobre">
+      <section className="flex flex-col gap-10 px-10 min-h-screen" id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
@@ -98,7 +103,33 @@ export default function Home() {
               </p>
           </div>
 
-          
+          <ul className=" flex flex-col gap-10 w-full xl:px-29">
+            <li>
+                <CardsSobreEvolvere
+                 icon={<IoSettingsOutline />}
+                 title="Personalização real"
+                 p="Planos de carreira e recomendações moldados ao seu ritmo, seus objetivos e seu estilo de aprendizado."
+                 /> 
+            </li>
+            <li>
+                <CardsSobreEvolvere
+                 icon={<RiRobot2Line />}
+                 title="IA que aconselha"
+                 p="Uma inteligência que analisa seu progresso e recomenda Planos de Carreira, cursos e melhorias tudo de forma contínua."
+                 /> 
+            </li>
+            <li>
+                <CardsSobreEvolvere
+                 icon={<FaHandsHelping />}
+                 title="Mentoria que acompanha"
+                 p="Especialistas e profissionais prontos para orientar, aconselhar e abrir caminhos."
+                 /> 
+            </li>
+            <li>
+              <CardConstruindoFuturo />
+            </li>
+          </ul>
+
       </section>
     </section>
   );
