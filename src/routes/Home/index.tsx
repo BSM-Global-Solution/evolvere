@@ -160,12 +160,21 @@ export default function Home() {
       </section>
 
       {/* pitch */}
-      <section className="h-screen px-12.5 pt-14.5 pb-17.5">
+      <section className="
+      h-screen px-12.5 pt-14.5 pb-17.5
+      max-[645px]:px-4
+      ">
         <header className="flex flex-col gap-5">
-          <h6 className="font-instrument-sans text-6xl font-bold text-green-600">
+          <h6 className="
+          font-instrument-sans text-6xl font-bold text-green-600
+          max-[596px]:text-5xl
+          ">
             Conheça o Evolvere
           </h6>
-          <p className="font-instrument-sans font-light text-3xl">
+          <p className="
+          font-instrument-sans font-light text-3xl
+          max-[596px]:text-2xl
+          ">
             Assista ao nosso vídeo de apresentação e veja
             como o Evolvere conecta pessoas ao melhor caminho
             profissional:
@@ -175,7 +184,10 @@ export default function Home() {
         <VideoPitch />
 
         <footer className="flex flex-col gap-3 pt-15 pb-20">
-            <p className="font-instrument-sans font-light text-3xl">
+            <p className="
+            font-instrument-sans font-light text-3xl
+            max-[596px]:text-2xl
+            ">
               Caso o vídeo não carregue,
               você pode assistir diretamente
               pelo YouTube:
@@ -187,6 +199,13 @@ export default function Home() {
             bg-green-400 text-white py-3.5
             w-[25%] rounded-full cursor-pointer
             btn-hover-green-460
+            max-[1160px]:w-[30%]
+            max-[966px]:w-[35%]
+            max-[838px]:w-[40%]
+            max-[778px]:w-[50%]
+            max-[596px]:w-[60%]
+            max-[481px]:w-[70%]
+            max-[408px]:w-full
             ">
               <a href="" className="border-b text-2xl">Assistir no Youtube</a>
               <FaCirclePlay className="text-[30px]"/>
