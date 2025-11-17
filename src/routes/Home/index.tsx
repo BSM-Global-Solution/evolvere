@@ -10,6 +10,8 @@ import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
 import CardMentor from "../../components/CardMentor";
 import CardPlanoCarreira from "../../components/CardPlanoCarreira";
 import CardCarreira from "../../components/CardCarreira/indes";
+import VideoPitch from "../../components/VideoPitch";
+import { FaCirclePlay } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -48,7 +50,7 @@ export default function Home() {
                       className="
                       py-2 px-4 bg-green-400 rounded-[20px]
                       border-3 border-green-500 text-2xl
-                      hover:bg-green-500/80 duration-200
+                      btn-hover-green-580
                       "
                       >
                           Saber Mais!
@@ -61,7 +63,7 @@ export default function Home() {
                       className="
                       py-2 px-4 bg-none rounded-[20px]
                       border-3 border-white text-2xl
-                      hover:bg-white/30 duration-200
+                      btn-hover-white-30
                       "
                       >
                           Fazer login
@@ -142,7 +144,7 @@ export default function Home() {
 
       </section>
 
-      {/* mentor */}
+      {/* mentor.IA */}
       <section className="
       flex h-screen bg-tertiary-100 border-t-5 border-green-400 pl-7.5 pr-12.5
       max-[445px]:pr-2
@@ -155,6 +157,42 @@ export default function Home() {
       <section className="min-h-screen bg-green-400">
         <CardPlanoCarreira />
         <CardCarreira />
+      </section>
+
+      {/* pitch */}
+      <section className="h-screen px-12.5 pt-14.5 pb-17.5">
+        <header className="flex flex-col gap-5">
+          <h6 className="font-instrument-sans text-6xl font-bold text-green-600">
+            Conheça o Evolvere
+          </h6>
+          <p className="font-instrument-sans font-light text-3xl">
+            Assista ao nosso vídeo de apresentação e veja
+            como o Evolvere conecta pessoas ao melhor caminho
+            profissional:
+          </p>
+        </header>
+
+        <VideoPitch />
+
+        <footer className="flex flex-col gap-3 pt-15 pb-20">
+            <p className="font-instrument-sans font-light text-3xl">
+              Caso o vídeo não carregue,
+              você pode assistir diretamente
+              pelo YouTube:
+            </p>
+            <span 
+            title="Clique aqui para ver o vídeo no youtube"
+            className="
+            flex justify-center items-center gap-3
+            bg-green-400 text-white py-3.5
+            w-[25%] rounded-full cursor-pointer
+            btn-hover-green-460
+            ">
+              <a href="" className="border-b text-2xl">Assistir no Youtube</a>
+              <FaCirclePlay className="text-[30px]"/>
+            </span>
+        </footer>
+
       </section>
     </section>
   );
