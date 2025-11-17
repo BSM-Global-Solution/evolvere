@@ -89,7 +89,7 @@ export default function CardCarreira() {
           className="
             text-white font-inter font-bold text-xl cursor-pointer
             bg-green-500 border-2 border-green-600 py-2 px-4 rounded-[20px]
-            hover:text-cyan-100/80 duration-300 hover:bg-green-500/80
+            btn-hover-green-460
           "
         >
           {mostrarMais ? "Clique aqui para ver menos" : "Clique aqui!"}
