@@ -49,7 +49,7 @@ export default function Menu({ className }: MenuProps) {
           <LinkMenu
             to={m.link}
             title={m.title}
-            classname="hover:text-cyan-100/70 duration-200"
+            classname="text-hover-cyan-70"
             onClick={(e) => {
               if (m.handleScrollLink) {
                 e.preventDefault();
