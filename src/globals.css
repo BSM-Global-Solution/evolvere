@@ -11,11 +11,15 @@
     --color-tertiary-100: #E8FFFC;
 
     --color-cyan-100: #66FEEC;
+    --color-cyan-200: #64FEED;
+
+    --color-gray-100: #E3E8E7;
 
     /* Fonts */
      --font-inter: "Inter";
      --font-instrument-sans: "Instrument Sans";
      --font-inria-sans: "Inria Sans";
+     --font-plus-jakarta-sans: "Plus Jakarta Sans";
 }
 
 /* Hovers */

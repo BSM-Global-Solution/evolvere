@@ -161,7 +161,7 @@ export default function Home() {
 
       {/* pitch */}
       <section className="
-      h-screen px-12.5 pt-14.5 pb-17.5
+      min-h-screen px-12.5 pt-14.5 pb-17.5
       max-[645px]:px-4
       ">
         <header className="flex flex-col gap-5">
@@ -183,7 +183,7 @@ export default function Home() {
 
         <VideoPitch />
 
-        <footer className="flex flex-col gap-3 pt-15 pb-20">
+        <div className="flex flex-col gap-3 pt-15 pb-20">
             <p className="
             font-instrument-sans font-light text-3xl
             max-[596px]:text-2xl
@@ -210,7 +210,7 @@ export default function Home() {
               <a href="" className="border-b text-2xl">Assistir no Youtube</a>
               <FaCirclePlay className="text-[30px]"/>
             </span>
-        </footer>
+        </div>
 
       </section>
     </section>
