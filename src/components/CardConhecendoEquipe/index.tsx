@@ -49,6 +49,7 @@ export default function CardConhecendoEquipe() {
                 className="
                 w-[35%] flex justify-center py-2 gap-2 items-center bg-green-400
                 text-2xl text-white font-inter font-bold rounded-[20px]
+                border-r-5 border-b-5 border-green-500
                 max-[1055px]:text-xl
                 max-[881px]:text-lg
                 max-[881px]:w-[40%]

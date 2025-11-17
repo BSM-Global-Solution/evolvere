@@ -7,6 +7,7 @@ import { RiRobot2Line } from "react-icons/ri";
 import { FaHandsHelping } from "react-icons/fa";
 import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
 import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
+import CardMentor from "../../components/CardMentor";
 
 export default function Home() {
   return (
@@ -71,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* sobre */}
-      <section className="flex flex-col gap-10 px-10 min-h-screen mb-30" id="sobre">
+      <section className="flex flex-col gap-10 px-10 min-h-screen mb-40" id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
@@ -137,6 +138,15 @@ export default function Home() {
               <CardConhecendoEquipe />
           </div>
 
+      </section>
+
+      {/* mentor */}
+      <section className="
+      flex h-screen bg-tertiary-100 border-t-5 border-green-400 pl-7.5 pr-12.5
+      max-[445px]:pr-2
+      max-[445px]:pl-4
+      ">
+        <CardMentor />
       </section>
     </section>
   );
