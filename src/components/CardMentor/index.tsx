@@ -51,8 +51,7 @@ export default function CardMentor() {
             w-[50%] font-inter font-bold text-2xl mt-19 text-center
             bg-green-400 text-white px-4.5 py-4 rounded-[20px]
             border-r-5 border-b-5 border-green-500
-        hover:text-cyan-100/70 duration-300
-        hover:bg-green-400/80
+            btn-hover-green-400
             max-[1200px]:text-xl
             max-[1200px]:w-[45%]
             max-[1004px]:w-[55%]

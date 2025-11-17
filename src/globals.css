@@ -17,3 +17,41 @@
      --font-instrument-sans: "Instrument Sans";
      --font-inria-sans: "Inria Sans";
 }
+
+/* Hovers */
+
+/* Green */
+@utility btn-hover-green-300 {
+    @apply hover:text-cyan-100/70 duration-300 hover:bg-green-400/80;
+}
+
+@utility btn-hover-green-400 {
+  @apply hover:text-cyan-100/80 hover:bg-green-400/80 duration-300;
+}
+
+@utility btn-hover-green-460 {
+  @apply hover:bg-green-400/60 duration-200;
+}
+
+@utility btn-hover-green-500 {
+  @apply hover:text-cyan-100/80 duration-300 hover:bg-green-500/80;
+}
+
+@utility btn-hover-green-580 {
+  @apply hover:bg-green-500/80 duration-200;
+}
+
+@utility btn-hover-green-580/70 {
+  @apply hover:text-cyan-100/70 duration-200 hover:bg-green-500/80;
+}
+
+/* White */
+@utility btn-hover-white-30 {
+  @apply hover:bg-white/30 duration-200;
+}
+
+/* Cyan */
+@utility text-hover-cyan-70 {
+  @apply hover:text-cyan-100/70 duration-200;
+}
+

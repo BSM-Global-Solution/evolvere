@@ -59,7 +59,7 @@ export default function CardConhecendoEquipe() {
                 max-[517px]:text-xl
                 max-[429px]:w-[50%]
                 max-[400px]:w-[60%]
-                hover:bg-green-400/60 duration-200
+                btn-hover-green-460
                 "
                 >
                   <span>Saiba mais!</span>

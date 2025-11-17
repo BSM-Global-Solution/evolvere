@@ -15,7 +15,7 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
     >
       <li>
         <LinkMenu to="/" title="Clique aqui para entrar na conta"
-        classname="hover:text-cyan-100/70 duration-200"
+        classname="text-hover-cyan-70"
         >
           Entrar
         </LinkMenu>
@@ -26,8 +26,7 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
           title="Clique aqui para criar sua conta"
           classname="
           bg-green-500 py-2 px-3 rounded-[5px]
-           hover:text-cyan-100/70 duration-200
-           hover:bg-green-500/80
+            btn-hover-green-580/70
            "
         >
           Criar Conta
@@ -35,7 +34,7 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
       </li>
       <li>
         <button
-          className="cursor-pointer max-[862px]: mt-3 hover:text-cyan-100/70 duration-200"
+          className="cursor-pointer max-[862px]: mt-3 text-hover-cyan-70"
           title="Clique para mudar para o modo Dark"
         >
           <MdOutlineDarkMode size={35} />
