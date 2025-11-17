@@ -8,6 +8,7 @@ import { FaHandsHelping } from "react-icons/fa";
 import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
 import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
 import CardMentor from "../../components/CardMentor";
+import CardPlanoCarreira from "../../components/CardPlanoCarreira";
 
 export default function Home() {
   return (
@@ -147,6 +148,11 @@ export default function Home() {
       max-[445px]:pl-4
       ">
         <CardMentor />
+      </section>
+
+      {/* plano de carreira */}
+      <section className="h-screen bg-green-400">
+        <CardPlanoCarreira />
       </section>
     </section>
   );
