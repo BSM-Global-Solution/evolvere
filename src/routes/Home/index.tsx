@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* plano de carreira */}
-      <section className="min-h-screen bg-green-400">
+      <section className="min-h-screen bg-green-400" id="planos-carreira">
         <CardPlanoCarreira />
         <CardCarreira />
       </section>

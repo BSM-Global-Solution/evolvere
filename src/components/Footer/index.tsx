@@ -35,6 +35,7 @@ export default function Footer() {
                         title="Ver o Twiter do Evolvere"
                         className="
                         flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
+                        btn-hover-cyan-70
                         "
                         >
                             <RiTwitterXFill className="
@@ -47,8 +48,11 @@ export default function Footer() {
                     <li>
                         <a 
                         href="" 
-                        title="Ver o Twiter do Evolvere"
-                        className="flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]"
+                        title="Ver o Instagram do Evolvere"
+                        className="
+                        flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
+                        btn-hover-cyan-70
+                        "
                         >
                             <GrInstagram className="
                             text-[40px]
@@ -60,8 +64,11 @@ export default function Footer() {
                     <li>
                         <a 
                         href="" 
-                        title="Ver o Twiter do Evolvere"
-                        className="flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]"
+                        title="Ver o Youtube do Evolvere"
+                        className="
+                        flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
+                        btn-hover-cyan-70
+                        "
                         >
                             <FaYoutube className="
                             text-[40px]
@@ -85,25 +92,37 @@ export default function Footer() {
                         <h6 className="text-cyan-200 font-bold">Planos de Carreira para você</h6>
                         <ul className="flex flex-col gap-2 text-gray-100">
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <a 
+                                href="#planos-carreira"
+                                title="Clique aqui para ver mais"
+                                className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Tecnologia e IA
                                 </a>
                             </li>
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <a 
+                                href="#planos-carreira"
+                                title="Clique aqui para ver mais"
+                                className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Negócios e Estratégia de Dados
                                 </a>
                             </li>
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <a 
+                                href="#planos-carreira"
+                                title="Clique aqui para ver mais"
+                                className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Sustentabilidade e Meio Ambiente
                                 </a>
                             </li>
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <a 
+                                href="#planos-carreira"
+                                title="Clique aqui para ver mais"
+                                className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Economia Criativa e Conteúdo
                                 </a>
@@ -114,16 +133,16 @@ export default function Footer() {
                         <h6 className="text-cyan-200 font-bold">Contato</h6>
                         <ul className="flex flex-col gap-1 text-gray-100">
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <Link to="" className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Nosso time
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="" className="flex items-center text-[12px]">
+                                <Link to="" className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Entrar em contato
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
@@ -131,7 +150,7 @@ export default function Footer() {
                         <h6 className="text-cyan-200 font-bold">Dúvidas</h6>
                         <ul className="flex flex-col gap-1 text-gray-100">
                             <li>
-                                <Link to="" className="flex items-center text-[12px]">
+                                <Link to="" className="flex items-center text-[12px] text-hover-cyan-70">
                                     <IoIosArrowForward />
                                     Envie uma mensagem
                                 </Link>
@@ -142,7 +161,10 @@ export default function Footer() {
             </div>
         </div>
         <div className="pt-3 max-[600px]:pt-7">
-            <Link to="" className="flex justify-end items-center gap-0.5 text-white">
+            <Link 
+            to=""
+            title="Clique aqui para nos enviar uma mensagem"
+            className="flex justify-end items-center gap-0.5 text-white text-hover-cyan-70">
                 <MdOutlineMail />
                 <span>
                     evolvere.contato@gmail.com
