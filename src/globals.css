@@ -49,7 +49,7 @@ html {
   @apply hover:bg-green-500/80 duration-200;
 }
 
-@utility btn-hover-green-580/70 {
+@utility btn-hover-green-580-70 {
   @apply hover:text-cyan-100/70 duration-200 hover:bg-green-500/80;
 }
 
@@ -67,3 +67,19 @@ html {
   @apply hover:bg-cyan-100/70 duration-200;
 }
 
+
+/* Animações */
+@theme {
+  --animate-fade-in: fadeIn 0.3s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
