@@ -6,7 +6,8 @@ import Menu from "../Menu";
 import EntrarCriarConta from "../EntrarCriarConta";
 
 export default function Header() {
-  
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [open, setOpen] = useState(false)
 
     useEffect(() => {
@@ -19,16 +20,36 @@ export default function Header() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+    useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
   
   return (
     <header className={`
-    fixed w-full px-17 pt-7 text-white font-inter z-1000
+    fixed w-full px-17 pt-7 text-white font-inter z-1000 duration-500
     max-[1180px]:px-10 
     max-[975px]:px-5 
     ${
       open ? 
       "max-[862px]:h-full max-[862px]:px-0 max-[862px]:pt-0 max-[862px]:w-1/2 "
       : ""
+    }
+    ${
+      showHeader ? "translate-y-0" : "-translate-y-full"
     }  
     `}>
       <nav className="
