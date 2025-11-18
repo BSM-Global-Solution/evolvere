@@ -1,8 +1,5 @@
-import { FaYoutube } from "react-icons/fa";
-import { GrInstagram } from "react-icons/gr";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
-import { RiTwitterXFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { footerDataLinks, footerDataRedesSociais } from "../../data/footerData";
 
