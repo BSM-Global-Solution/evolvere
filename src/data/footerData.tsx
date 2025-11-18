@@ -35,3 +35,37 @@ export const footerDataRedesSociais:FooterDataRedesSociaisProps[] = [
         "/> 
     }
 ] 
+
+interface FooterDataLinksProps {
+    title: string;
+    links: {
+        name: string;
+        title: string;
+        link: string;
+    }[];
+}
+
+export const footerDataLinks: FooterDataLinksProps[] = [
+    {
+        title: "Planos de Carreira para você",
+        links: [
+            {name: "Tecnologia e IA", title: "Clique aqui para ver mais", link: "#planos-carreira"},
+            {name: "Negócios e Estratégia de Dados", title: "Clique aqui para ver mais", link: "#planos-carreira"},
+            {name: "Sustentabilidade e Meio Ambiente", title: "Clique aqui para ver mais", link: "#planos-carreira"},
+            {name: "Economia Criativa e Conteúdo", title: "Clique aqui para ver mais", link: "#planos-carreira"}
+        ]
+    },
+    {
+        title: "Contato",
+        links: [
+            {name: "Nosso time", title: "Clique aqui para ver mais", link: ""},
+            {name: "Entrar em contato", title: "Clique aqui para ver mais", link: ""}
+        ]
+    },
+    {
+        title: "Dúvidas",
+        links: [
+            {name: "Envie uma mensagem", title: "Clique aqui para ver mais", link: ""},
+        ]
+    },
+]
