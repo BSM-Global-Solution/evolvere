@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
 import { RiTwitterXFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { footerDataRedesSociais } from "../../data/footerData";
 
 export default function Footer() {
   return (
@@ -29,54 +30,20 @@ export default function Footer() {
                     />
                 </span>
                 <ul className="flex justify-center items-center gap-5 w-full">
-                    <li>
-                        <a 
-                        href="" 
-                        title="Ver o Twiter do Evolvere"
-                        className="
-                        flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
-                        btn-hover-cyan-70
-                        "
-                        >
-                            <RiTwitterXFill className="
-                            text-[40px]
-                            max-[1046px]:text-[30px] 
-                            max-[830px]:text-[20px] 
-                            "/>
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                        href="" 
-                        title="Ver o Instagram do Evolvere"
-                        className="
-                        flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
-                        btn-hover-cyan-70
-                        "
-                        >
-                            <GrInstagram className="
-                            text-[40px]
-                            max-[1046px]:text-[30px]
-                            max-[830px]:text-[20px]
-                            "/>
-                        </a>
-                    </li>
-                    <li>
-                        <a 
-                        href="" 
-                        title="Ver o Youtube do Evolvere"
-                        className="
-                        flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
-                        btn-hover-cyan-70
-                        "
-                        >
-                            <FaYoutube className="
-                            text-[40px]
-                            max-[1046px]:text-[30px]
-                            max-[830px]:text-[20px]
-                            " />
-                        </a>
-                    </li>
+                    {footerDataRedesSociais.map((redes, i) => (
+                        <li key={i}>
+                            <a 
+                            href={redes.link} 
+                            title={redes.title}
+                            className="
+                            flex bg-cyan-200 rounded-br-[15px] rounded-tl-[15px] pr-2 pt-2 pl-[7px] pb-[7px]
+                            btn-hover-cyan-70
+                            "
+                            >
+                                {redes.icon}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className="
