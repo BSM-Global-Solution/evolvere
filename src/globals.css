@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
     /* Colors */
     --color-green-300: #318B82;
@@ -57,5 +61,9 @@
 /* Cyan */
 @utility text-hover-cyan-70 {
   @apply hover:text-cyan-100/70 duration-200;
+}
+
+@utility btn-hover-cyan-70 {
+  @apply hover:bg-cyan-100/70 duration-200;
 }
 
