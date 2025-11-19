@@ -4,6 +4,7 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { criarContaData } from "../../data/criarContaData";
 
 const s = z.object({
     nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),
@@ -21,7 +22,7 @@ const s = z.object({
     path: ["confirmarSenha"]
 });
 
-type Form = z.infer<typeof s>
+export type Form = z.infer<typeof s>
 
 export default function CriarConta() {
 
@@ -134,149 +135,83 @@ export default function CriarConta() {
                         </p>
                     </div>
 
-                    <ul className="
-                    flex flex-col gap-6 pt-[57px] max-[884px]:gap-9
-                    max-[455px]:w-full
-                    ">
-                        <li>
-                            <ul className="
+                    <ul
+                    className="
+                        flex flex-col gap-6 pt-[57px] max-[884px]:gap-9
+                        max-[455px]:w-full
+                    "
+                    >
+                    {/* Primeira linha: Nome + Data */}
+                    <li>
+                        <ul
+                        className="
                             flex gap-2 max-[455px]:flex-col
                             max-[455px]:gap-6
-                            ">
-                                <li className="
-                                flex flex-col gap-2.5 w-1/2 font-inter
-                                max-[455px]:w-full
-                                ">
-                                    <label className="
-                                    text-2xl font-bold text-tertiary-700
-                                    max-[1240px]:text-xl
-                                    max-[980px]:text-lg
-                                    max-[884px]:text-[16px]
-                                    ">
-                                        Nome *
-                                    </label>
-                                    <input 
-                                    type="text"
-                                    placeholder="Digite o seu nome"
-                                    className="
-                                    max-w-[285px] p-2.5 placeholder:text-gray-300
-                                    outline-none border border-gray-200 rounded-[10px]
-                                    focus:border-green-700
-                                    max-[455px]:max-w-[610px]
-                                    "
-                                    {...register("nome")}
-                                    />
-                                    {errors.nome && (
-                                        <p className="text-red-500">
-                                            {errors.nome.message}
-                                        </p>
-                                    )}
-                                </li>
-                                <li className="
-                                flex flex-col gap-2.5 w-1/2 font-inter
-                                max-[455px]:w-full
-                                ">
-                                    <label className="
-                                    text-2xl font-bold text-tertiary-700
-                                    max-[1240px]:text-xl
-                                    max-[980px]:text-lg
-                                    max-[884px]:text-[16px]
-                                    ">
-                                        Data de nascimento *
-                                    </label>
-                                    <input 
-                                    type="date"
-                                    className="
-                                    max-w-[285px] p-2.5 placeholder:text-gray-300
-                                    outline-none border border-gray-200 rounded-[10px]
-                                    focus:border-green-700
-                                    max-[455px]:max-w-[610px]
-                                    "
-                                    {...register("data")}
-                                    />
-                                    {errors.data && (
-                                        <p className="text-red-500">
-                                            {errors.data.message}
-                                        </p>
-                                    )}
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="
-                         text-2xl font-bold text-tertiary-700
-                         max-[1240px]:text-xl
-                         max-[980px]:text-lg
-                         max-[884px]:text-[16px]
-                         ">
-                            E-mail *
-                         </label>
-                         <input 
-                            type="text"
-                            placeholder="exemplo@email.com"
+                        "
+                        >
+                        {criarContaData.slice(0, 2).map((field) => (
+                            <li key={field.name} className={field.wrapperClasses}>
+                            <label
+                                className="
+                                text-2xl font-bold text-tertiary-700
+                                max-[1240px]:text-xl
+                                max-[980px]:text-lg
+                                max-[884px]:text-[16px]
+                                "
+                            >
+                                {field.label}
+                            </label>
+
+                            <input
+                                type={field.type}
+                                placeholder={field.placeholder}
+                                className="
+                                max-w-[285px] p-2.5 placeholder:text-gray-300
+                                outline-none border border-gray-200 rounded-[10px]
+                                focus:border-green-700
+                                max-[455px]:max-w-[610px]
+                                "
+                                {...register(field.name)}
+                            />
+
+                            {errors[field.name] && (
+                                <p className="text-red-500">{errors[field.name]?.message}</p>
+                            )}
+                            </li>
+                        ))}
+                        </ul>
+                    </li>
+
+                    {/* Restante dos campos */}
+                    {criarContaData.slice(2).map((field) => (
+                        <li key={field.name} className={field.wrapperClasses}>
+                        <label
+                            className="
+                            text-2xl font-bold text-tertiary-700
+                            max-[1240px]:text-xl
+                            max-[980px]:text-lg
+                            max-[884px]:text-[16px]
+                            "
+                        >
+                            {field.label}
+                        </label>
+
+                        <input
+                            type={field.type}
+                            placeholder={field.placeholder}
                             className="
                             max-w-[610px] p-2.5 placeholder:text-gray-300
                             outline-none border border-gray-200 rounded-[10px]
                             focus:border-green-700
                             "
-                            {...register("email")}
-                            />
-                            {errors.email && (
-                                <p className="text-red-500">
-                                    {errors.email.message}
-                                </p>
-                            )}
+                            {...register(field.name)}
+                        />
+
+                        {errors[field.name] && (
+                            <p className="text-red-500">{errors[field.name]?.message}</p>
+                        )}
                         </li>
-                        <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="
-                         text-2xl font-bold text-tertiary-700
-                         max-[1240px]:text-xl
-                         max-[980px]:text-lg
-                         max-[884px]:text-[16px]
-                         ">
-                            Crie uma senha *
-                         </label>
-                         <input 
-                            type="password"
-                            placeholder="Crie sua senha"
-                            className="
-                            max-w-[610px] p-2.5 placeholder:text-gray-300
-                            outline-none border border-gray-200 rounded-[10px]
-                            focus:border-green-700
-                            "
-                            {...register("senha")}
-                            />
-                            {errors.senha && (
-                                <p className="text-red-500 inset-0">
-                                    {errors.senha.message}
-                                </p>
-                            )}
-                        </li>
-                        <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="
-                         text-2xl font-bold text-tertiary-700
-                         max-[1240px]:text-xl
-                         max-[980px]:text-lg
-                         max-[884px]:text-[16px]
-                         ">
-                            Confirme sua senha *
-                         </label>
-                         <input 
-                            type="password"
-                            placeholder="Repita a senha"
-                            className="
-                            max-w-[610px] p-2.5 placeholder:text-gray-300
-                            outline-none border border-gray-200 rounded-[10px]
-                            focus:border-green-700
-                            "
-                            {...register("confirmarSenha")}
-                            />
-                            {errors.confirmarSenha && (
-                                <p className="text-red-500 inset-0">
-                                    {errors.confirmarSenha.message}
-                                </p>
-                            )}
-                        </li>
+                    ))}
                     </ul>
 
                     <div className="flex justify-end max-w-[610px] mt-2.5">
