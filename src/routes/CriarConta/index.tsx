@@ -163,15 +163,17 @@ export default function CriarConta() {
                             </label>
 
                             <input
-                                type={field.type}
-                                placeholder={field.placeholder}
-                                className="
+                            type={field.type}
+                            placeholder={field.placeholder}
+                            className={`
                                 max-w-[285px] p-2.5 placeholder:text-gray-300
-                                outline-none border border-gray-200 rounded-[10px]
-                                focus:border-green-700
+                                outline-none rounded-[10px]
+                                ${errors[field.name]
+                                ? "border border-red-500 focus:border-red-500"
+                                : "border border-gray-200 focus:border-green-700"}
                                 max-[455px]:max-w-[610px]
-                                "
-                                {...register(field.name)}
+                            `}
+                            {...register(field.name)}
                             />
 
                             {errors[field.name] && (
@@ -197,14 +199,16 @@ export default function CriarConta() {
                         </label>
 
                         <input
-                            type={field.type}
-                            placeholder={field.placeholder}
-                            className="
+                        type={field.type}
+                        placeholder={field.placeholder}
+                        className={`
                             max-w-[610px] p-2.5 placeholder:text-gray-300
-                            outline-none border border-gray-200 rounded-[10px]
-                            focus:border-green-700
-                            "
-                            {...register(field.name)}
+                            outline-none rounded-[10px]
+                            ${errors[field.name]
+                            ? "border border-red-500 focus:border-red-500"
+                            : "border border-gray-200 focus:border-green-700"}
+                        `}
+                        {...register(field.name)}
                         />
 
                         {errors[field.name] && (
