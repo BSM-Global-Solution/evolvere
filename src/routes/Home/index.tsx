@@ -12,8 +12,12 @@ import CardPlanoCarreira from "../../components/CardPlanoCarreira";
 import CardCarreira from "../../components/CardCarreira/indes";
 import VideoPitch from "../../components/VideoPitch";
 import { FaCirclePlay } from "react-icons/fa6";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function Home() {
+
+  const { theme } = useTheme();
+
   return (
     <section>
       <section className="relative w-full h-screen overflow-hidden text-white font-bold" id="/">
@@ -76,7 +80,14 @@ export default function Home() {
       </section>
 
       {/* sobre */}
-      <section className="flex flex-col gap-10 px-10 min-h-screen mb-40" id="sobre">
+      <section className={`
+        flex flex-col gap-10 px-10 min-h-screen pb-40
+        ${
+          theme === "light"
+          ? "bg-white text-black"
+          : "bg-blue-200 text-white"
+        }
+        `} id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
