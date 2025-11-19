@@ -1,4 +1,5 @@
 import { FiUserPlus } from "react-icons/fi";
+import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 export default function CriarConta() {
@@ -41,6 +42,25 @@ export default function CriarConta() {
                         ">
                             Comece agora e faça parte dessa evolução.
                         </figcaption>
+                        <Link 
+                        to="/"
+                        title="Voltar para a página inicial"
+                        className="
+                        w-full font-inter font-bold text-2xl text-center outline-none
+                        bg-green-400 text-white px-4.5 py-4 rounded-[20px]
+                        border-r-5 border-b-5 border-green-500
+                        btn-hover-green-400
+                        max-[951px]:text-xl
+                        max-[951px]:py-3
+                        "
+                        >
+                            <div className="flex justify-between items-center w-[60%]">
+                                <span>
+                                    <IoIosArrowDropleft size={25} />
+                                </span>
+                                Voltar
+                            </div>
+                        </Link>
                     </figure>
                 </header>
             </section>
