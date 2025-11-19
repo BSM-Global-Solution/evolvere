@@ -3,48 +3,104 @@ import { Link } from "react-router-dom";
 
 export default function CriarConta() {
     return (
-        <section className="flex h-screen w-full">
-            <section className="bg-tertiary-700 h-full w-1/2">
+        <section className="
+        flex h-screen w-full
+        max-[776px]:flex-col
+        ">
+            <section className="
+            bg-tertiary-700 h-full w-1/2
+            max-[776px]:w-full
+            max-[776px]:py-5
+            ">
                 <header className="
                     flex flex-col justify-center items-center
                     gap-12.5 h-full px-7
                 ">
-                    <h1 className="font-inter font-semibold text-white text-6xl text-center">
+                    <h1 className="
+                    font-inter font-semibold text-white text-6xl text-center
+                    max-[1161px]:text-5xl
+                    max-[951px]:text-4xl
+                    ">
                         Estamos felizes em ter você conosco!
                     </h1>
                     <figure className="flex flex-col items-center gap-12.5">
                         <img 
                         src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1763522082/logo-fundo-transparente_nom0tb.png"
                         alt="Logo da Evolvere com fundo transparente"
-                        className="w-[500px]"
+                        className="
+                        w-[500px] 
+                        max-[1161px]:w-[460px]
+                        max-[1080px]:w-[440px]
+                        max-[951px]:w-[410px]
+                        "
                          />
                         <figcaption className="
                             text-3xl text-white font-normal
+                            max-[1253px]:text-center
+                            max-[951px]:text-2xl
                         ">
                             Comece agora e faça parte dessa evolução.
                         </figcaption>
                     </figure>
                 </header>
             </section>
-            <section className="h-full w-1/2 pr-6 pl-4 pt-6.5 pb-6.5">
+            <section className="
+            h-full w-1/2 pr-6 pl-4 pt-6.5 pb-6.5
+            max-[1010px]:pl-2
+            max-[1010px]:pr-2
+            max-[776px]:w-full
+            max-[776px]:pt-4
+            ">
                 <form className="
-                w-full h-full bg-green-178177/15 rounded-[20px]
+                w-full min-h-full bg-green-178177/15 rounded-[20px]
                 border-3 border-green-500 px-[39px]
+                max-[1102px]:px-6
+                max-[1042px]:px-4
+                max-[776px]:flex
+                max-[776px]:flex-col
+                max-[776px]:items-center
+                max-[455px]:items-start
                 ">
-                    <div className="flex flex-col items-center gap-1 pt-12.5 font-inter">
-                        <h2 className="font-bold text-5xl">
+                    <div className="
+                    flex flex-col items-center gap-1 pt-12.5 font-inter
+                    max-[455px]:w-full
+                    ">
+                        <h2 className="
+                        font-bold text-5xl
+                        max-[951px]:text-4xl
+                        ">
                             Criar Conta
                         </h2>
-                        <p className="text-xl font-normal text-green-700">
+                        <p className="
+                        text-xl font-normal text-green-700
+                        max-[951px]:text-lg
+                        max-[821px]:text-[16px]
+                        max-[400px]:text-[14px]
+                        max-[400px]:text-center
+                        ">
                             Campos marcados com * são obrigatórios.
                         </p>
                     </div>
 
-                    <ul className="flex flex-col gap-6 pt-[57px]">
+                    <ul className="
+                    flex flex-col gap-6 pt-[57px] max-[884px]:gap-9
+                    max-[455px]:w-full
+                    ">
                         <li>
-                            <ul className="flex">
-                                <li className="flex flex-col gap-2.5 w-1/2 font-inter">
-                                    <label className="text-2xl font-bold text-tertiary-700">
+                            <ul className="
+                            flex gap-2 max-[455px]:flex-col
+                            max-[455px]:gap-6
+                            ">
+                                <li className="
+                                flex flex-col gap-2.5 w-1/2 font-inter
+                                max-[455px]:w-full
+                                ">
+                                    <label className="
+                                    text-2xl font-bold text-tertiary-700
+                                    max-[1240px]:text-xl
+                                    max-[980px]:text-lg
+                                    max-[884px]:text-[16px]
+                                    ">
                                         Nome *
                                     </label>
                                     <input 
@@ -54,11 +110,20 @@ export default function CriarConta() {
                                     max-w-[285px] p-2.5 placeholder:text-gray-300
                                     outline-none border border-gray-200 rounded-[10px]
                                     focus:border-green-700
+                                    max-[455px]:max-w-[610px]
                                     "
                                     />
                                 </li>
-                                <li className="flex flex-col gap-2.5 w-1/2 font-inter">
-                                    <label className="text-2xl font-bold text-tertiary-700">
+                                <li className="
+                                flex flex-col gap-2.5 w-1/2 font-inter
+                                max-[455px]:w-full
+                                ">
+                                    <label className="
+                                    text-2xl font-bold text-tertiary-700
+                                    max-[1240px]:text-xl
+                                    max-[980px]:text-lg
+                                    max-[884px]:text-[16px]
+                                    ">
                                         Data de nascimento *
                                     </label>
                                     <input 
@@ -68,13 +133,19 @@ export default function CriarConta() {
                                     max-w-[285px] p-2.5 placeholder:text-gray-300
                                     outline-none border border-gray-200 rounded-[10px]
                                     focus:border-green-700
+                                    max-[455px]:max-w-[610px]
                                     "
                                     />
                                 </li>
                             </ul>
                         </li>
                         <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="text-2xl font-bold text-tertiary-700">
+                         <label className="
+                         text-2xl font-bold text-tertiary-700
+                         max-[1240px]:text-xl
+                         max-[980px]:text-lg
+                         max-[884px]:text-[16px]
+                         ">
                             E-mail *
                          </label>
                          <input 
@@ -88,7 +159,12 @@ export default function CriarConta() {
                             />
                         </li>
                         <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="text-2xl font-bold text-tertiary-700">
+                         <label className="
+                         text-2xl font-bold text-tertiary-700
+                         max-[1240px]:text-xl
+                         max-[980px]:text-lg
+                         max-[884px]:text-[16px]
+                         ">
                             Crie uma senha *
                          </label>
                          <input 
@@ -102,7 +178,12 @@ export default function CriarConta() {
                             />
                         </li>
                         <li className="flex flex-col w-full gap-2.5 font-inter">
-                         <label className="text-2xl font-bold text-tertiary-700">
+                         <label className="
+                         text-2xl font-bold text-tertiary-700
+                         max-[1240px]:text-xl
+                         max-[980px]:text-lg
+                         max-[884px]:text-[16px]
+                         ">
                             Confirme sua senha *
                          </label>
                          <input 
@@ -124,13 +205,21 @@ export default function CriarConta() {
                         className="
                         font-inter font-semibold text-tertiary-700
                         hover:text-hover-green-580
+                        max-[951px]:text-lg
+                        max-[884px]:text-[16px]
                         "
                         >
                          Já tem uma conta? Clique aqui.
                         </Link>
                     </div>
 
-                    <div className="flex justify-end max-w-[610px] pt-4">
+                    <div className="
+                    flex justify-end py-4
+                    max-w-[610px]
+                    max-[776px]:w-full
+                    max-[776px]:px-23
+                    max-[400px]:px-15
+                    ">
                         <button 
                         title="Criar Conta"
                         className="
@@ -138,6 +227,10 @@ export default function CriarConta() {
                             bg-tertiary-700 px-4.5 py-3
                             rounded-[20px] font-inter font-semibold
                             text-xl cursor-pointer hover:btn-hover-tertiary-80
+                            max-[951px]:text-lg
+                            max-[884px]:text-[16px]
+                            max-[776px]:w-full
+                            max-[776px]:justify-center
                         ">
                             Cadastrar
                             <span>
