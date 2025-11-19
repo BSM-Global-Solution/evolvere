@@ -1,11 +1,16 @@
 import { MdOutlineDarkMode } from "react-icons/md";
 import LinkMenu from "../LinkMenu";
+import { useTheme } from "../../context/ThemeContext";
+import { FaSun } from "react-icons/fa";
 
 interface EntrarCriarConta {
     className?: string
 }
 
 export default function EntrarCriarConta({className}: EntrarCriarConta) {
+
+  const {theme, toggleTheme} = useTheme();
+
   return (
     <ul
       className={`
@@ -34,10 +39,15 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
       </li>
       <li>
         <button
-          className="cursor-pointer max-[862px]: mt-3 text-hover-cyan-70"
-          title="Clique para mudar para o modo Dark"
+          onClick={toggleTheme}
+          className="cursor-pointer max-[862px]: mt-3 text-hover-cyan-70 outline-none"
+          title={
+            theme == "light" 
+            ? "Clique para mudar para o modo Dark" 
+            : "Clique para mudar para o modo Light"
+          }
         >
-          <MdOutlineDarkMode size={35} />
+          {theme === "light" ? <MdOutlineDarkMode size={35} /> : <FaSun size={35} /> }
         </button>
       </li>
     </ul>
