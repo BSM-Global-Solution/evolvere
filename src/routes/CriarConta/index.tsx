@@ -1,15 +1,45 @@
+import { useForm } from "react-hook-form";
 import { FiUserPlus } from "react-icons/fi";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
+import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const s = z.object({
+    nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),
+    data: z.string().min(1, "Coloque sua data de nascimento"),
+    email: z.email("E-mail inválido, use: exemplo@email.com"),
+    senha: z.string()
+    .min(6,"A senha deve ter no mínimo 6 caracteres")
+    .max(20, "A senha deve ter no máximo 20 caracteres")
+    .regex(/(?:.*\d){2,}/, "A senha deve conter pelo menos 2 números")
+    .regex(/(?:.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]){2,}/, "A senha deve conter pelo menos 2 caracteres especiais")
+    .regex(/(?:.*[A-Za-z]){2,}/, "A senha deve conter pelo menos 2 letras"),
+    confirmarSenha: z.string()
+}).refine((data) => data.senha === data.confirmarSenha, {
+    message: "As senhas estão diferentes",
+    path: ["confirmarSenha"]
+});
+
+type Form = z.infer<typeof s>
 
 export default function CriarConta() {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<Form>({
+        resolver: zodResolver(s),
+    });
+
+    const onSubmit = async (data: Form) => {
+       await alert("Cadastrado com Sucesso" )
+    }
+
     return (
         <section className="
-        flex h-screen w-full
+        flex min-h-screen w-full
         max-[776px]:flex-col
         ">
             <section className="
-            bg-tertiary-700 h-full w-1/2
+            bg-tertiary-700 min-h-screen w-1/2
             max-[776px]:w-full
             max-[776px]:py-5
             ">
@@ -56,7 +86,7 @@ export default function CriarConta() {
                         >
                             <div className="flex justify-between items-center w-[60%]">
                                 <span>
-                                    <IoIosArrowDropleft size={25} />
+                                    <IoIosArrowDropleft size={30} />
                                 </span>
                                 Voltar
                             </div>
@@ -71,7 +101,9 @@ export default function CriarConta() {
             max-[776px]:w-full
             max-[776px]:pt-4
             ">
-                <form className="
+                <form 
+                onSubmit={handleSubmit(onSubmit)}
+                className="
                 w-full min-h-full bg-green-178177/15 rounded-[20px]
                 border-3 border-green-500 px-[39px]
                 max-[1102px]:px-6
@@ -132,7 +164,13 @@ export default function CriarConta() {
                                     focus:border-green-700
                                     max-[455px]:max-w-[610px]
                                     "
+                                    {...register("nome")}
                                     />
+                                    {errors.nome && (
+                                        <p className="text-red-500">
+                                            {errors.nome.message}
+                                        </p>
+                                    )}
                                 </li>
                                 <li className="
                                 flex flex-col gap-2.5 w-1/2 font-inter
@@ -148,14 +186,19 @@ export default function CriarConta() {
                                     </label>
                                     <input 
                                     type="date"
-                                    placeholder="Digite o seu nome"
                                     className="
                                     max-w-[285px] p-2.5 placeholder:text-gray-300
                                     outline-none border border-gray-200 rounded-[10px]
                                     focus:border-green-700
                                     max-[455px]:max-w-[610px]
                                     "
+                                    {...register("data")}
                                     />
+                                    {errors.data && (
+                                        <p className="text-red-500">
+                                            {errors.data.message}
+                                        </p>
+                                    )}
                                 </li>
                             </ul>
                         </li>
@@ -176,7 +219,13 @@ export default function CriarConta() {
                             outline-none border border-gray-200 rounded-[10px]
                             focus:border-green-700
                             "
+                            {...register("email")}
                             />
+                            {errors.email && (
+                                <p className="text-red-500">
+                                    {errors.email.message}
+                                </p>
+                            )}
                         </li>
                         <li className="flex flex-col w-full gap-2.5 font-inter">
                          <label className="
@@ -195,7 +244,13 @@ export default function CriarConta() {
                             outline-none border border-gray-200 rounded-[10px]
                             focus:border-green-700
                             "
+                            {...register("senha")}
                             />
+                            {errors.senha && (
+                                <p className="text-red-500 inset-0">
+                                    {errors.senha.message}
+                                </p>
+                            )}
                         </li>
                         <li className="flex flex-col w-full gap-2.5 font-inter">
                          <label className="
@@ -214,7 +269,13 @@ export default function CriarConta() {
                             outline-none border border-gray-200 rounded-[10px]
                             focus:border-green-700
                             "
+                            {...register("confirmarSenha")}
                             />
+                            {errors.confirmarSenha && (
+                                <p className="text-red-500 inset-0">
+                                    {errors.confirmarSenha.message}
+                                </p>
+                            )}
                         </li>
                     </ul>
 
