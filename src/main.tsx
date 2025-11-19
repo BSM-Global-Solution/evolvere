@@ -14,8 +14,14 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "/", element: <Home />},
-      {path: "/criarConta", element: <CriarConta />}
-  ]}
+  ]},
+  { 
+    path: "/criarConta",
+    element: <CriarConta />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <CriarConta />}
+  ]},
 ])
 
 createRoot(document.getElementById('root')!).render(
