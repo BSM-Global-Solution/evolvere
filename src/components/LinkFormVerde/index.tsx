@@ -7,7 +7,7 @@ interface LinkVerdeProps {
     linkTitle: string;
     linkPosition: PositionLink;
     linkText: string;
-    pxDivLink?: Number;
+    pxDivLink?: number;
 }
 
 export default function LinkFormVerde({link, linkTitle, linkPosition, linkText, pxDivLink}: LinkVerdeProps) {
