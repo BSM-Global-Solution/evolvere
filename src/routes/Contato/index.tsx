@@ -18,12 +18,14 @@ export default function Contato() {
         figcaption: string;
         span: string;
         text: string;
+        text1: string;
+        text2: string;
     }
 
     const cardsEvolvere: CardsGerais[] = [
-        { icon: <FiPhone size={24} />, link: "", title: "Ligar para (12) 3456-7891", figcaption: "Telefone: (12) 3456-7891", span: "", text: "" },
-        { icon: <MdOutlineMail size={24} />, link: "", title: "Enviar e-mail para evolvere.contato@gmail.com", figcaption: "E-mail:", span: "evolvere.contato@gmail.com", text: "" },
-        { icon: <FaRegClock size={24} />,link: "", title: "Ver horários de atendimento", figcaption: "Horários de Atendimento", span: "", text: "Segunda à Sexta: das 07h às 20h Sábados: das 09h às 19h Domingos e feriados: fechado" }
+        { icon: <FiPhone size={24} />, link: "", title: "", figcaption: "Telefone:", span: "", text: "(12) 3456-7891", text1: "", text2: ""},
+        { icon: <MdOutlineMail size={24} />, link: "", title: "", figcaption: "E-mail:", span: "evolvere.contatos@gmail.com", text: "", text1: "", text2: "" },
+        { icon: <FaRegClock size={24} />,link: "", title: "", figcaption: "Horários de Atendimento", span: "", text: "Segunda à Sexta: das 07h às 20h", text1: "Sábados: das 09h às 19h", text2: "Domingos e feriados: fechado"  }
     ];
 
     interface RedeSocial {
@@ -40,57 +42,59 @@ export default function Contato() {
 
     return (
         <section className="flex flex-col text-center py-26 px-10">
-            <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1]">
+            <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1 md:text-4xl">
                 Contate-nos
             </h1>
-            <p className="text-[16px] text-[var(--color-green-500)] pb-5">
+            <p className="text-[16px] text-[var(--color-green-500)] pb-5 md:text-2xl md:px-14">
                 Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?
             </p>
-                <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px]  border-[var(--color-cyan-300)] flex flex-col">
-                    <div className="px-2 flex flex-col">
-                        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1">
+                <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px] border-[var(--color-cyan-300)] flex flex-col md:flex-row">
+                    <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6">
+                        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 md:py-2 md:text-2xl">
                             Envie uma mensagem para nós!
                         </h2>
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
                             Nome *
                         </label>
                         <input type="text"
                         placeholder="Digite seu nome"
-                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2"
+                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
                             Email *
                         </label>
                         <input type="text"
                         placeholder="Digite seu email"
-                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2"
+                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
                             Assunto *
                         </label>
                         <input type="text"
                         placeholder="Digite o assunto da mensagem"
-                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2"
+                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
                             Sua mensagem *
                         </label>
-                        <input type="text"
+                        <textarea
                         placeholder="Digite sua mensagem"
-                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2"
+                        className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                    </div>
-                    <div className="flex items-end justify-between justify-center py-3">
+                        <div className="flex justify-center py-3">
                         <button 
                         type="submit"
                         title="Clique aqui para enviar mensagem"
-                        className="w-[75%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300"
+                        className="w-[75%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300
+                        sm:w-[40%] md:items-center md:w-full"
                         >
                         Enviar mensagem <IoIosArrowDropright size={24} />
                         </button>
                     </div>
-                    <div className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1">
-                        <h3 className='text-white text-2xl font-semibold flex'>
+                    </div>
+                    <div className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
+                    sm:items-start md:mt-10 md:mb-3">
+                        <h3 className='text-white text-2xl font-semibold flex px-4'>
                             Contato
                         </h3>
                         <ul className="flex flex-col gap-2">
@@ -108,7 +112,7 @@ export default function Contato() {
                                     <div className="flex flex-col gap-1 font-bold">
                                         <figcaption className="text-[14px] text-white">{cardsEvolvere.figcaption}</figcaption>
                                         <p className="text-white text-[12px]">
-                                        <span className="underline text-[12px]">{cardsEvolvere.span}</span> {cardsEvolvere.text}
+                                        <span className="underline text-[12px]">{cardsEvolvere.span}</span> <text className='flex text-start'>{cardsEvolvere.text} <br /> {cardsEvolvere.text1} <br /> {cardsEvolvere.text2}</text>
                                         </p>
                                     </div>
                                     </figure>
