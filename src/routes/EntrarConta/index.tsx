@@ -117,6 +117,12 @@ export default function EntrarConta() {
                     buttonPosition="start"
                     pxButton={10}
                     pxDivButton={10}
+                    className="
+                    max-[776px]:px-43
+                    max-[650px]:px-38
+                    max-[600px]:px-30
+                    max-[500px]:px-25   
+                    "
                 />
             </FormVerde>    
             <BannerLogoVerde title="Que bom ver você novamente!" p="Entre para continuar sua jornada."/>
