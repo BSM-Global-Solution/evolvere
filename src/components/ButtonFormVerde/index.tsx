@@ -5,8 +5,8 @@ interface ButtonFormVerdeProps {
     buttonTiltle: string;
     buttonIcon: React.ReactNode;
     buttonPosition: PositionButton;
-    pxButton?: Number;
-    pxDivButton?: Number;
+    pxButton?: number;
+    pxDivButton?: number;
     className?: string
 }
 
