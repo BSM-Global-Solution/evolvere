@@ -1,7 +1,12 @@
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-export default function BannerLogoVerde() {
+interface BannerProps {
+    title: string;
+    p: string;
+}
+
+export default function BannerLogoVerde({title, p}: BannerProps) {
   return (
     <section className="
         flex flex-col items-center justify-center
@@ -21,7 +26,7 @@ export default function BannerLogoVerde() {
                     max-[951px]:text-4xl
                     "
                 >
-                Estamos felizes em ter você conosco!
+                {title}
                 </h1>
                 <figure className="flex flex-col items-center gap-12.5">
                 <img
@@ -40,7 +45,7 @@ export default function BannerLogoVerde() {
                         max-[951px]:text-2xl
                         "
                 >
-                    Comece agora e faça parte dessa evolução.
+                    {p}
                 </figcaption>
                 <Link
                     to="/"
