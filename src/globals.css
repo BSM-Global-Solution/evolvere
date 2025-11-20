@@ -16,8 +16,11 @@ html {
 
     --color-cyan-100: #66FEEC;
     --color-cyan-200: #64FEED;
+    --color-cyan-300: #53DED0;
 
     --color-gray-100: #E3E8E7;
+    --color-gray-200: #BBC0BF;
+    --color-gray-300: #959999;
 
     /* Fonts */
      --font-inter: "Inter";
