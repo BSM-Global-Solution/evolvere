@@ -1,36 +1,13 @@
-import { Link } from "react-router-dom";
-
 type FormSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => void;
-
-type PositionLink = "start" | "center" | "end"
-
 interface FormProps {
   onSubmit: FormSubmitHandler;
   h2: string;
   p: boolean;
   children: React.ReactNode;
-  link: string;
-  linkTitle: string;
-  linkPosition: PositionLink;
-  linkText: string;
-  pxDivLink?: Number;
-  buttonText: string;
-  buttonTiltle: string;
-  buttonIcon: React.ReactNode;
-  buttonPosition: PositionLink;
-  pxButton?: Number;
-  pxDivButton?: Number;
   classname?: string;
 }
 
-export default function FormVerde(
-    {
-        onSubmit, h2, p, children: childrenInputs, 
-        link, linkTitle, linkPosition, linkText, pxDivLink,
-        buttonText, buttonTiltle, buttonIcon, buttonPosition,
-        pxButton=4.5, pxDivButton, classname
-    }
-    : FormProps) {
+export default function FormVerde({onSubmit, h2, p, children: childrenInputs, classname}: FormProps) {
     return (
         <section className={`
             flex flex-col items-center justify-center
@@ -73,49 +50,7 @@ export default function FormVerde(
                            {p ? "Campos marcados com * são obrigatórios.": ""} 
                         </p>
                     </div>
-
                     {childrenInputs}
-
-                    <div className={`flex justify-${linkPosition} max-w-[610px] mt-2.5 px-${pxDivLink}`}>
-                        <Link 
-                        to={link}
-                        title={linkTitle}
-                        className="
-                        font-inter font-semibold text-tertiary-700
-                        hover:text-hover-green-580
-                        max-[951px]:text-lg
-                        max-[884px]:text-[16px]
-                        "
-                        >
-                            {linkText}
-                        </Link>
-                    </div>
-
-                    <div className={`
-                    flex justify-${buttonPosition} py-4 px-${pxDivButton}
-                    max-w-[610px]
-                    max-[776px]:w-full
-                    max-[776px]:px-23
-                    max-[400px]:px-15
-                    `}>
-                        <button 
-                        title={buttonTiltle}
-                        className={`
-                            flex items-center gap-1 text-white
-                            bg-tertiary-700 px-${pxButton} py-3
-                            rounded-[20px] font-inter font-semibold
-                            text-xl cursor-pointer hover:btn-hover-tertiary-80
-                            max-[951px]:text-lg
-                            max-[884px]:text-[16px]
-                            max-[776px]:w-full
-                            max-[776px]:justify-center
-                        `}>
-                            {buttonText}
-                            <span>
-                                {buttonIcon}  
-                            </span>
-                        </button>
-                    </div>
                 </form>
         </section>
     )
