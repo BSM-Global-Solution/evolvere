@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FiLogIn } from "react-icons/fi";
 import FormVerde from "../../components/FormVerde";
+import LinkFormVerde from "../../components/LinkFormVerde";
+import ButtonFormVerde from "../../components/ButtonFormVerde";
 
 
 const s = z.object({
@@ -32,17 +34,6 @@ export default function EntrarConta() {
             onSubmit={handleSubmit(onSubmit)}
             h2="Entrar na Conta"
             p={false}
-            link="/criarConta"
-            linkTitle="Criar Conta"
-            linkPosition="start"
-            linkText="Não tem uma conta? Clique aqui."
-            pxDivLink={10}
-            buttonText="Entrar"
-            buttonTiltle="Entrar na conta"
-            buttonIcon={<FiLogIn className="w-[29px] h-6"/>}
-            buttonPosition="start"
-            pxButton={10}
-            pxDivButton={10}
             >
                 <ul className="
                     flex flex-col gap-8 pt-[57px] px-10 max-[884px]:gap-9
@@ -110,6 +101,23 @@ export default function EntrarConta() {
                     )}
                  </li>
                 </ul>
+
+                <LinkFormVerde             
+                    link="/criarConta"
+                    linkTitle="Criar Conta"
+                    linkPosition="start"
+                    linkText="Não tem uma conta? Clique aqui."
+                    pxDivLink={10} 
+                />
+
+                <ButtonFormVerde 
+                    buttonText="Entrar"
+                    buttonTiltle="Entrar na conta"
+                    buttonIcon={<FiLogIn className="w-[29px] h-6"/>}
+                    buttonPosition="start"
+                    pxButton={10}
+                    pxDivButton={10}
+                />
             </FormVerde>    
             <BannerLogoVerde title="Que bom ver você novamente!" p="Entre para continuar sua jornada."/>
         </section>
