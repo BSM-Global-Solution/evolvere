@@ -46,7 +46,7 @@ export default function Contato() {
             <p className="text-[16px] text-[var(--color-green-500)] pb-5">
                 Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?
             </p>
-                <div className="bg-[var(--color-tertiary-100)] border-1 border-[var(--color-cyan-300)] flex flex-col">
+                <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px]  border-[var(--color-cyan-300)] flex flex-col">
                     <div className="px-2 flex flex-col">
                         <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1">
                             Envie uma mensagem para nós!
@@ -84,12 +84,12 @@ export default function Contato() {
                         <button 
                         type="submit"
                         title="Clique aqui para enviar mensagem"
-                        className="border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300"
+                        className="w-[75%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300"
                         >
-                        Enviar mensagem
+                        Enviar mensagem <IoIosArrowDropright size={24} />
                         </button>
                     </div>
-                    <div className="bg-[var(--color-green-400)] flex flex-col items-center py-1">
+                    <div className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1">
                         <h3 className='text-white text-2xl font-semibold flex'>
                             Contato
                         </h3>
@@ -160,9 +160,9 @@ export default function Contato() {
                     <button 
                     type="submit"
                     title="Clique aqui para enviar o feedback"
-                    className='border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-xl text-white p-2 hover:bg-[var(--color-green-300)] hover:duration-300'
+                    className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300"
                     >
-                    Enviar feedback
+                    Enviar feedback <IoIosArrowDropright size={24} />
                     </button>
                     </div>
                 </section>
