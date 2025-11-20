@@ -7,14 +7,17 @@ interface ButtonFormVerdeProps {
     buttonPosition: PositionButton;
     pxButton?: Number;
     pxDivButton?: Number;
+    className?: string
 }
 
 export default function ButtonFormVerde({ 
         buttonText, buttonTiltle, buttonIcon, 
-        buttonPosition, pxButton=4.5, pxDivButton
+        buttonPosition, pxButton=4.5, pxDivButton,
+        className
     }: ButtonFormVerdeProps) {
     return (
         <div className={`
+            ${className ?? ""}
             flex justify-${buttonPosition} py-4 px-${pxDivButton}
             max-w-[610px]
             max-[776px]:w-full
