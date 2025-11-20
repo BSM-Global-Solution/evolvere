@@ -16,7 +16,7 @@ const s = z.object({
     .min(6,"A senha deve ter no mínimo 6 caracteres")
     .max(20, "A senha deve ter no máximo 20 caracteres")
     .regex(/(?:.*\d){2,}/, "A senha deve conter pelo menos 2 números")
-    .regex(/(?:.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]){2,}/, "A senha deve conter pelo menos 2 caracteres especiais")
+    .regex(/(?:.*[!@#$%^&*()_+\-={};':"\\|,.<>/?]){2,}/, "A senha deve conter pelo menos 2 caracteres especiais")
     .regex(/(?:.*[A-Za-z]){2,}/, "A senha deve conter pelo menos 2 letras"),
     confirmarSenha: z.string()
 }).refine((data) => data.senha === data.confirmarSenha, {
