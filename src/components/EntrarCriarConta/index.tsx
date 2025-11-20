@@ -19,7 +19,7 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
         `}
     >
       <li>
-        <LinkMenu to="/" title="Clique aqui para entrar na conta"
+        <LinkMenu to="/entrarConta" title="Clique aqui para entrar na conta"
         classname="text-hover-cyan-70"
         >
           Entrar
