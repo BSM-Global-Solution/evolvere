@@ -21,8 +21,8 @@ export default function Integrantes() {
       role: "Desenvolvedor Fullstack",
       rm: "565049",
       turma: "1TDSPG",
-      github: "",
-      linkedin: "",
+      github: "https://github.com/moisesBarsoti",
+      linkedin: "https://www.linkedin.com/in/mois%C3%A9s-barsoti-468869278/",
     },
     {
       img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755002/img-sofia_hrzsac.png",
@@ -31,8 +31,8 @@ export default function Integrantes() {
       role: "Designer UI/UX",
       rm: "563829",
       turma: "1TDSPG",
-      github: "",
-      linkedin: "",
+      github: "https://github.com/sSofia-s",
+      linkedin: "https://www.linkedin.com/in/sofia-siqueira-0111a230b/",
     },
     {
       img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755015/img-felipe_ndm51d.png",
@@ -41,8 +41,8 @@ export default function Integrantes() {
       role: "Desenvolvedor Back-end",
       rm: "561810",
       turma: "1TDSPG",
-      github: "",
-      linkedin: "",
+      github: "https://github.com/FeKiModesto",
+      linkedin: "https://www.linkedin.com/in/felipe-modesto-348986366/",
     },
   ];
 
@@ -75,12 +75,14 @@ export default function Integrantes() {
           <div
           key={index}
           onClick={() => toggleCard(index)}
-          className="bg-green-600 cursor-pointer">
+          className="bg-green-600 cursor-pointer rounded-2xl border-4 border-green-500
+          transition-all duration-300 hover:scale-[1.02]">
             
-            <figure className="flex flex-col items-center p-3 gap-4">
+            <figure className="flex flex-col items-center gap-5 pt-5">
               <img src={pessoa.img} alt={pessoa.figcaption}
-              className="w-[80%]"/>
-              <figcaption className="text-cyan-100">
+              className="w-[85%] border-4 rounded-[20px] border-green-500"/>
+
+              <figcaption className="text-cyan-100 text-2xl tracking-wide">
                 <strong>
                   {cardAtivo === index
                   ? pessoa.figcaption
@@ -88,12 +90,13 @@ export default function Integrantes() {
                 </strong>
               </figcaption>
             </figure>
-            <span className="text-cyan-100 flex justify-end pr-5 pb-5">
+
+            <span className="text-cyan-100 flex justify-end pr-5 pb-3 text-xl">
               {cardAtivo === index ? <FaMinus /> : <FaPlus />}
             </span>
 
             {cardAtivo === index && (
-              <div>
+              <div className="text-cyan-100 px-6 pb-6 animate-fade-in duration-600">
                 <h3>{pessoa.role}</h3>
                 <hr />
                 <p>
@@ -103,13 +106,13 @@ export default function Integrantes() {
                   <strong>Turma:</strong> {pessoa.turma}
                 </p>
 
-                <h4>Redes Sociais:</h4>
+                <h4> <strong>Redes Sociais:</strong></h4>
                 <div>
-                  <a href={pessoa.github} target="_blank">
-                    GitHub
+                  <a href={pessoa.github} target="_blank" rel="noopener noreferrer" >
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png" alt="Logotipo do GitHub" />
                   </a>
-                  <a href={pessoa.linkedin} target="_blank">
-                    LinkedIn
+                  <a href={pessoa.linkedin} target="_blank" rel="noopener noreferrer">
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png" alt="Logotipo do LinkedIn" />
                   </a>
                 </div>
 
