@@ -15,12 +15,23 @@ export async function criarUsuario(data: CriarUsuarioDTO) {
             nome: data.nome,
             email: data.email,
             senha: data.senha,
-            dataDeNascimento: data.data, 
+            dataDeNascimento: data.data,
         }),
     });
 
+    // Se der erro, tenta ler a mensagem do backend
     if (!response.ok) {
-        throw new Error("Erro ao criar usuário");
+        let erroMensagem = "Erro ao criar usuário";
+
+        try {
+            const errorData = await response.json();
+            if (errorData.erro) erroMensagem = errorData.erro;
+            if (errorData.mensagem) erroMensagem = errorData.mensagem;
+        } catch (e) {
+            // Caso não consiga ler o JSON, usa erro genérico
+        }
+
+        throw new Error(erroMensagem);
     }
 
     return await response.json();
