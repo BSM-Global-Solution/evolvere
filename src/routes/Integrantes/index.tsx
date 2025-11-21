@@ -174,23 +174,27 @@ export default function Integrantes() {
         </p>
       </section>
 
-      <section className="py-20">
-        <div>
-          <h2>Sobre o desafio - <br />
+      <section className=" flex flex-col gap-10 py-10 px-5">
+        <div className="flex flex-col gap-5 items-center">
+          <h2 className="text-green-500 font-bold text-4xl text-center">Sobre o desafio - <br />
           Global Solution <br />
           2025
           </h2>
-          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png" alt="Banner do Global Solution 2025." />
+          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png"
+          alt="Banner do Global Solution 2025." />
         </div>
-        <p>O Global Solution, é um grande desafio que integra diversas áreas do conhecimento e incentiva os alunos a resolverem problemas reais usando tecnologia e impacto social.</p>
+
+        <p className="text-green-600 text-2xl">O <strong>Global Solution</strong>, é um grande desafio que integra diversas áreas do conhecimento e incentiva os alunos a resolverem problemas reais usando tecnologia e impacto social.</p>
         
-        <div>
-          <div>
-            <h3>O desafio</h3>
-            <hr />
+        <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5">
+          <div className="flex items-center gap-4 mb-3">
+            <h1 className="text-3xl font-bold text-green-400">
+              O desafio 
+            </h1>
+            <hr className="whitespace-nowrap w-[35%] border-green-400 border-2 rounded" />
           </div>
-          
-          <p>Imaginar como será o trabalho em um mundo onde a tecnologia está em todos os lugares, mas as relações humanas continuam no centro de tudo. O desafio é propor uma solução que use inovação, tecnologia e boas ideias para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades mais justas, inclusivas e sustentáveis.</p>
+
+          <p className="text-green-600 text-xl">Imaginar como será o trabalho em um mundo onde a <strong>tecnologia</strong> está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo. O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias</strong> para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades mais justas, inclusivas e sustentáveis.</p>
         </div>
       </section>
     </>
