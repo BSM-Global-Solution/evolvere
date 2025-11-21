@@ -129,7 +129,7 @@ export default function Contato() {
                 type="submit"
                 title="Clique aqui para enviar mensagem"
                 className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300
-                            sm:w-[40%] md:items-center md:w-full"
+                            sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3"
               >
                 Enviar mensagem <IoIosArrowDropright size={24} />
               </button>
@@ -137,9 +137,9 @@ export default function Contato() {
           </div>
           <div
             className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
-                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7"
+                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3"
           >
-            <h3 className="text-white text-2xl font-semibold flex px-4">
+            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl">
               Contato
             </h3>
             <ul className="flex flex-col gap-2">
@@ -155,7 +155,7 @@ export default function Contato() {
                         {cardsEvolvere.icon}
                       </div>
                       <div className="flex flex-col gap-1 font-bold">
-                        <figcaption className="text-[14px] text-white">
+                        <figcaption className="text-[14px] text-white lg:text-xl">
                           {cardsEvolvere.figcaption}
                         </figcaption>
                         <p className="text-white text-[12px]">
@@ -195,17 +195,17 @@ export default function Contato() {
         </div>
       </div>
       <section className="flex flex-col items-center text-center p-4">
-        <h1 className="text-[var(--color-green-500)] font-bold text-xl">
+        <h1 className="text-[var(--color-green-500)] font-bold text-xl lg:text-3xl">
           O que você achou do nosso projeto?
         </h1>
-        <p className="text-[var(--color-green-500)] text-[16px] pb-5">
+        <p className="text-[var(--color-green-500)] text-[16px] pb-5 lg:text-xl">
           Sua opinião é essencial para melhorarmos cada vez mais. <br />
           Conte pra gente como tem sido sua experiência com a Evolvere!
         </p>
         <div></div>
-        <h2 className="text-[var(--color-green-500)] font-bold text-xl pb-3">
+        <h2 className="text-[var(--color-green-500)] font-bold text-xl pb-3 lg:text-2xl">
           Gostaria de deixar um comentário? <br />
-          <span className="font-normal text-[16px]">
+          <span className="font-normal text-[16px] lg:text-xl">
             (Caso não queira, deixe este espaço em branco).
           </span>
         </h2>
@@ -213,13 +213,14 @@ export default function Contato() {
           name="Mensagem"
           id="Mensagem"
           placeholder="Digite sua mensagem"
-          className="w-full border-1 border-[var(--color-gray-200)] rounded-[10px] p-2 gap-1 text-[14px]"
+          className="w-full border-1 border-[var(--color-gray-200)] rounded-[10px] p-2 gap-1 text-[14px] lg:w-[50%] lg:py-3 lg:mt-1"
         ></textarea>
         <div className="py-3">
           <button
             type="submit"
             title="Clique aqui para enviar o feedback"
-            className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300"
+            className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300
+            lg:p-3 lg:mt-1"
           >
             Enviar feedback <IoIosArrowDropright size={24} />
           </button>
