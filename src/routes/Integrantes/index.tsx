@@ -58,7 +58,7 @@ export default function Integrantes() {
   };
 
   return (
-    <section className="bg-tertiary-100 pt-30 px-5">
+    <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
         <div className="flex items-center gap-4 mb-3">
             <h1 className="text-3xl font-bold text-green-600">
                 Conheça nossa equipe!
@@ -141,10 +141,10 @@ export default function Integrantes() {
         ))}
       </div>
 
-      <h2>Porquê criamos o Projeto Evolvere?</h2>
-      <p>
-        O Evolvere nasceu como resposta ao desafio da FIAP (Faculdade de
-        Informática e Administração Paulista). Nosso objetivo é ajudar pessoas a
+      <h2 className="text-3xl font-bold text-green-500 mt-10 mb-5">Porquê criamos o Projeto Evolvere?</h2>
+      <p className="text-lg text-green-500 leading-relaxed max-w-3xl font-medium">
+        O <strong>Evolvere</strong> nasceu como resposta ao desafio da <strong>FIAP (Faculdade de
+        Informática e Administração Paulista)</strong>. Nosso objetivo é ajudar pessoas a
         encontrarem caminhos profissionais mais conscientes, tecnológicos e
         humanos ao mesmo tempo sempre olhando para a empregabilidade do futuro.
       </p>
