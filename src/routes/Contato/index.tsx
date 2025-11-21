@@ -144,9 +144,9 @@ export default function Contato() {
           </div>
           <div
             className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
-                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4"
+                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4 2xl:ml-14 2xl:mr-14 2xl:py-8 2xl:mt-14"
           >
-            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl xl:text-4xl">
+            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl xl:text-4xl 2xl:text-[40px]">
               Contato
             </h3>
             <ul className="flex flex-col gap-2">
@@ -162,10 +162,10 @@ export default function Contato() {
                         {cardsEvolvere.icon}
                       </div>
                       <div className="flex flex-col gap-1 font-bold">
-                        <figcaption className="text-[14px] text-white lg:text-xl xl:text-2xl">
+                        <figcaption className="text-[14px] text-white lg:text-xl xl:text-2xl 2xl:text-[22px] 2xl:mt-1 2xl:mr-38">
                           {cardsEvolvere.figcaption}
                         </figcaption>
-                        <p className="text-white text-[12px] xl:text-[14px]">
+                        <p className="text-white text-[12px] xl:text-[14px] 2xl:text-[16px]">
                           <span className="underline text-[12px] xl:text-[16px]">
                             {cardsEvolvere.span}
                           </span>{" "}
@@ -180,7 +180,7 @@ export default function Contato() {
                 </li>
               ))}
             </ul>
-            <h4 className="text-white text-2xl font-semibold flex px-4 xl:text-3xl">
+            <h4 className="text-white text-2xl font-semibold flex px-4 xl:text-3xl 2xl:text-[32px]">
               Siga-nos
             </h4>
             <ul className="flex">
@@ -188,7 +188,7 @@ export default function Contato() {
                 <li className="flex" key={index}>
                   <Link
                     to={rede.link}
-                    className="w-full flex items-center gap-3 px-3 py-2 xl:p-3"
+                    className="w-full flex items-center gap-3 px-3 py-2 xl:p-3 2xl:py-3"
                     title={rede.title}
                   >
                     <div className="bg-[var(--color-green-500)] rounded-[10px] p-3 text-white">
