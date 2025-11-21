@@ -57,6 +57,25 @@ export default function Integrantes() {
     return partes.slice(0, 2).join(" ");
   };
 
+  const cardsFinal = [
+  {
+    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755022/img-moises_pjeymd.png",
+    nome: "Moisés Barsoti",
+    funcoes: ["Front e Back-End", "Banco de Dados"],
+  },
+  {
+    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755002/img-sofia_hrzsac.png",
+    nome: "Sofia Siqueira",
+    funcoes: ["Pesquisa", "UX e UI Design"],
+  },
+  {
+    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755015/img-felipe_ndm51d.png",
+    nome: "Felipe Modesto",
+    funcoes: ["Back-End", "Documentação"],
+  },
+];
+
+
   return (
     <>
       <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
@@ -160,41 +179,84 @@ export default function Integrantes() {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold text-green-500 mt-10 mb-5">
+        <h3 className="text-3xl font-bold text-green-500 mt-10 mb-5">
           Porquê criamos o Projeto Evolvere?
-        </h2>
+        </h3>
         <p className="text-lg text-green-500 font-medium mb-5">
-          O <strong>Evolvere</strong> nasceu como resposta ao desafio da{" "}
-          <strong>
-            FIAP (Faculdade de Informática e Administração Paulista)
-          </strong>
-          . Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais
-          mais conscientes, tecnológicos e humanos ao mesmo tempo sempre olhando
-          para a empregabilidade do futuro.
+          O <strong>Evolvere</strong> nasceu como resposta ao desafio da
+          <strong>FIAP (Faculdade de Informática e Administração Paulista)</strong>.
+          Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais mais conscientes,
+          tecnológicos e humanos ao mesmo tempo sempre olhando para a empregabilidade do futuro.
         </p>
       </section>
 
       <section className=" flex flex-col gap-10 py-10 px-5">
         <div className="flex flex-col gap-5 items-center">
-          <h2 className="text-green-500 font-bold text-4xl text-center">Sobre o desafio - <br />
-          Global Solution <br />
-          2025
+          <h2 className="text-green-500 font-bold text-4xl text-center">
+            Sobre o desafio - <br />
+            Global Solution <br />
+            2025
           </h2>
-          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png"
-          alt="Banner do Global Solution 2025." />
+          <img
+            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png"
+            alt="Banner do Global Solution 2025."
+          />
         </div>
 
-        <p className="text-green-600 text-2xl">O <strong>Global Solution</strong>, é um grande desafio que integra diversas áreas do conhecimento e incentiva os alunos a resolverem problemas reais usando tecnologia e impacto social.</p>
-        
+        <p className="text-green-600 text-2xl">
+          O <strong>Global Solution</strong>, é um grande desafio que integra
+          diversas áreas do conhecimento e incentiva os alunos a resolverem
+          problemas reais usando tecnologia e impacto social.
+        </p>
+
         <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5">
           <div className="flex items-center gap-4 mb-3">
-            <h1 className="text-3xl font-bold text-green-400">
-              O desafio 
-            </h1>
+            <h3 className="text-3xl font-bold text-green-400">O desafio</h3>
             <hr className="whitespace-nowrap w-[35%] border-green-400 border-2 rounded" />
           </div>
 
-          <p className="text-green-600 text-xl">Imaginar como será o trabalho em um mundo onde a <strong>tecnologia</strong> está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo. O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias</strong> para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades mais justas, inclusivas e sustentáveis.</p>
+          <p className="text-green-600 text-xl">
+            Imaginar como será o trabalho em um mundo onde a <strong>tecnologia</strong>
+            está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo.
+            O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias</strong>
+            para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades
+            mais justas, inclusivas e sustentáveis.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-10 px-5">
+        <h2 className="text-3xl font-bold text-green-600 mb-3">
+          O time do Evolvere:
+        </h2>
+        <p className="text-green-600 mb-8">
+          Entenda como cada integrante contribuiu para a construção do Evolvere.
+        </p>
+
+        <div>
+          {cardsFinal.map((pessoa, index) => (
+            <div
+              key={index}
+              >
+              <img
+                src={pessoa.img}
+                alt={pessoa.nome}
+              />
+
+              <h3>
+                {pessoa.nome}
+              </h3>
+
+              <ul>
+                {pessoa.funcoes.map((funcao, i) => (
+                  <li key={i}
+                  className="list-disc">
+                    {funcao}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
     </>
