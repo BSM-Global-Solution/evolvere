@@ -7,6 +7,7 @@ import Home from './routes/Home/index.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
 import CriarConta from './routes/CriarConta/index.tsx'
 import EntrarConta from './routes/EntrarConta/index.tsx'
+import Autenticacao from './routes/Autenticacao/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -29,6 +30,13 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "", element: <EntrarConta />}
+  ]},
+  { 
+    path: "/autenticacao",
+    element: <Autenticacao />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <Autenticacao />}
   ]},
 ])
 
