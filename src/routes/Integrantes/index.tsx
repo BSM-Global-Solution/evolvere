@@ -15,7 +15,7 @@ export default function Integrantes() {
 
   const cardsPessoas: CardsIntegrantes[] = [
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763684929/img-moises_pjeymd.jpg",
+      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755022/img-moises_pjeymd.png",
       figcaption: "Moisés Barsoti Andrade de Oliveira",
       icon: <FaPlus />,
       role: "Desenvolvedor Fullstack",
@@ -25,7 +25,7 @@ export default function Integrantes() {
       linkedin: "",
     },
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763685190/img-sofia_hrzsac.jpg",
+      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755002/img-sofia_hrzsac.png",
       figcaption: "Sofia Siqueira Fontes",
       icon: <FaPlus />,
       role: "Designer UI/UX",
@@ -35,7 +35,7 @@ export default function Integrantes() {
       linkedin: "",
     },
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763684953/img-felipe_ndm51d.jpg",
+      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755015/img-felipe_ndm51d.png",
       figcaption: "Felipe Kirschner Modesto",
       icon: <FaPlus />,
       role: "Desenvolvedor Back-end",
@@ -58,33 +58,39 @@ export default function Integrantes() {
   };
 
   return (
-    <section className="bg-tertiary-100 pt-30">
-        <div className="flex items-center gap-4">
-            <h1 className="whitespace-nowrap text-2xl font-bold text-green-600">
+    <section className="bg-tertiary-100 pt-30 px-5">
+        <div className="flex items-center gap-4 mb-3">
+            <h1 className="text-3xl font-bold text-green-600">
                 Conheça nossa equipe!
             </h1>
-            <hr className="w-[15%] border-green-600 border-2 rounded" />
+            <hr className="hidden w-[15%] border-green-600 border-2 rounded" />
         </div>
         
-        <p className="text-green-600 font-medium text-lg">
+        <p className="text-green-600 font-medium text-xl mb-5">
             Conheça os desenvolvedores por trás do projeto Evolvere:
         </p>
 
-      <div>
+      <div className="flex flex-col gap-10 justify-center items-center">
         {cardsPessoas.map((pessoa, index) => (
-          <div key={index} onClick={() => toggleCard(index)}>
-            <figure>
-              <img src={pessoa.img} alt={pessoa.figcaption} />
-              <figcaption>
-                {cardAtivo === index
+          <div
+          key={index}
+          onClick={() => toggleCard(index)}
+          className="bg-green-600 cursor-pointer">
+            
+            <figure className="flex flex-col items-center p-3 gap-4">
+              <img src={pessoa.img} alt={pessoa.figcaption}
+              className="w-[80%]"/>
+              <figcaption className="text-cyan-100">
+                <strong>
+                  {cardAtivo === index
                   ? pessoa.figcaption
                   : cortarNome(pessoa.figcaption)}
+                </strong>
               </figcaption>
-
-              <span className="icon">
-                {cardAtivo === index ? <FaMinus /> : <FaPlus />}
-              </span>
             </figure>
+            <span className="text-cyan-100 flex justify-end pr-5 pb-5">
+              {cardAtivo === index ? <FaMinus /> : <FaPlus />}
+            </span>
 
             {cardAtivo === index && (
               <div>
