@@ -8,6 +8,7 @@ import FormVerde from "../../components/FormVerde";
 import LinkFormVerde from "../../components/LinkFormVerde";
 import ButtonFormVerde from "../../components/ButtonFormVerde";
 import emailjs from "@emailjs/browser";
+import { criarUsuario } from "../../service/api-java";
 
 const s = z.object({
     nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),
@@ -35,20 +36,27 @@ export default function CriarConta() {
 
     const onSubmit = async (data: Form) => {
         try {
-            const response = await emailjs.send(
-            "service_eld94ci",
-            "template_ocvszt2",
-            {
+            const usuarioCriado = await criarUsuario({
                 nome: data.nome,
+                data: data.data,
                 email: data.email,
-            },
-            "4PFdoXgps6b5cCssP"
+                senha: data.senha,
+            });
+
+
+            await emailjs.send(
+                "service_eld94ci",
+                "template_ocvszt2",
+                {
+                    nome: data.nome,
+                    email: data.email,
+                },
+                "4PFdoXgps6b5cCssP"
             );
-            console.log(response);
         } catch (error) {
-            alert("Erro na hora de criar a conta");
+            console.error(error);
         }
-    }
+    };
 
     return (
         <section className="
