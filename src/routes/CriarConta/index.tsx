@@ -9,6 +9,8 @@ import LinkFormVerde from "../../components/LinkFormVerde";
 import ButtonFormVerde from "../../components/ButtonFormVerde";
 import emailjs from "@emailjs/browser";
 import { criarUsuario } from "../../service/api-java";
+import { useState } from "react";
+import ApiErro from "../../components/ApiErro";
 
 const s = z.object({
     nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),
@@ -30,11 +32,15 @@ export type Form = z.infer<typeof s>
 
 export default function CriarConta() {
 
+    const [apiError, setApiError] = useState<string | null>(null);
+
     const { register, handleSubmit, formState: { errors } } = useForm<Form>({
         resolver: zodResolver(s),
     });
 
     const onSubmit = async (data: Form) => {
+        setApiError(null); // limpa erro anterior
+
         try {
             const usuarioCriado = await criarUsuario({
                 nome: data.nome,
@@ -42,7 +48,6 @@ export default function CriarConta() {
                 email: data.email,
                 senha: data.senha,
             });
-
 
             await emailjs.send(
                 "service_eld94ci",
@@ -53,7 +58,19 @@ export default function CriarConta() {
                 },
                 "4PFdoXgps6b5cCssP"
             );
-        } catch (error) {
+        } catch (error: any) {
+            // Caso o backend tenha enviado JSON com erro
+            if (error.response?.data?.message) {
+                setApiError(error.response.data.message);
+            }
+            else if (error.message) {
+                setApiError(error.message);
+            }
+            // Última camada de fallback
+            else {
+                setApiError("Erro inesperado ao criar usuário");
+            }
+
             console.error(error);
         }
     };
@@ -63,6 +80,7 @@ export default function CriarConta() {
         flex min-h-screen w-full
         max-[776px]:flex-col
         ">
+            {apiError && <ApiErro message={apiError} />}
             <BannerLogoVerde 
                 title="Estamos felizes em ter você conosco!"
                 p="Comece agora e faça parte dessa evolução."
