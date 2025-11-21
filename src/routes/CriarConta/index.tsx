@@ -33,6 +33,7 @@ export type Form = z.infer<typeof s>
 export default function CriarConta() {
 
     const [apiError, setApiError] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const { register, handleSubmit, formState: { errors } } = useForm<Form>({
         resolver: zodResolver(s),
@@ -40,6 +41,7 @@ export default function CriarConta() {
 
     const onSubmit = async (data: Form) => {
         setApiError(null); // limpa erro anterior
+        setLoading(true); // para ativar o loading
 
         try {
             const usuarioCriado = await criarUsuario({
@@ -62,6 +64,7 @@ export default function CriarConta() {
             // Caso o backend tenha enviado JSON com erro
             if (error.response?.data?.message) {
                 setApiError(error.response.data.message);
+                setLoading(false)
             }
             else if (error.message) {
                 setApiError(error.message);
@@ -181,10 +184,12 @@ export default function CriarConta() {
                 />
 
                 <ButtonFormVerde 
-                    buttonText="Cadastrar"
+                    buttonText={loading ? "Criando..." : "Cadastrar"}
                     buttonTiltle="Criar Conta"
                     buttonPosition="end"
-                    buttonIcon={<FiUserPlus className="w-[29px] h-6" />}
+                    buttonIcon={
+                        loading ? null : <FiUserPlus className="w-[29px] h-6" /> 
+                    }
                 />
             </FormVerde>
         </section>
