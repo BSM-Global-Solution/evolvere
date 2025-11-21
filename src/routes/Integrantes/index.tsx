@@ -52,6 +52,11 @@ export default function Integrantes() {
     setCardAtivo(cardAtivo === index ? null : index);
   };
 
+  const cortarNome = (nome: string) => {
+    const partes = nome.split(" ");
+    return partes.slice(0, 2).join(" ");
+  };
+
   return (
     <section>
       <div>
@@ -65,7 +70,11 @@ export default function Integrantes() {
           <div key={index} onClick={() => toggleCard(index)}>
             <figure>
               <img src={pessoa.img} alt={pessoa.figcaption} />
-              <figcaption>{pessoa.figcaption}</figcaption>
+              <figcaption>
+                {cardAtivo === index
+                  ? pessoa.figcaption
+                  : cortarNome(pessoa.figcaption)}
+              </figcaption>
 
               <span className="icon">
                 {cardAtivo === index ? <FaMinus /> : <FaPlus />}
@@ -99,7 +108,6 @@ export default function Integrantes() {
                     setCardAtivo(null);
                   }}
                 >
-                  –
                 </button>
               </div>
             )}
