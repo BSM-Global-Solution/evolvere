@@ -93,7 +93,7 @@ export default function Contato() {
           Envie uma mensagem para nós!
         </h2>
         <div className="md:flex md:flex-row">
-          <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%] xl:w-[70%] xl:mt-1 2xl:mt-8 2xl:w-full">
+          <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%] xl:w-[70%] xl:mt-1 2xl:mt-12 2xl:w-full">
             <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 
             md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Nome *
