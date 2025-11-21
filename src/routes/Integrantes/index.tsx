@@ -58,12 +58,17 @@ export default function Integrantes() {
   };
 
   return (
-    <section>
-      <div>
-        <h1>Conheça nossa equipe!</h1>
-        <hr />
-      </div>
-      <p>Conheça os desenvolvedores por trás do projeto Evolvere:</p>
+    <section className="bg-tertiary-100 pt-30">
+        <div className="flex items-center gap-4">
+            <h1 className="whitespace-nowrap text-2xl font-bold text-green-600">
+                Conheça nossa equipe!
+            </h1>
+            <hr className="w-[15%] border-green-600 border-2 rounded" />
+        </div>
+        
+        <p className="text-green-600 font-medium text-lg">
+            Conheça os desenvolvedores por trás do projeto Evolvere:
+        </p>
 
       <div>
         {cardsPessoas.map((pessoa, index) => (
