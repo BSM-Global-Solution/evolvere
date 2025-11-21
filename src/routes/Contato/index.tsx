@@ -130,12 +130,13 @@ export default function Contato() {
               className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
               md:text-[16px] md:w-[80%] md:mb-4 xl:text-xl xl:mt-1 xl:mb-0 xl:p-[10px]"
             />
-            <div className="flex justify-center py-3">
+            <div className="flex justify-center py-3 xl:px-34.5">
               <button
                 type="submit"
                 title="Clique aqui para enviar mensagem"
-                className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300
-                            sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3 xl:p-4 xl:text-xl xl:mt-1"
+                className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
+                hover:bg-[var(--color-green-300)] hover:duration-300
+                sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3 xl:p-4 xl:text-xl xl:mt-2"
               >
                 Enviar mensagem <IoIosArrowDropright size={24} />
               </button>
@@ -143,9 +144,9 @@ export default function Contato() {
           </div>
           <div
             className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
-                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3"
+                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4"
           >
-            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl">
+            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl xl:text-4xl">
               Contato
             </h3>
             <ul className="flex flex-col gap-2">
@@ -161,11 +162,11 @@ export default function Contato() {
                         {cardsEvolvere.icon}
                       </div>
                       <div className="flex flex-col gap-1 font-bold">
-                        <figcaption className="text-[14px] text-white lg:text-xl">
+                        <figcaption className="text-[14px] text-white lg:text-xl xl:text-2xl">
                           {cardsEvolvere.figcaption}
                         </figcaption>
-                        <p className="text-white text-[12px]">
-                          <span className="underline text-[12px]">
+                        <p className="text-white text-[12px] xl:text-[14px]">
+                          <span className="underline text-[12px] xl:text-[16px]">
                             {cardsEvolvere.span}
                           </span>{" "}
                           <text className="flex text-start">
