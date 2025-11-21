@@ -163,7 +163,7 @@ export default function Integrantes() {
         <h2 className="text-3xl font-bold text-green-500 mt-10 mb-5">
           Porquê criamos o Projeto Evolvere?
         </h2>
-        <p className="text-lg text-green-500 leading-relaxed max-w-3xl font-medium">
+        <p className="text-lg text-green-500 font-medium mb-5">
           O <strong>Evolvere</strong> nasceu como resposta ao desafio da{" "}
           <strong>
             FIAP (Faculdade de Informática e Administração Paulista)
@@ -174,7 +174,25 @@ export default function Integrantes() {
         </p>
       </section>
 
-      <section></section>
+      <section className="py-20">
+        <div>
+          <h2>Sobre o desafio - <br />
+          Global Solution <br />
+          2025
+          </h2>
+          <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png" alt="Banner do Global Solution 2025." />
+        </div>
+        <p>O Global Solution, é um grande desafio que integra diversas áreas do conhecimento e incentiva os alunos a resolverem problemas reais usando tecnologia e impacto social.</p>
+        
+        <div>
+          <div>
+            <h3>O desafio</h3>
+            <hr />
+          </div>
+          
+          <p>Imaginar como será o trabalho em um mundo onde a tecnologia está em todos os lugares, mas as relações humanas continuam no centro de tudo. O desafio é propor uma solução que use inovação, tecnologia e boas ideias para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades mais justas, inclusivas e sustentáveis.</p>
+        </div>
+      </section>
     </>
   );
 }
