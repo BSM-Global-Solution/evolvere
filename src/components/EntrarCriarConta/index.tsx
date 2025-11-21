@@ -27,11 +27,11 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
       </li>
       <li>
         <LinkMenu
-          to="/"
+          to="/criarConta"
           title="Clique aqui para criar sua conta"
           classname="
           bg-green-500 py-2 px-3 rounded-[5px]
-            btn-hover-green-580/70
+            btn-hover-green-580-70
            "
         >
           Criar Conta

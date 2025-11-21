@@ -42,39 +42,39 @@ export default function Contato() {
 
     return (
         <section className="flex flex-col text-center py-26 px-10">
-            <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1 md:text-4xl">
+            <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1 md:text-4xl lg:text-5xl lg:py-4">
                 Contate-nos
             </h1>
-            <p className="text-[16px] text-[var(--color-green-500)] pb-5 md:text-2xl md:px-14">
+            <p className="text-[16px] text-[var(--color-green-500)] pb-5 md:text-2xl md:px-14 lg:text-3xl lg:px-26 lg:mb-1">
                 Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?
             </p>
                 <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px] border-[var(--color-cyan-300)] flex flex-col md:flex-row">
                     <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6">
-                        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 md:py-2 md:text-2xl">
+                        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 md:py-2 md:text-2xl lg:text-3xl">
                             Envie uma mensagem para nós!
                         </h2>
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
                             Nome *
                         </label>
                         <input type="text"
                         placeholder="Digite seu nome"
                         className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
                             Email *
                         </label>
                         <input type="text"
                         placeholder="Digite seu email"
                         className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
                             Assunto *
                         </label>
                         <input type="text"
                         placeholder="Digite o assunto da mensagem"
                         className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
                         />
-                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl">
+                        <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
                             Sua mensagem *
                         </label>
                         <textarea
