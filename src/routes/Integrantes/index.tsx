@@ -82,7 +82,7 @@ export default function Integrantes() {
               <img src={pessoa.img} alt={pessoa.figcaption}
               className="w-[85%] border-4 rounded-[20px] border-green-500"/>
 
-              <figcaption className="text-cyan-100 text-2xl tracking-wide">
+              <figcaption className="text-cyan-100 text-2xl text-center w-[90%]">
                 <strong>
                   {cardAtivo === index
                   ? pessoa.figcaption
@@ -91,31 +91,37 @@ export default function Integrantes() {
               </figcaption>
             </figure>
 
-            <span className="text-cyan-100 flex justify-end pr-5 pb-3 text-xl">
-              {cardAtivo === index ? <FaMinus /> : <FaPlus />}
-            </span>
 
             {cardAtivo === index && (
-              <div className="text-cyan-100 px-6 pb-6 animate-fade-in duration-600">
-                <h3>{pessoa.role}</h3>
-                <hr />
-                <p>
-                  <strong>RM:</strong> {pessoa.rm}
-                </p>
-                <p>
-                  <strong>Turma:</strong> {pessoa.turma}
-                </p>
+              <div className="text-cyan-100 px-5 flex flex-col animate-fade-in duration-600 mt-4">
+                <h2 className="text-xl text-green-200 font-medium self-center">{pessoa.role}</h2>
+                <hr className="w-[95%] self-center"/>
 
-                <h4> <strong>Redes Sociais:</strong></h4>
-                <div>
-                  <a href={pessoa.github} target="_blank" rel="noopener noreferrer" >
-                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png" alt="Logotipo do GitHub" />
+                <ul className="text-xl mt-3 mb-5">
+                  <li>
+                    <strong>RM:</strong> {pessoa.rm}
+                  </li>
+                  <li>
+                    <strong>Turma:</strong> {pessoa.turma}
+                  </li>
+                </ul>
+
+                <p className="text-2xl"><strong>Redes Sociais:</strong></p>
+                <div className="gap-3 flex flex-row py-4">
+                  <a href={pessoa.github}
+                  target="_blank" rel="noopener noreferrer" >
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png"
+                    alt="Logotipo do GitHub" />
                   </a>
-                  <a href={pessoa.linkedin} target="_blank" rel="noopener noreferrer">
-                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png" alt="Logotipo do LinkedIn" />
+
+                  <a href={pessoa.linkedin}
+                  target="_blank" rel="noopener noreferrer">
+                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png"
+                    alt="Logotipo do LinkedIn" />
                   </a>
                 </div>
 
+                
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -125,6 +131,9 @@ export default function Integrantes() {
                 </button>
               </div>
             )}
+            <span className="text-cyan-100 flex justify-end pr-5 pb-3 text-xl">
+              {cardAtivo === index ? <FaMinus /> : <FaPlus />}
+            </span>
           </div>
         ))}
       </div>
