@@ -49,7 +49,7 @@ export default function Contato() {
                 Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?
             </p>
                 <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px] border-[var(--color-cyan-300)] flex flex-col md:flex-row">
-                    <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6">
+                    <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%]">
                         <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 md:py-2 md:text-2xl lg:text-3xl">
                             Envie uma mensagem para nós!
                         </h2>
@@ -93,7 +93,7 @@ export default function Contato() {
                     </div>
                     </div>
                     <div className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
-                    sm:items-start md:mt-10 md:mb-3">
+                    sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7">
                         <h3 className='text-white text-2xl font-semibold flex px-4'>
                             Contato
                         </h3>
