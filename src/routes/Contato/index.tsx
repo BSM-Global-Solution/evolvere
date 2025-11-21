@@ -88,48 +88,54 @@ export default function Contato() {
         dúvida?
       </p>
       <div className="bg-[var(--color-tertiary-100)] border-1 rounded-[20px] border-[var(--color-cyan-300)] flex flex-col">
-        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 md:py-2 md:text-2xl lg:text-3xl">
+        <h2 className="text-[var(--color-green-500)] font-semibold text-[16px] py-1 
+        md:py-2 md:text-2xl lg:text-3xl xl:text-4xl">
           Envie uma mensagem para nós!
         </h2>
         <div className="md:flex md:flex-row">
-          <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%]">
-            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
+          <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%] xl:w-[70%] xl:mt-1">
+            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 
+            md:text-2xl lg:text-3xl xl:text-4xl">
               Nome *
             </label>
             <input
               type="text"
               placeholder="Digite seu nome"
-              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
+              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
+              md:text-[16px] md:w-[80%] xl:p-[10px]"
             />
-            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
+            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl">
               Email *
             </label>
             <input
               type="text"
               placeholder="Digite seu email"
-              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
+              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
+              md:text-[16px] md:w-[80%] xl:p-[10px]"
             />
-            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
+            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl">
               Assunto *
             </label>
             <input
               type="text"
               placeholder="Digite o assunto da mensagem"
-              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%]"
+              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
+              md:text-[16px] md:w-[80%] xl:p-[10px]"
             />
-            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl">
+            <label className="text-[16px] text-[var(--color-green-500)] font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl">
               Sua mensagem *
             </label>
             <textarea
               placeholder="Digite sua mensagem"
-              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 md:text-[16px] md:w-[80%] md:mb-4"
+              className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
+              md:text-[16px] md:w-[80%] md:mb-4 xl:text-xl xl:mt-1 xl:mb-0 xl:p-[10px]"
             />
             <div className="flex justify-center py-3">
               <button
                 type="submit"
                 title="Clique aqui para enviar mensagem"
                 className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5 hover:bg-[var(--color-green-300)] hover:duration-300
-                            sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3"
+                            sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3 xl:p-4 xl:text-xl xl:mt-1"
               >
                 Enviar mensagem <IoIosArrowDropright size={24} />
               </button>
