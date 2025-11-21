@@ -84,14 +84,17 @@ export default function Integrantes() {
           sm:text-4xl">
             Conheça nossa equipe!
           </h1>
-          <hr className="hidden sm:block sm:w-[32%] border-green-600 border-2 rounded" />
+          <hr className="hidden border-green-600 border-2 rounded
+          sm:block sm:w-[32%]
+          md:w-[44%]" />
         </div>
 
         <p className="text-green-600 font-medium text-xl mb-5">
           Conheça os desenvolvedores por trás do projeto Evolvere:
         </p>
 
-        <div className="flex flex-col gap-10 justify-center items-center">
+        <div className="flex flex-col gap-10 justify-center items-center
+        md:flex-row">
           {cardsPessoas.map((pessoa, index) => (
             <div
               key={index}
@@ -197,7 +200,8 @@ export default function Integrantes() {
         <div className="flex flex-col gap-5 items-center
         sm:flex-row sm:justify-center">
           <h2 className="text-green-500 font-bold text-4xl text-center
-          sm:text-end sm:text-3xl">
+          sm:text-end sm:text-3xl
+          md:text-4xl">
             Sobre o desafio - <br />
             Global Solution <br />
             2025
@@ -219,7 +223,8 @@ export default function Integrantes() {
           <div className="flex items-center gap-4 mb-3">
             <h3 className="text-3xl font-bold text-green-400">O desafio</h3>
             <hr className="w-[35%] border-green-400 border-2 rounded
-            sm:w-[70%]" />
+            sm:w-[70%]
+            md:w-[75%]" />
           </div>
 
           <p className="text-green-600 text-xl">
@@ -242,19 +247,20 @@ export default function Integrantes() {
           Entenda como cada integrante contribuiu para a construção do Evolvere.
         </p>
 
-        <div className="flex flex-col gap-10 justify-center items-center">
+        <div className="flex flex-col gap-10 justify-center items-center
+        md:flex-row">
           {cardsFinal.map((pessoa, index) => (
             <div
               key={index}
-              className="flex flex-col items-center gap-5 py-5 bg-green-300/35 cursor-pointer rounded-2xl border-4 border-green-500"
-              >
+              className="flex flex-col items-center gap-5 py-5 bg-green-300/35 rounded-2xl border-4 border-green-500">
               <img
                 src={pessoa.img}
                 alt={pessoa.nome}
                 className="w-[85%] border-4 rounded-[20px] border-green-500"
               />
 
-              <h3 className="text-3xl text-green-600 font-bold">
+              <h3 className="text-3xl text-green-600 font-bold
+              md:text-2xl">
                 {pessoa.nome}
               </h3>
 
@@ -262,7 +268,8 @@ export default function Integrantes() {
                 {pessoa.funcoes.map((funcao, i) => (
                   <li key={i}
                   className="list-disc text-green-400 font-medium text-xl
-                  sm:text-2xl">
+                  sm:text-2xl
+                  md:text-xl">
                     {funcao}
                   </li>
                 ))}
