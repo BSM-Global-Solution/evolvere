@@ -80,10 +80,11 @@ export default function Integrantes() {
     <>
       <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
         <div className="flex items-center gap-4 mb-3">
-          <h1 className="text-3xl font-bold text-green-600">
+          <h1 className="text-3xl font-bold text-green-600
+          sm:text-4xl">
             Conheça nossa equipe!
           </h1>
-          <hr className="hidden w-[15%] border-green-600 border-2 rounded" />
+          <hr className="hidden sm:block sm:w-[32%] border-green-600 border-2 rounded" />
         </div>
 
         <p className="text-green-600 font-medium text-xl mb-5">
@@ -179,10 +180,12 @@ export default function Integrantes() {
           ))}
         </div>
 
-        <h3 className="text-3xl font-bold text-green-500 mt-10 mb-5">
+        <h3 className="text-3xl font-bold text-green-500 mt-10 mb-5
+        sm:text-4xl">
           Porquê criamos o Projeto Evolvere?
         </h3>
-        <p className="text-lg text-green-500 font-medium mb-5">
+        <p className="text-lg text-green-500 font-medium mb-5
+        sm:text-xl">
           O <strong>Evolvere</strong> nasceu como resposta ao desafio da
           <strong>FIAP (Faculdade de Informática e Administração Paulista)</strong>.
           Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais mais conscientes,
@@ -191,8 +194,10 @@ export default function Integrantes() {
       </section>
 
       <section className=" flex flex-col gap-10 py-10 px-5">
-        <div className="flex flex-col gap-5 items-center">
-          <h2 className="text-green-500 font-bold text-4xl text-center">
+        <div className="flex flex-col gap-5 items-center
+        sm:flex-row sm:justify-center">
+          <h2 className="text-green-500 font-bold text-4xl text-center
+          sm:text-end sm:text-3xl">
             Sobre o desafio - <br />
             Global Solution <br />
             2025
@@ -200,6 +205,7 @@ export default function Integrantes() {
           <img
             src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png"
             alt="Banner do Global Solution 2025."
+            className="sm:w-[55%]"
           />
         </div>
 
@@ -212,7 +218,8 @@ export default function Integrantes() {
         <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5">
           <div className="flex items-center gap-4 mb-3">
             <h3 className="text-3xl font-bold text-green-400">O desafio</h3>
-            <hr className="whitespace-nowrap w-[35%] border-green-400 border-2 rounded" />
+            <hr className="w-[35%] border-green-400 border-2 rounded
+            sm:w-[70%]" />
           </div>
 
           <p className="text-green-600 text-xl">
@@ -226,10 +233,12 @@ export default function Integrantes() {
       </section>
 
       <section className="py-10 px-5">
-        <h2 className="text-3xl font-bold text-green-600 mb-3">
+        <h2 className="text-3xl font-bold text-green-600 mb-3
+        sm:text-4xl">
           O time do Evolvere:
         </h2>
-        <p className="text-green-600 mb-8 text-xl">
+        <p className="text-green-600 mb-8 text-xl
+        sm:text-2xl">
           Entenda como cada integrante contribuiu para a construção do Evolvere.
         </p>
 
@@ -252,7 +261,8 @@ export default function Integrantes() {
               <ul>
                 {pessoa.funcoes.map((funcao, i) => (
                   <li key={i}
-                  className="list-disc text-green-400 font-medium text-xl">
+                  className="list-disc text-green-400 font-medium text-xl
+                  sm:text-2xl">
                     {funcao}
                   </li>
                 ))}
