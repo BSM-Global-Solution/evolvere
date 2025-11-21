@@ -80,7 +80,10 @@ export default function Integrantes() {
             
             <figure className="flex flex-col items-center gap-5 pt-5">
               <img src={pessoa.img} alt={pessoa.figcaption}
-              className="w-[85%] border-4 rounded-[20px] border-green-500"/>
+              className={`w-[85%] border-4 rounded-[20px] border-green-500
+                transition-all duration-300
+                ${cardAtivo === index ? "opacity-0 h-0 overflow-hidden" : "opacity-100"}
+              `}/>
 
               <figcaption className="text-cyan-100 text-2xl text-center w-[90%]">
                 <strong>
