@@ -58,96 +58,123 @@ export default function Integrantes() {
   };
 
   return (
-    <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
+    <>
+      <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
         <div className="flex items-center gap-4 mb-3">
-            <h1 className="text-3xl font-bold text-green-600">
-                Conheça nossa equipe!
-            </h1>
-            <hr className="hidden w-[15%] border-green-600 border-2 rounded" />
+          <h1 className="text-3xl font-bold text-green-600">
+            Conheça nossa equipe!
+          </h1>
+          <hr className="hidden w-[15%] border-green-600 border-2 rounded" />
         </div>
-        
+
         <p className="text-green-600 font-medium text-xl mb-5">
-            Conheça os desenvolvedores por trás do projeto Evolvere:
+          Conheça os desenvolvedores por trás do projeto Evolvere:
         </p>
 
-      <div className="flex flex-col gap-10 justify-center items-center">
-        {cardsPessoas.map((pessoa, index) => (
-          <div
-          key={index}
-          onClick={() => toggleCard(index)}
-          className="bg-green-600 cursor-pointer rounded-2xl border-4 border-green-500
-          transition-all duration-300 hover:scale-[1.02]">
-            
-            <figure className="flex flex-col items-center gap-5 pt-5">
-              <img src={pessoa.img} alt={pessoa.figcaption}
-              className={`w-[85%] border-4 rounded-[20px] border-green-500
+        <div className="flex flex-col gap-10 justify-center items-center">
+          {cardsPessoas.map((pessoa, index) => (
+            <div
+              key={index}
+              onClick={() => toggleCard(index)}
+              className="bg-green-600 cursor-pointer rounded-2xl border-4 border-green-500
+          transition-all duration-300 hover:scale-[1.02]"
+            >
+              <figure className="flex flex-col items-center gap-5 pt-5">
+                <img
+                  src={pessoa.img}
+                  alt={pessoa.figcaption}
+                  className={`w-[85%] border-4 rounded-[20px] border-green-500
                 transition-all duration-300
-                ${cardAtivo === index ? "opacity-0 h-0 overflow-hidden" : "opacity-100"}
-              `}/>
+                ${
+                  cardAtivo === index
+                    ? "opacity-0 h-0 overflow-hidden"
+                    : "opacity-100"
+                }
+              `}
+                />
 
-              <figcaption className="text-cyan-100 text-2xl text-center w-[90%]">
-                <strong>
-                  {cardAtivo === index
-                  ? pessoa.figcaption
-                  : cortarNome(pessoa.figcaption)}
-                </strong>
-              </figcaption>
-            </figure>
+                <figcaption className="text-cyan-100 text-2xl text-center w-[90%]">
+                  <strong>
+                    {cardAtivo === index
+                      ? pessoa.figcaption
+                      : cortarNome(pessoa.figcaption)}
+                  </strong>
+                </figcaption>
+              </figure>
 
+              {cardAtivo === index && (
+                <div className="text-cyan-100 px-5 flex flex-col animate-fade-in duration-600 mt-4">
+                  <h2 className="text-xl text-green-200 font-medium self-center">
+                    {pessoa.role}
+                  </h2>
+                  <hr className="w-[95%] self-center" />
 
-            {cardAtivo === index && (
-              <div className="text-cyan-100 px-5 flex flex-col animate-fade-in duration-600 mt-4">
-                <h2 className="text-xl text-green-200 font-medium self-center">{pessoa.role}</h2>
-                <hr className="w-[95%] self-center"/>
+                  <ul className="text-xl mt-3 mb-5">
+                    <li>
+                      <strong>RM:</strong> {pessoa.rm}
+                    </li>
+                    <li>
+                      <strong>Turma:</strong> {pessoa.turma}
+                    </li>
+                  </ul>
 
-                <ul className="text-xl mt-3 mb-5">
-                  <li>
-                    <strong>RM:</strong> {pessoa.rm}
-                  </li>
-                  <li>
-                    <strong>Turma:</strong> {pessoa.turma}
-                  </li>
-                </ul>
+                  <p className="text-2xl">
+                    <strong>Redes Sociais:</strong>
+                  </p>
+                  <div className="gap-3 flex flex-row py-4">
+                    <a
+                      href={pessoa.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png"
+                        alt="Logotipo do GitHub"
+                      />
+                    </a>
 
-                <p className="text-2xl"><strong>Redes Sociais:</strong></p>
-                <div className="gap-3 flex flex-row py-4">
-                  <a href={pessoa.github}
-                  target="_blank" rel="noopener noreferrer" >
-                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png"
-                    alt="Logotipo do GitHub" />
-                  </a>
+                    <a
+                      href={pessoa.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png"
+                        alt="Logotipo do LinkedIn"
+                      />
+                    </a>
+                  </div>
 
-                  <a href={pessoa.linkedin}
-                  target="_blank" rel="noopener noreferrer">
-                    <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png"
-                    alt="Logotipo do LinkedIn" />
-                  </a>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCardAtivo(null);
+                    }}
+                  ></button>
                 </div>
+              )}
+              <span className="text-cyan-100 flex justify-end pr-5 pb-3 text-xl">
+                {cardAtivo === index ? <FaMinus /> : <FaPlus />}
+              </span>
+            </div>
+          ))}
+        </div>
 
-                
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCardAtivo(null);
-                  }}
-                >
-                </button>
-              </div>
-            )}
-            <span className="text-cyan-100 flex justify-end pr-5 pb-3 text-xl">
-              {cardAtivo === index ? <FaMinus /> : <FaPlus />}
-            </span>
-          </div>
-        ))}
-      </div>
+        <h2 className="text-3xl font-bold text-green-500 mt-10 mb-5">
+          Porquê criamos o Projeto Evolvere?
+        </h2>
+        <p className="text-lg text-green-500 leading-relaxed max-w-3xl font-medium">
+          O <strong>Evolvere</strong> nasceu como resposta ao desafio da{" "}
+          <strong>
+            FIAP (Faculdade de Informática e Administração Paulista)
+          </strong>
+          . Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais
+          mais conscientes, tecnológicos e humanos ao mesmo tempo sempre olhando
+          para a empregabilidade do futuro.
+        </p>
+      </section>
 
-      <h2 className="text-3xl font-bold text-green-500 mt-10 mb-5">Porquê criamos o Projeto Evolvere?</h2>
-      <p className="text-lg text-green-500 leading-relaxed max-w-3xl font-medium">
-        O <strong>Evolvere</strong> nasceu como resposta ao desafio da <strong>FIAP (Faculdade de
-        Informática e Administração Paulista)</strong>. Nosso objetivo é ajudar pessoas a
-        encontrarem caminhos profissionais mais conscientes, tecnológicos e
-        humanos ao mesmo tempo sempre olhando para a empregabilidade do futuro.
-      </p>
-    </section>
+      <section></section>
+    </>
   );
 }
