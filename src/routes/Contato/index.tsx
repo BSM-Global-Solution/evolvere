@@ -80,10 +80,10 @@ export default function Contato() {
 
   return (
     <section className="flex flex-col text-center py-26 px-10">
-      <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1 md:text-4xl lg:text-5xl lg:py-4">
+      <h1 className="text-2xl text-[var(--color-green-500)] font-bold pb-1 md:text-4xl lg:text-5xl lg:py-4 xl:text-6xl xl:py-5">
         Contate-nos
       </h1>
-      <p className="text-[16px] text-[var(--color-green-500)] pb-5 md:text-2xl md:px-14 lg:text-3xl lg:px-26 lg:mb-1">
+      <p className="text-[16px] text-[var(--color-green-500)] pb-5 md:text-2xl md:px-14 lg:text-3xl lg:px-26 lg:mb-1 xl:px-32">
         Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma
         dúvida?
       </p>
