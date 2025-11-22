@@ -11,12 +11,13 @@ import EntrarConta from './routes/EntrarConta/index.tsx'
 import Autenticacao from './routes/Autenticacao/index.tsx'
 import EsqueciSenha from './routes/EsqueciSenha/index.tsx'
 import RedefinirSenha from './routes/RedefinirSenha/index.tsx'
+import Error from './routes/Error/index.tsx'
 
 const router = createBrowserRouter([
   { 
     path: "/",
     element: <App />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "/", element: <Home />},
       {path: "/nossaEquipe", element: <Integrantes/>},
@@ -24,35 +25,35 @@ const router = createBrowserRouter([
   { 
     path: "/criarConta",
     element: <CriarConta />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "", element: <CriarConta />}
   ]},
   { 
     path: "/entrarConta",
     element: <EntrarConta />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "", element: <EntrarConta />}
   ]},
   { 
     path: "/autenticacao",
     element: <Autenticacao />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "", element: <Autenticacao />}
   ]},
   { 
     path: "/esqueciSenha",
     element: <EsqueciSenha />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "", element: <EsqueciSenha />}
   ]},
   { 
     path: "/redefinirSenha",
     element: <RedefinirSenha />,
-    errorElement: "erro",
+    errorElement: <Error />,
     children: [
       {path: "", element: <RedefinirSenha />}
   ]},
