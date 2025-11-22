@@ -157,22 +157,22 @@ export default function Contato() {
             </h3>
             <ul className="flex flex-col gap-2">
               {cardsEvolvere.map((cardsEvolvere, index) => (
-                <li className="flex" key={index}>
+                <li className="flex hover:cursor-default" key={index}>
                   <Link
                     to={cardsEvolvere.link}
-                    className="w-full"
+                    className="w-full hover:cursor-default"
                     title={cardsEvolvere.title}
                   >
                     <figure className="flex items-center gap-3 px-3 py-2">
-                      <div className="bg-[var(--color-green-500)] hover:bg-[#1aa194c4] hover:border-[#1aa194c4] hover:duration-300 rounded-[10px] p-3 text-white">
+                      <div className="bg-[var(--color-green-500)] hover:cursor-default rounded-[10px] p-3 text-white">
                         {cardsEvolvere.icon}
                       </div>
-                      <div className="flex flex-col gap-1 font-bold">
-                        <figcaption className="text-[14px] text-white lg:text-xl xl:text-2xl 2xl:text-[22px] 2xl:mt-1 2xl:mr-38">
+                      <div className="flex flex-col gap-1 font-bold hover:cursor-default">
+                        <figcaption className="text-[14px] text-white mr-24.5 lg:text-xl xl:text-2xl 2xl:text-[22px] 2xl:mt-0 2xl:mr-65">
                           {cardsEvolvere.figcaption}
                         </figcaption>
                         <p className="text-white text-[12px] xl:text-[14px] 2xl:text-[16px]">
-                          <span className="underline text-[12px] xl:text-[16px]">
+                          <span className="underline text-[12px] xl:text-[16px] hover:cursor-pointer 2xl:mr-26">
                             {cardsEvolvere.span}
                           </span>{" "}
                           <text className="flex text-start">
