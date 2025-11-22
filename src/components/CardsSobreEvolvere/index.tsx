@@ -1,3 +1,5 @@
+import { useTheme } from "../../context/ThemeContextBase";
+
 interface CardsSobreEvolvereProps {
     icon: React.ReactNode
     title: string
@@ -5,13 +7,21 @@ interface CardsSobreEvolvereProps {
 }
 
 export default function CardsSobreEvolvere({icon, title, p}: CardsSobreEvolvereProps) {
+
+  const { theme } = useTheme();
+
   return (
     <div
-      className="
-        flex items-center w-full bg-green-300/35 rounded-[20px]
-        border-4 border-green-500
+      className={`
+        ${
+          theme == "light"
+          ? "bg-green-300/35 border-green-500"
+          : "bg-green-200/30 border-green-200"
+        }
+        flex items-center w-full rounded-[20px]
+        border-4 
         max-[490px]:flex-col
-        "
+        `}
     >
       <span className="py-8 pl-11 pr-19">
         <span className="
@@ -25,13 +35,18 @@ export default function CardsSobreEvolvere({icon, title, p}: CardsSobreEvolvereP
       </span>
       <div className="py-[33px] w-full pr-6 max-[490px]:pl-2">
         <h3
-          className="
-            text-3xl text-green-400 font-inter font-bold
+          className={`
+            ${
+              theme == "light"
+              ? "text-green-400"
+              : "text-tertiary-200"
+            }
+            text-3xl font-inter font-bold
             max-[630px]:text-2xl
             max-[534px]:text-xl
             max-[490px]:text-2xl
             max-[400px]:text-xl
-            "
+            `}
         >
           {title}
         </h3>

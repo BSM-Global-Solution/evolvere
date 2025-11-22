@@ -85,18 +85,24 @@ export default function Home() {
         ${
           theme === "light"
           ? "bg-white text-black"
-          : "bg-blue-200 text-white"
+          : "bg-black-dark text-white"
         }
         `} id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
-             <h2 className="
-             text-7xl font-instrument-sans font-bold text-green-600
+             <h2 className={`
+             text-7xl font-instrument-sans font-bold 
+            ${
+              theme === "light"
+              ? "text-green-600"
+              : "text-cyan-300"
+            }
+             
              max-[560px]:text-5xl
              max-[500px]:text-4xl
              max-[400px]:text-3xl
-             ">
+             `}>
                 Sobre o Evolvere
               </h2>
              <p className="
@@ -105,10 +111,22 @@ export default function Home() {
              max-[560px]:text-3xl
              max-[500px]:text-xl
              ">
-              Unimos <span className="text-green-600 font-bold">Inteligência Artificial </span>
-              e <span className="text-green-600 font-bold">mentoria humana </span>para ajudar o usuário a 
+              Unimos <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>Inteligência Artificial </span>
+              e <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>mentoria humana </span>para ajudar o usuário a 
               evoluir suas hard e soft skills, acompanhando seu progresso e conectando-o 
-              a mentores de forma dinâmica e <span className="text-green-600 font-bold">personalizada.</span>
+              a mentores de forma dinâmica e <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>personalizada.</span>
               </p>
               <p className="
                  w-300 text-4xl font-inter
@@ -117,8 +135,16 @@ export default function Home() {
                  max-[500px]:text-xl
              ">
               Nosso objetivo é: destravar habilidades, abrir portas e 
-              <span className="text-green-600 font-bold"> impulsionar carreiras </span>
-              de verdade para o <span className="text-green-600 font-bold">futuro.</span>
+              <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}> impulsionar carreiras </span>
+              de verdade para o <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>futuro.</span>
               </p>
           </div>
 

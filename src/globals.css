@@ -5,7 +5,6 @@ html {
 }
 
 @theme {
-    /* Colors */
     --color-green-200: #29D5C4;
     --color-green-300: #318B82;
     --color-green-400: #158277;
@@ -16,11 +15,13 @@ html {
     --color-green-178177: #178177;
 
     --color-tertiary-100: #E8FFFC;
+    --color-tertiary-200: #BDFDF4;
     --color-tertiary-600: #12403B;
     --color-tertiary-700: #12403B;
 
     --color-cyan-100: #66FEEC;
     --color-cyan-200: #64FEED;
+    --color-cyan-300: #BDFDF4;
 
     --color-gray-100: #E3E8E7;
     --color-gray-200: #BBC0BF;
@@ -31,6 +32,11 @@ html {
      --font-instrument-sans: "Instrument Sans";
      --font-inria-sans: "Inria Sans";
      --font-plus-jakarta-sans: "Plus Jakarta Sans";
+}
+
+/* Modo Dark */
+@utility bg-black-dark {
+  @apply bg-[#252525]
 }
 
 /* Hovers */
