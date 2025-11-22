@@ -137,7 +137,7 @@ export default function Contato() {
                 type="submit"
                 title="Clique aqui para enviar mensagem"
                 className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
-                hover:bg-[var(--color-green-300)] hover:duration-300
+                hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
                 sm:w-[40%] 
                 md:items-center md:w-full 
                 lg:mt-0 lg:p-3 
@@ -164,7 +164,7 @@ export default function Contato() {
                     title={cardsEvolvere.title}
                   >
                     <figure className="flex items-center gap-3 px-3 py-2">
-                      <div className="bg-[var(--color-green-500)] rounded-[10px] p-3 text-white">
+                      <div className="bg-[var(--color-green-500)] hover:bg-[#1aa194c4] hover:border-[#1aa194c4] hover:duration-300 rounded-[10px] p-3 text-white">
                         {cardsEvolvere.icon}
                       </div>
                       <div className="flex flex-col gap-1 font-bold">
@@ -197,7 +197,7 @@ export default function Contato() {
                     className="w-full flex items-center gap-3 px-3 py-2 xl:p-3 2xl:py-3"
                     title={rede.title}
                   >
-                    <div className="bg-[var(--color-green-500)] rounded-[10px] p-3 text-white">
+                    <div className="bg-[var(--color-green-500)] hover:bg-[#1aa194c4] hover:border-[#1aa194c4] hover:duration-300 rounded-[10px] p-3 text-white">
                       {rede.icon}
                     </div>
                   </Link>
@@ -236,7 +236,7 @@ export default function Contato() {
             type="submit"
             title="Clique aqui para enviar o feedback"
             className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
-            hover:bg-[var(--color-green-300)] hover:duration-300
+            hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
             lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
           >
             Enviar feedback <IoIosArrowDropright size={24} />
