@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home/index.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
 import Integrantes from './routes/Integrantes/index.tsx'
+import CriarConta from './routes/CriarConta/index.tsx'
+import EntrarConta from './routes/EntrarConta/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -14,8 +16,22 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "/", element: <Home />},
-      {path: "/nossaEquipe", element: <Integrantes/>},           
-  ]}
+      {path: "/nossaEquipe", element: <Integrantes/>},
+  ]},
+  { 
+    path: "/criarConta",
+    element: <CriarConta />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <CriarConta />}
+  ]},
+  { 
+    path: "/entrarConta",
+    element: <EntrarConta />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <EntrarConta />}
+  ]},
 ])
 
 createRoot(document.getElementById('root')!).render(
