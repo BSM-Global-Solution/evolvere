@@ -8,12 +8,13 @@ interface ButtonFormVerdeProps {
     pxButton?: number;
     pxDivButton?: number;
     className?: string
+    classNameButton?: string
 }
 
 export default function ButtonFormVerde({ 
         buttonText, buttonTiltle, buttonIcon, 
         buttonPosition, pxButton=4.5, pxDivButton,
-        className
+        className, classNameButton
     }: ButtonFormVerdeProps) {
     return (
         <div className={`
@@ -27,6 +28,7 @@ export default function ButtonFormVerde({
                 <button 
                 title={buttonTiltle}
                 className={`
+                    ${classNameButton}
                     flex items-center gap-1 text-white
                     bg-tertiary-700 px-${pxButton} py-3
                     rounded-[20px] font-inter font-semibold
