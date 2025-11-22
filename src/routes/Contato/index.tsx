@@ -128,7 +128,9 @@ export default function Contato() {
             <textarea
               placeholder="Digite sua mensagem"
               className="border-2 border-[var(--color-gray-200)] rounded-[10px] text-[14px] text-[var(--color-gray-300)] font-medium p-[6px] px-2 
-              md:text-[16px] md:w-[80%] md:mb-4 xl:text-xl xl:mt-1 xl:mb-0 xl:p-[10px] 2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl"
+              md:text-[16px] md:w-[80%] md:mb-4 
+              lg:h-25 xl:text-xl xl:mt-1 xl:mb-0 xl:p-[10px] 
+              2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl 2xl:h-35"
             />
             <div className="flex justify-center py-3 xl:px-34.5 2xl:px-70">
               <button
@@ -136,7 +138,11 @@ export default function Contato() {
                 title="Clique aqui para enviar mensagem"
                 className="w-[80%] border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
                 hover:bg-[var(--color-green-300)] hover:duration-300
-                sm:w-[40%] md:items-center md:w-full lg:mt-3 lg:p-3 xl:p-4 xl:text-xl xl:mt-2 2xl:mt-3 2xl:text-2xl 2xl:px-4 2xl:py-4.5"
+                sm:w-[40%] 
+                md:items-center md:w-full 
+                lg:mt-0 lg:p-3 
+                xl:p-4 xl:text-xl xl:mt-2 
+                2xl:mt-3 2xl:text-2xl 2xl:px-4 2xl:py-4.5"
               >
                 Enviar mensagem <IoIosArrowDropright size={24} />
               </button>
@@ -219,8 +225,11 @@ export default function Contato() {
           name="Mensagem"
           id="Mensagem"
           placeholder="Digite sua mensagem"
-          className="w-full border-1 border-[var(--color-gray-200)] rounded-[10px] p-2 gap-1 text-[14px] lg:w-[50%] lg:py-3 lg:mt-1 xl:w-[45%] xl:py-4 xl:px-2 lg:mt-1.5 
-          2xl:text-xl 2xl:mt-1 2xl:py-2"
+          className="w-full border-1 border-[var(--color-gray-200)] rounded-[10px] p-2 gap-1 text-[14px] 
+          sm:w-[70%] sm:h-25 
+          lg:w-[50%] lg:h-30 lg:py-3 lg:mt-1 
+          xl:w-[45%] xl:py-4 xl:px-2 lg:mt-1.5 
+          2xl:text-xl 2xl:mt-1 2xl:py-2 2xl:h-45"
         ></textarea>
         <div className="py-3">
           <button
