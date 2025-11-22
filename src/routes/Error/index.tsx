@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function Error() {
   return (
-    <section className="w-full h-screen bg-tertiary-700 px-45 py-24 text-white">
-      <div className="flex flex-col justify-between items-center w-full h-full px-42">
-        <h1 className="text-7xl font-bold text-center">
+    <section className="w-full h-screen bg-tertiary-700 px-5 py-15 text-white
+    sm:py-20 sm:px-8">
+      <div className="flex flex-col justify-between items-center w-full h-full">
+        <h1 className="text-4xl font-bold text-center
+        sm:text-5xl">
             Página não encontrada!
         </h1>
-        <ul className="flex flex-col gap-10 max-w-220 bg-tertiary-600 px-10 py-6 text-2xl rounded-br-[20px] rounded-tl-[20px] border-2 border-white">
+        <ul className="flex flex-col gap-8 max-w-220 bg-tertiary-600 p-5 text-2xl
+        rounded-br-[20px] rounded-tl-[20px] border-2 border-white
+        max-sm:text-xl
+        sm:p-7">
           <li>
             Parece que a página que você está tentando acessar não existe ou não
             foi encontrada.
@@ -20,13 +25,14 @@ export default function Error() {
             </ul>
           </li>
         </ul>
-        <div className="flex justify-center">
+        <div className="flex justify-center max-sm:text-xl">
           <Link to="/" title="Voltar para a página inicial"
-          className="w-[35%] flex justify-center py-2 gap-2 items-center bg-tertiary-600 text-2xl text-white font-inter font-bold rounded-[20px]">
-            <span>
+          className="flex justify-center py-3 px-4 gap-2 bg-tertiary-600
+          text-2xl text-white font-inter font-semibold rounded-[20px]">
+            <span className="flex flex-row items-center gap-3">
                 Ir para Home <IoIosArrowDropright />
             </span>
-          </Link>
+          </Link> 
         </div>
       </div>
     </section>
