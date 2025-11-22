@@ -1,3 +1,4 @@
+import { IoIosArrowDropright } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 export default function Error() {
@@ -13,15 +14,18 @@ export default function Error() {
             foi encontrada.
           </li>
           <li>
-            <ul>
+            <ul className="ml-10 list-disc">
               <li>Verifique se o endereço digitado está correto.</li>
               <li>Ou volte para a página inicial.</li>
             </ul>
           </li>
         </ul>
-        <div>
-          <Link to="/" title="Voltar para a página inicial">
-            Ir para Home
+        <div className="flex justify-center">
+          <Link to="/" title="Voltar para a página inicial"
+          className="w-[35%] flex justify-center py-2 gap-2 items-center bg-tertiary-600 text-2xl text-white font-inter font-bold rounded-[20px]">
+            <span>
+                Ir para Home <IoIosArrowDropright />
+            </span>
           </Link>
         </div>
       </div>
