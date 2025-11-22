@@ -5,6 +5,7 @@ import './globals.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home/index.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
+import Contato from './routes/Contato/index.tsx'
 import Integrantes from './routes/Integrantes/index.tsx'
 import CriarConta from './routes/CriarConta/index.tsx'
 import EntrarConta from './routes/EntrarConta/index.tsx'
@@ -20,43 +21,14 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {path: "/", element: <Home />},
+      {path: "/contato", element: <Contato />},
+      {path: "/criarConta", element: <CriarConta />},
       {path: "/nossaEquipe", element: <Integrantes/>},
-  ]},
-  { 
-    path: "/criarConta",
-    element: <CriarConta />,
-    errorElement: <Error />,
-    children: [
-      {path: "", element: <CriarConta />}
-  ]},
-  { 
-    path: "/entrarConta",
-    element: <EntrarConta />,
-    errorElement: <Error />,
-    children: [
-      {path: "", element: <EntrarConta />}
-  ]},
-  { 
-    path: "/autenticacao",
-    element: <Autenticacao />,
-    errorElement: <Error />,
-    children: [
-      {path: "", element: <Autenticacao />}
-  ]},
-  { 
-    path: "/esqueciSenha",
-    element: <EsqueciSenha />,
-    errorElement: <Error />,
-    children: [
-      {path: "", element: <EsqueciSenha />}
-  ]},
-  { 
-    path: "/redefinirSenha",
-    element: <RedefinirSenha />,
-    errorElement: <Error />,
-    children: [
-      {path: "", element: <RedefinirSenha />}
-  ]},
+      {path: "/entrarConta", element: <EntrarConta/>},
+      {path: "/autenticacao", element: <Autenticacao/>},
+      {path: "/esqueciSenha", element: <EsqueciSenha/>},
+      {path: "/redefinirSenha", element: <RedefinirSenha/>},
+  ]}
 ])
 
 createRoot(document.getElementById('root')!).render(
