@@ -78,7 +78,8 @@ export default function Integrantes() {
 
   return (
     <>
-      <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400">
+      <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400
+      lg:pt-40">
         <div className="flex items-center gap-4 mb-3">
           <h1 className="text-3xl font-bold text-green-600
           sm:text-4xl">
@@ -86,10 +87,12 @@ export default function Integrantes() {
           </h1>
           <hr className="hidden border-green-600 border-2 rounded
           sm:block sm:w-[32%]
-          md:w-[44%]" />
+          md:w-[44%]
+          lg:w-[59%]" />
         </div>
 
-        <p className="text-green-600 font-medium text-xl mb-5">
+        <p className="text-green-600 font-medium text-xl mb-5
+        lg:text-2xl">
           Conheça os desenvolvedores por trás do projeto Evolvere:
         </p>
 
@@ -190,7 +193,7 @@ export default function Integrantes() {
         <p className="text-lg text-green-500 font-medium mb-5
         sm:text-xl">
           O <strong>Evolvere</strong> nasceu como resposta ao desafio da
-          <strong>FIAP (Faculdade de Informática e Administração Paulista)</strong>.
+          <strong> FIAP (Faculdade de Informática e Administração Paulista)</strong>.
           Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais mais conscientes,
           tecnológicos e humanos ao mesmo tempo sempre olhando para a empregabilidade do futuro.
         </p>
@@ -219,18 +222,20 @@ export default function Integrantes() {
           problemas reais usando tecnologia e impacto social.
         </p>
 
-        <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5">
+        <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5
+        lg:p-8">
           <div className="flex items-center gap-4 mb-3">
             <h3 className="text-3xl font-bold text-green-400">O desafio</h3>
             <hr className="w-[35%] border-green-400 border-2 rounded
             sm:w-[70%]
-            md:w-[75%]" />
+            md:w-[75%]
+            lg:w-[80%]" />
           </div>
 
           <p className="text-green-600 text-xl">
-            Imaginar como será o trabalho em um mundo onde a <strong>tecnologia</strong>
+            Imaginar como será o trabalho em um mundo onde a <strong>tecnologia </strong>
             está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo.
-            O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias</strong>
+            O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias </strong>
             para melhorar a vida das pessoas, preparar organizações para novos tempos e criar oportunidades
             mais justas, inclusivas e sustentáveis.
           </p>
@@ -269,7 +274,8 @@ export default function Integrantes() {
                   <li key={i}
                   className="list-disc text-green-400 font-medium text-xl
                   sm:text-2xl
-                  md:text-xl">
+                  md:text-xl
+                  lg:text-2xl">
                     {funcao}
                   </li>
                 ))}
