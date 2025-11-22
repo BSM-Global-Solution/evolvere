@@ -82,7 +82,8 @@ export default function Integrantes() {
       lg:pt-40">
         <div className="flex items-center gap-4 mb-3">
           <h1 className="text-3xl font-bold text-green-600
-          sm:text-4xl">
+          sm:text-4xl
+          xl:text-5xl">
             Conheça nossa equipe!
           </h1>
           <hr className="hidden border-green-600 border-2 rounded
@@ -191,7 +192,8 @@ export default function Integrantes() {
           Porquê criamos o Projeto Evolvere?
         </h3>
         <p className="text-lg text-green-500 font-medium mb-5
-        sm:text-xl">
+        sm:text-xl
+        xl:text-2xl">
           O <strong>Evolvere</strong> nasceu como resposta ao desafio da
           <strong> FIAP (Faculdade de Informática e Administração Paulista)</strong>.
           Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais mais conscientes,
@@ -201,10 +203,12 @@ export default function Integrantes() {
 
       <section className=" flex flex-col gap-10 py-10 px-5">
         <div className="flex flex-col gap-5 items-center
-        sm:flex-row sm:justify-center">
+        sm:flex-row sm:justify-center
+        xl:gap-10">
           <h2 className="text-green-500 font-bold text-4xl text-center
           sm:text-end sm:text-3xl
-          md:text-4xl">
+          md:text-4xl
+          xl:text-5xl">
             Sobre o desafio - <br />
             Global Solution <br />
             2025
@@ -216,7 +220,8 @@ export default function Integrantes() {
           />
         </div>
 
-        <p className="text-green-600 text-2xl">
+        <p className="text-green-600 text-2xl
+        xl:text-3xl">
           O <strong>Global Solution</strong>, é um grande desafio que integra
           diversas áreas do conhecimento e incentiva os alunos a resolverem
           problemas reais usando tecnologia e impacto social.
@@ -225,14 +230,16 @@ export default function Integrantes() {
         <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5
         lg:p-8">
           <div className="flex items-center gap-4 mb-3">
-            <h3 className="text-3xl font-bold text-green-400">O desafio</h3>
+            <h3 className="text-3xl font-bold text-green-400
+            xl:text-4xl">O desafio</h3>
             <hr className="w-[35%] border-green-400 border-2 rounded
             sm:w-[70%]
             md:w-[75%]
             lg:w-[80%]" />
           </div>
 
-          <p className="text-green-600 text-xl">
+          <p className="text-green-600 text-xl
+          xl:text-2xl">
             Imaginar como será o trabalho em um mundo onde a <strong>tecnologia </strong>
             está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo.
             O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias </strong>
@@ -244,11 +251,13 @@ export default function Integrantes() {
 
       <section className="py-10 px-5">
         <h2 className="text-3xl font-bold text-green-600 mb-3
-        sm:text-4xl">
+        sm:text-4xl
+        xl:text-5xl">
           O time do Evolvere:
         </h2>
         <p className="text-green-600 mb-8 text-xl
-        sm:text-2xl">
+        sm:text-2xl
+        xl:text-3xl">
           Entenda como cada integrante contribuiu para a construção do Evolvere.
         </p>
 
