@@ -150,7 +150,7 @@ export default function Contato() {
           </div>
           <div
             className="bg-[var(--color-green-400)] rounded-[20px] flex flex-col items-center py-1
-                        sm:items-start md:mt-10 md:mb-3 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4 2xl:ml-14 2xl:mr-14 2xl:py-8 2xl:mt-14"
+                        sm:items-start md:mt-10 md:mb-3 md:mr-5 md:ml-5 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4 2xl:ml-14 2xl:mr-14 2xl:py-8 2xl:mt-14"
           >
             <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl xl:text-4xl 2xl:text-[40px]">
               Contato
@@ -209,12 +209,23 @@ export default function Contato() {
       </div>
       <section className="flex flex-col items-center text-center p-4">
         <h1 className="text-[var(--color-green-500)] font-bold text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl 2xl:py-1">
-          O que você achou do nosso projeto?
+          Quer entrar em contato conosco?
         </h1>
         <p className="text-[var(--color-green-500)] text-[16px] pb-5 lg:text-xl xl:text-2xl xl:px-60 2xl:text-3xl 2xl:px-70 2xl:mt-2">
-          Sua opinião é essencial para melhorarmos cada vez mais. <br />
-          Conte pra gente como tem sido sua experiência com a Evolvere!
+          Entre em contato diretamente com algum dos membros da equipe. <br />
+          Clique abaixo para ser direcionado à página de integrantes.
         </p>
+        <div className="py-1">
+          <button
+            type="submit"
+            title="Clique aqui para seguir para a página de integrantes"
+            className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
+            hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
+            sm:p-2 sm:mb-1 lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
+          >
+            Integrantes
+          </button>
+        </div>
         <h2 className="text-[var(--color-green-500)] font-bold text-xl pb-3 lg:text-2xl xl:text-3xl 2xl:text-4xl">
           Gostaria de deixar um comentário? <br />
           <span className="font-normal text-[16px] lg:text-xl xl:text-[22px] 2xl:text-[26px]">
