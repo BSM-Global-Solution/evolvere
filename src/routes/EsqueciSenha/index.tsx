@@ -35,7 +35,7 @@ export default function EsqueciSenha() {
                 <span>
                     <img 
                         src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1763793994/logo_evolvere_fundo_verde_nkva4h.png" 
-                        alt="" 
+                        alt="Logo do Evolvere com fundo verde" 
                     />
                 </span>
                 <div className="flex flex-col gap-2">
