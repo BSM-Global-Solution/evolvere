@@ -9,6 +9,8 @@ import Integrantes from './routes/Integrantes/index.tsx'
 import CriarConta from './routes/CriarConta/index.tsx'
 import EntrarConta from './routes/EntrarConta/index.tsx'
 import Autenticacao from './routes/Autenticacao/index.tsx'
+import EsqueciSenha from './routes/EsqueciSenha/index.tsx'
+import RedefinirSenha from './routes/RedefinirSenha/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -39,6 +41,20 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "", element: <Autenticacao />}
+  ]},
+  { 
+    path: "/esqueciSenha",
+    element: <EsqueciSenha />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <EsqueciSenha />}
+  ]},
+  { 
+    path: "/redefinirSenha",
+    element: <RedefinirSenha />,
+    errorElement: "erro",
+    children: [
+      {path: "", element: <RedefinirSenha />}
   ]},
 ])
 

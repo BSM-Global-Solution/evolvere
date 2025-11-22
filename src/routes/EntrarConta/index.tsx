@@ -141,6 +141,14 @@ export default function EntrarConta() {
           pxDivLink={10}
         />
 
+        <LinkFormVerde
+          link="/esqueciSenha"
+          linkTitle="Clique para trocar a senha"
+          linkPosition="start"
+          linkText="Esqueci minha senha."
+          pxDivLink={10}
+        />
+
         <ButtonFormVerde
           buttonText={loading ? "Entrando..." : "Entrar"}
           buttonTiltle="Entrar na conta"
