@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 export default function Error() {
   return (
     <section className="w-full h-screen bg-tertiary-700 px-5 py-15 text-white
-    sm:py-20 sm:px-8">
+    sm:py-20 sm:px-8
+    md:px-15">
       <div className="flex flex-col justify-between items-center w-full h-full">
         <h1 className="text-4xl font-bold text-center
-        sm:text-5xl">
+        sm:text-5xl
+        md:text-6xl">
             Página não encontrada!
         </h1>
         <ul className="flex flex-col gap-8 max-w-220 bg-tertiary-600 p-5 text-2xl
