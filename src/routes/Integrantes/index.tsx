@@ -208,7 +208,7 @@ export default function Integrantes() {
           <h2 className="text-green-500 font-bold text-4xl text-center
           sm:text-end sm:text-3xl
           md:text-4xl
-          xl:text-5xl">
+          xl:text-6xl">
             Sobre o desafio - <br />
             Global Solution <br />
             2025
@@ -216,7 +216,8 @@ export default function Integrantes() {
           <img
             src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763302241/banner-global-solution_rdl0bo.png"
             alt="Banner do Global Solution 2025."
-            className="sm:w-[55%]"
+            className="sm:w-[55%]
+            lg:w-[40%]"
           />
         </div>
 
@@ -227,12 +228,13 @@ export default function Integrantes() {
           problemas reais usando tecnologia e impacto social.
         </p>
 
-        <div className="border-4 border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5
-        lg:p-8">
+        <div className="border-4 self-center border-green-400 rounded-[50px] shadow-[5px_7px_8px_rgba(0,0,0,.5)] p-5 w-[90%]
+        lg:p-8
+        ">
           <div className="flex items-center gap-4 mb-3">
             <h3 className="text-3xl font-bold text-green-400
             xl:text-4xl">O desafio</h3>
-            <hr className="w-[35%] border-green-400 border-2 rounded
+            <hr className="w-[25%] border-green-400 border-2 rounded
             sm:w-[70%]
             md:w-[75%]
             lg:w-[80%]" />
