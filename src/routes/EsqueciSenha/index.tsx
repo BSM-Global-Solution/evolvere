@@ -1,8 +1,24 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import ButtonFormVerde from "../../components/ButtonFormVerde";
 import ContainerTransparente from "../../components/ContainerTransparente/indeex";
+import z from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const s = z.object({
+    email: z.email("E-mail inválido, use: exemplo@email.com")
+});
+
+export type EsqueciSenhaType = z.infer<typeof s>;
+
 
 export default function EsqueciSenha() {
+    const { register, handleSubmit, formState: {errors} } = useForm<EsqueciSenhaType>({
+        resolver: zodResolver(s)
+    })
+    
+    const onSubmit = () => {
+    }
   return (
     <section className="flex justify-center items-center w-full min-h-screen bg-tertiary-700">
         <ContainerTransparente 
@@ -27,7 +43,9 @@ export default function EsqueciSenha() {
                     <p className="font-light text-xl max-[458px]:text-sm">Informe seu e-mail para <br />  redefinir sua senha.</p>
                 </div>
             </header>
-            <form className="
+            <form 
+            onSubmit={handleSubmit(onSubmit)}
+            className="
                 px-15 pt-7.5 w-full
                 max-[532px]:px-0
             ">
@@ -36,11 +54,21 @@ export default function EsqueciSenha() {
                     <input 
                         type="text"
                         placeholder="Digite o seu e-mail"
-                        className="
-                            w-full outline-none border border-white
+                        className={`
+                            w-full outline-none 
                             p-2.5 rounded-[10px]
-                        "
+                            ${errors["email"]
+                              ? "border border-red-500"
+                              :  "border border-white"
+                            }
+                        `}
+                        {...register("email")}
                     />
+                    {errors.email && (
+                        <span className="text-red-500">
+                            {errors.email.message}
+                        </span>
+                    )}
                 </div>
                 <ButtonFormVerde 
                     buttonText="Enviar"
