@@ -6,7 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { HiOutlineRefresh } from "react-icons/hi";
 
 const s = z.object({
-    email: z.email("E-mail inválido, use: exemplo@email.com")
+    senha: z.string()
+    .min(6,"A senha deve ter no mínimo 6 caracteres")
+    .max(20, "A senha deve ter no máximo 20 caracteres")
+    .regex(/(?:.*\d){2,}/, "A senha deve conter pelo menos 2 números")
+    .regex(/(?:.*[!@#$%^&*()_+\-={};':"\\|,.<>/?]){2,}/, "A senha deve conter pelo menos 2 caracteres especiais")
+    .regex(/(?:.*[A-Za-z]){2,}/, "A senha deve conter pelo menos 2 letras"),
+    confirmarSenha: z.string()
+}).refine((data) => data.senha === data.confirmarSenha, {
+    message: "As senhas estão diferentes",
+    path: ["confirmarSenha"]
 });
 
 export type EsqueciSenhaType = z.infer<typeof s>;
@@ -58,19 +67,18 @@ export default function RedefinirSenha() {
                             className={`
                                 w-full outline-none 
                                 p-2.5 rounded-[10px]
-                                ${errors["email"]
+                                ${errors["senha"]
                                 ? "border border-red-500"
                                 :  "border border-white"
                                 }
                             `}
-                            {...register("email")}
+                            {...register("senha")}
                         />
-                        {errors.email && (
+                        {errors.senha && (
                             <span className="text-red-500">
-                                {errors.email.message}
+                                {errors.senha.message}
                             </span>
                         )}
-
                     </li>
                     <li>
                         <label className="font-bold text-2xl">Confirme sua senha *</label>
@@ -80,16 +88,16 @@ export default function RedefinirSenha() {
                             className={`
                                 w-full outline-none 
                                 p-2.5 rounded-[10px]
-                                ${errors["email"]
+                                ${errors["confirmarSenha"]
                                 ? "border border-red-500"
                                 :  "border border-white"
                                 }
                             `}
-                            {...register("email")}
+                            {...register("confirmarSenha")}
                         />
-                        {errors.email && (
+                        {errors.confirmarSenha && (
                             <span className="text-red-500">
-                                {errors.email.message}
+                                {errors.confirmarSenha.message}
                             </span>
                         )}
 
