@@ -6,14 +6,17 @@ html {
 
 @theme {
     /* Colors */
+    --color-green-200: #29D5C4;
     --color-green-300: #318B82;
     --color-green-400: #158277;
     --color-green-500: #0B5B53;
     --color-green-600: #043732;
     --color-green-700: #011714;
+    --color-green-800: #12403B;
     --color-green-178177: #178177;
 
     --color-tertiary-100: #E8FFFC;
+    --color-tertiary-600: #21645D;
     --color-tertiary-700: #12403B;
 
     --color-cyan-100: #66FEEC;
@@ -58,9 +61,14 @@ html {
   @apply hover:text-cyan-100/70 duration-200 hover:bg-green-500/80;
 }
 
+@utility btn-hover-green-800 {
+  @apply hover:bg-green-800/60 duration-200;
+}
+
 @utility text-hover-green-580 {
   @apply hover:text-green-500/80 duration-200;
 }
+
 
 /* White */
 @utility btn-hover-white-30 {

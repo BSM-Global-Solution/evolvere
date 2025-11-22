@@ -5,11 +5,13 @@ export default function VoltarAoTopo() {
     const [mostrarBotao, setMostrarBotao] = useState<boolean>(false);
 
     useEffect(() => {
-        function scrollar() {
-            (window.scrollY > window.innerHeight)
-            ? setMostrarBotao(true)
-            : setMostrarBotao(false);
-        }
+      function scrollar() {
+        if (window.scrollY > window.innerHeight) {
+          setMostrarBotao(true);
+        } else {
+          setMostrarBotao(false);
+       }
+    }
 
         window.addEventListener("scroll", scrollar);
         return () => window.removeEventListener("scroll", scrollar);

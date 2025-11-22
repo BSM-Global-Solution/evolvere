@@ -12,7 +12,7 @@ import CardPlanoCarreira from "../../components/CardPlanoCarreira";
 import CardCarreira from "../../components/CardCarreira/indes";
 import VideoPitch from "../../components/VideoPitch";
 import { FaCirclePlay } from "react-icons/fa6";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContextBase";
 
 export default function Home() {
 
