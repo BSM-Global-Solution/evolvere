@@ -196,7 +196,14 @@ export default function Home() {
       </section>
 
       {/* plano de carreira */}
-      <section className="min-h-screen bg-green-400" id="planos-carreira">
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-green-400"
+        : "bg-green-500"
+      }
+      min-h-screen
+      `} id="planos-carreira">
         <CardPlanoCarreira />
         <CardCarreira />
       </section>
