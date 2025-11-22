@@ -216,15 +216,15 @@ export default function Contato() {
           Clique abaixo para ser direcionado à página de integrantes.
         </p>
         <div className="py-1">
-          <button
-            type="submit"
+          <Link
+            to="/nossaEquipe"
             title="Clique aqui para seguir para a página de integrantes"
             className="w-full border-1 border-[var(--color-green-400)] bg-[var(--color-green-400)] rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
             hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
             sm:p-2 sm:mb-1 lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
           >
-            Integrantes
-          </button>
+            Ver integrantes
+          </Link>
         </div>
         <h2 className="text-[var(--color-green-500)] font-bold text-xl pb-3 lg:text-2xl xl:text-3xl 2xl:text-4xl">
           Gostaria de deixar um comentário? <br />
