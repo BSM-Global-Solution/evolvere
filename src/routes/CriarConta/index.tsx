@@ -7,10 +7,11 @@ import BannerLogoVerde from "../../components/BannerLogoVerde";
 import FormVerde from "../../components/FormVerde";
 import LinkFormVerde from "../../components/LinkFormVerde";
 import ButtonFormVerde from "../../components/ButtonFormVerde";
-import emailjs from "@emailjs/browser";
-import { criarUsuario } from "../../service/api-java";
-import { useState } from "react";
 import ApiErro from "../../components/ApiErro";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import { iniciarRegistro } from "../../service/api-auth";
 
 const s = z.object({
     nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),
@@ -31,52 +32,62 @@ const s = z.object({
 export type Form = z.infer<typeof s>
 
 export default function CriarConta() {
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
-    const [apiError, setApiError] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
 
-    const { register, handleSubmit, formState: { errors } } = useForm<Form>({
-        resolver: zodResolver(s),
-    });
+  const { register, handleSubmit, formState: { errors }, } = useForm<Form>({
+    resolver: zodResolver(s)
+  });
 
-    const onSubmit = async (data: Form) => {
-        setApiError(null); // limpa erro anterior
-        setLoading(true); // para ativar o loading
+  const onSubmit = async (data: Form) => {
+    setApiError(null);
+    setLoading(true);
 
-        try {
-            const usuarioCriado = await criarUsuario({
-                nome: data.nome,
-                data: data.data,
-                email: data.email,
-                senha: data.senha,
-            });
+    try {
+      const dataNascimento = data.data;
 
-            await emailjs.send(
-                "service_eld94ci",
-                "template_ocvszt2",
-                {
-                    nome: data.nome,
-                    email: data.email,
-                },
-                "4PFdoXgps6b5cCssP"
-            );
-        } catch (error: any) {
-            // Caso o backend tenha enviado JSON com erro
-            if (error.response?.data?.message) {
-                setApiError(error.response.data.message);
-                setLoading(false)
-            }
-            else if (error.message) {
-                setApiError(error.message);
-            }
-            // Última camada de fallback
-            else {
-                setApiError("Erro inesperado ao criar usuário");
-            }
+      const resposta = await iniciarRegistro({
+        nome: data.nome,
+        email: data.email,
+        senha: data.senha,
+        dataNascimento,
+      });
 
-            console.error(error);
-        }
-    };
+      const codigo = resposta.codigo;
+
+      await emailjs.send(
+        "service_eld94ci",
+        "template_oz34zki",
+        {
+          to_email: data.email,
+          to_name: data.nome,
+          codigo: codigo,
+        },
+        "4PFdoXgps6b5cCssP"
+      );
+
+      navigate("/autenticacao", {
+        state: {
+          nome: data.nome,
+          email: data.email,
+          senha: data.senha,
+          dataNascimento,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+
+      if (error instanceof Error) {
+        setApiError(error.message);
+      } else {
+        setApiError("Erro inesperado ao iniciar registro");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
     return (
         <section className="
