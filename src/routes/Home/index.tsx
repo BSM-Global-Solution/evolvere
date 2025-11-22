@@ -182,11 +182,16 @@ export default function Home() {
       </section>
 
       {/* mentor.IA */}
-      <section className="
-      flex h-screen bg-tertiary-100 border-t-5 border-green-400 pl-7.5 pr-12.5
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-tertiary-100 border-green-400"
+        : "bg-tertiary-700 border-green-500"
+      }
+      flex h-screen border-t-5 pl-7.5 pr-12.5
       max-[445px]:pr-2
       max-[445px]:pl-4
-      ">
+      `}>
         <CardMentor />
       </section>
 
