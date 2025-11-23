@@ -15,7 +15,7 @@ export default function Integrantes() {
 
   const cardsPessoas: CardsIntegrantes[] = [
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755022/img-moises_pjeymd.png",
+      img: "https://avatars.githubusercontent.com/u/146322015?v=4",
       figcaption: "Moisés Barsoti Andrade de Oliveira",
       icon: <FaPlus />,
       role: "Desenvolvedor Fullstack",
@@ -25,7 +25,7 @@ export default function Integrantes() {
       linkedin: "https://www.linkedin.com/in/mois%C3%A9s-barsoti-468869278/",
     },
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755002/img-sofia_hrzsac.png",
+      img: "https://avatars.githubusercontent.com/u/202108239?v=4",
       figcaption: "Sofia Siqueira Fontes",
       icon: <FaPlus />,
       role: "Designer UI/UX",
@@ -35,7 +35,7 @@ export default function Integrantes() {
       linkedin: "https://www.linkedin.com/in/sofia-siqueira-0111a230b/",
     },
     {
-      img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755015/img-felipe_ndm51d.png",
+      img: "https://avatars.githubusercontent.com/u/202126798?v=4",
       figcaption: "Felipe Kirschner Modesto",
       icon: <FaPlus />,
       role: "Desenvolvedor Back-end",
