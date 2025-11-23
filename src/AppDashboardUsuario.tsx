@@ -12,7 +12,7 @@ export default function AppDashboardUsuario() {
     <div className="min-h-screen flex">
       <HeaderUsuario open={open} setOpen={setOpen} />
       <main className={`
-        ${open ? "ml-[300px]" : "ml-[90px]"}
+        ${open ? "ml-[300px] max-[800px]:ml-[250px]" : "ml-[90px]"}
         ${
           theme == "light"
           ? "bg-tertiary-100"
