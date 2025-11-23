@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {path: "/autenticacao", element: <Autenticacao />},
       {path: "/esqueciSenha", element: <EsqueciSenha />},
       {path: "/redefinirSenha", element: <RedefinirSenha />},
-      {path: "/redefinirSenha", element: <Mentores />},
+      {path: "/mentores", element: <Mentores />},
   ]}
 ])
 
