@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiErro from "../../../components/EvolvereApresentacao/ApiErro";
 import { loginUsuario } from "../../../service/api-entrar-conta";
+import { useUser } from "../../../context/UserContext";
 
 const s = z.object({
   email: z.email("E-mail inválido"),
@@ -23,6 +24,7 @@ export default function EntrarConta() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
+  const { setUsuario } = useUser();
 
   const { register, handleSubmit, formState: { errors },} = useForm<Form>({ 
     resolver: zodResolver(s),
@@ -38,6 +40,7 @@ export default function EntrarConta() {
         senha: data.senha,
       });
 
+      setUsuario(usuario);
       navigate("/dashboardUsuario", {
         state: { usuario },
       });
