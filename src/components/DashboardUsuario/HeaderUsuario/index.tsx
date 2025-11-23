@@ -11,7 +11,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
     return (
         <header className={`
         ${
-            open ? "w-[300px]" : "w-[90px]"
+            open ? "w-[300px] max-[800px]:w-[250px]" : "w-[90px]"
         }
          h-full bg-green-600
          pl-6 pr-5 pt-5 pb-7.5
