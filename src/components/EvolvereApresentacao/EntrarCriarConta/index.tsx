@@ -1,6 +1,6 @@
 import { MdOutlineDarkMode } from "react-icons/md";
 import LinkMenu from "../LinkMenu";
-import { useTheme } from "../../context/ThemeContextBase";
+import { useTheme } from "../../../context/ThemeContextBase";
 import { FaSun } from "react-icons/fa";
 
 interface EntrarCriarConta {

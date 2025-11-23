@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"; 
-import { planosDeCarreiraData } from "../../data/planosDeCarreiraData";
+import { planosDeCarreiraData } from "../../../data/planosDeCarreiraData";
 
 export default function CardCarreira() {
   const [mostrarMais, setMostrarMais] = useState<boolean>(false);

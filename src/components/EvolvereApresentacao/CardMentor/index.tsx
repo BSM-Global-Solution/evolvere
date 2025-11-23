@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "../../context/ThemeContextBase";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function CardMentor() {
 

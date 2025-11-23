@@ -1,7 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { footerDataLinks, footerDataRedesSociais } from "../../data/footerData";
+import { footerDataLinks, footerDataRedesSociais } from "../../../data/footerData";
 
 export default function Footer() {
   return (

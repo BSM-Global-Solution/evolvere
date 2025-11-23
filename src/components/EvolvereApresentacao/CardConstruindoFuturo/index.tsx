@@ -1,4 +1,4 @@
-import { useTheme } from "../../context/ThemeContextBase";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function CardConstruindoFuturo() {
 

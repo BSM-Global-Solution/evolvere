@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LinkMenu from "../LinkMenu";
-import { menuData } from "../../data/menuData";
+import { menuData } from "../../../data/menuData";
 
 interface MenuProps {
   className?: string;
