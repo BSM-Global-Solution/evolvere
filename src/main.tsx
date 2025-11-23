@@ -13,6 +13,7 @@ import Autenticacao from './routes/Autenticacao/index.tsx'
 import EsqueciSenha from './routes/EsqueciSenha/index.tsx'
 import RedefinirSenha from './routes/RedefinirSenha/index.tsx'
 import Error from './routes/Error/index.tsx'
+import Mentores from './routes/Mentores/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -23,11 +24,12 @@ const router = createBrowserRouter([
       {path: "/", element: <Home />},
       {path: "/contato", element: <Contato />},
       {path: "/criarConta", element: <CriarConta />},
-      {path: "/nossaEquipe", element: <Integrantes/>},
-      {path: "/entrarConta", element: <EntrarConta/>},
-      {path: "/autenticacao", element: <Autenticacao/>},
-      {path: "/esqueciSenha", element: <EsqueciSenha/>},
-      {path: "/redefinirSenha", element: <RedefinirSenha/>},
+      {path: "/nossaEquipe", element: <Integrantes />},
+      {path: "/entrarConta", element: <EntrarConta />},
+      {path: "/autenticacao", element: <Autenticacao />},
+      {path: "/esqueciSenha", element: <EsqueciSenha />},
+      {path: "/redefinirSenha", element: <RedefinirSenha />},
+      {path: "/redefinirSenha", element: <Mentores />},
   ]}
 ])
 
