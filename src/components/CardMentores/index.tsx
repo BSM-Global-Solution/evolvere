@@ -1,11 +1,11 @@
-interface MentorCardProps {
+interface CardMentoresProps {
   foto: string;
   nome: string;
   cargo: string;
   descricao: string;
 }
 
-export function MentorCard({ foto, nome, cargo, descricao }: MentorCardProps) {
+export function CardMentores({ foto, nome, cargo, descricao }: CardMentoresProps) {
   return (
     <div >
       <img src={foto} alt={nome} />
