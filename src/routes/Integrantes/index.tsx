@@ -1,6 +1,8 @@
 import { useState } from "react";
 import IntegranteInicioCard from "../../components/CardIntegrantesInicio";
 import { cardIntegrantes } from "../../data/integrantesInicioData";
+import { cardsFinal } from "../../data/integrantesFinalData";
+import IntegranteFinalCard from "../../components/CardIntegrantesFinal";
 
 export default function Integrantes() {
   
@@ -14,25 +16,6 @@ export default function Integrantes() {
     const partes = nome.split(" ");
     return partes.slice(0, 2).join(" ");
   };
-
-  const cardsFinal = [
-  {
-    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755022/img-moises_pjeymd.png",
-    nome: "Moisés Barsoti",
-    funcoes: ["Front e Back-End", "Banco de Dados"],
-  },
-  {
-    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755002/img-sofia_hrzsac.png",
-    nome: "Sofia Siqueira",
-    funcoes: ["Pesquisa", "UX e UI Design"],
-  },
-  {
-    img: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763755015/img-felipe_ndm51d.png",
-    nome: "Felipe Modesto",
-    funcoes: ["Back-End", "Documentação"],
-  },
-];
-
 
   return (
     <>
@@ -56,7 +39,7 @@ export default function Integrantes() {
         </p>
 
         <div className="flex flex-col gap-10 justify-center items-center md:flex-row">
-        {cardIntegrantes.map((pessoa, index) => (
+          {cardIntegrantes.map((pessoa, index) => (
           <IntegranteInicioCard
             key={index}
             pessoa={pessoa}
@@ -143,37 +126,11 @@ export default function Integrantes() {
           Entenda como cada integrante contribuiu para a construção do Evolvere.
         </p>
 
-        <div className="flex flex-col gap-10 justify-center items-center
-        md:flex-row">
+        <div className="flex flex-col gap-10 justify-center items-center md:flex-row">
           {cardsFinal.map((pessoa, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center gap-5 py-5 bg-green-300/35 rounded-2xl border-4 border-green-500">
-              <img
-                src={pessoa.img}
-                alt={pessoa.nome}
-                className="w-[85%] border-4 rounded-[20px] border-green-500"
-              />
-
-              <h3 className="text-3xl text-green-600 font-bold
-              md:text-2xl">
-                {pessoa.nome}
-              </h3>
-
-              <ul>
-                {pessoa.funcoes.map((funcao, i) => (
-                  <li key={i}
-                  className="list-disc text-green-400 font-medium text-xl
-                  sm:text-2xl
-                  md:text-xl
-                  lg:text-2xl">
-                    {funcao}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          <IntegranteFinalCard key={index} pessoa={pessoa} />
+        ))}
+      </div>
       </section>
     </>
   );
