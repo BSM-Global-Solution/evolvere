@@ -114,3 +114,140 @@ npm run dev -- --host
 Digite o link no navegador do seu celular, tablet, etc.
 
 ---
+
+## ▶️ Como Usar
+
+Alguns exemplos do que você pode colocar aqui:
+
+* Acesse o sistema no navegador após rodar o comando `npm run dev`;
+* Crie sua conta ou faça login (você pode também navegar pela página de apresentação do projeto sem criar uma conta);
+* Após criar sua conta/fazer login, explore o dashboard do usuário, a página de mentores, Mentor.IA e etc;
+* Utilize o sistema para acompanhar sua evolução e sua jornada profissional.
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+evolvere/
+ ├─ src/
+ │   ├─ components/
+ │   ├─ pages/
+ │   ├─ context/
+ │   ├─ hooks/
+ │   ├─ assets/
+ │   └─ App.tsx
+ ├─ public/
+ ├─ package.json
+ └─ vite.config.ts
+em atualização...
+```
+
+---
+
+## 🔗 Endpoints / Rotas Principais
+(atualizando...)
+
+| Método | Rota           | Descrição                     |
+| ------ | -------------- | ----------------------------- |
+| GET    | /              | Descrição                     |
+| POST   | /              | Descrição                     |
+| PUT    | /              | Descrição                     |
+| DELETE | /              | Descrição                     |
+
+---
+
+## 👥 Autores e Créditos
+
+### **Autores:**
+
+<table>
+  <tr>
+    <td width="130">
+      <img src="https://github.com/moisesBarsoti.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>👨‍💻 Moisés Barsoti Andrade de Oliveira</b><br/>
+      🆔 <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Desenvolvimento Fullstack / DBA / IA
+    </td>
+  </tr>
+
+  <tr>
+    <td width="130">
+      <img src="https://github.com/sSofia-s.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>🎨 Sofia Siqueira Fontes</b><br/>
+      🆔 <b>RM:</b> 563829 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Design UX/UI e Pesquisas
+    </td>
+  </tr>
+
+  <tr>
+    <td width="130">
+      <img src="https://github.com/FeKiModesto.png" width="120" style="border-radius: 50%;"/>
+    </td>
+    <td>
+      <b>⚙️ Felipe Kirschner Modesto</b><br/>
+      🆔 <b>RM:</b> 561810 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
+      💼 <b>Função:</b> Integração com APIs Java
+    </td>
+  </tr>
+</table>
+
+
+### **Créditos:**
+
+* Orientações: Professor **Alexandre Carlos de Jesus**
+* Documentações oficiais (React, Tailwind)
+* Freepik (Fotos dos mentores)
+
+---
+
+## 🖼 Screenshots / Demonstração
+
+### Página Home:
+<img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763901727/Home_sx1y9x.png" 
+    alt="Página Home - Evolvere" 
+    width="50%"/>
+    
+### Página Login:
+<img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763901725/Login_sxcgxx.png" 
+    alt="Página Login - Evolvere" 
+    width="50%"/>
+
+### Página Dashboard do Usuário:
+<img src="..." 
+    alt="Página Dashboard do Usuário - Evolvere" 
+    width="50%"/>
+
+**_atualizando..._**
+     
+---
+
+## 📞 Contatos
+
+### **Moisés Barsoti:**
+
+* GitHub: https://github.com/moisesBarsoti
+* LinkedIn: https://www.linkedin.com/in/mois%C3%A9s-barsoti-468869278/
+
+### **Sofia Siqueira:**
+
+* GitHub: https://github.com/sSofia-s
+* LinkedIn: https://www.linkedin.com/in/sofia-siqueira-0111a230b/
+
+### **Felipe Kirschner:**
+
+* GitHub: https://github.com/FeKiModesto
+* LinkedIn: https://www.linkedin.com/in/felipe-modesto-348986366/
+
+---
+
+## 🔗 Links
+
+* **Repositório GitHub: https://github.com/BSM-Global-Solution/evolvere**
+* **Vídeo de Apresentação (YouTube): ...**
+
+---
