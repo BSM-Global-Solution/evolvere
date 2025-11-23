@@ -26,8 +26,8 @@ export default function Contato() {
             <input
               type="text"
               placeholder="Digite seu nome"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-[6px] px-2 
-              md:text-[16px] md:w-[80%] xl:p-[10px] 2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl"
+              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
+              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
             />
             <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Email *
@@ -35,8 +35,8 @@ export default function Contato() {
             <input
               type="text"
               placeholder="Digite seu email"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-[6px] px-2 
-              md:text-[16px] md:w-[80%] xl:p-[10px] 2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl"
+              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
+              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
             />
             <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Assunto *
@@ -44,18 +44,18 @@ export default function Contato() {
             <input
               type="text"
               placeholder="Digite o assunto da mensagem"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-[6px] px-2 
-              md:text-[16px] md:w-[80%] xl:p-[10px] 2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl"
+              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
+              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
             />
             <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
               Sua mensagem *
             </label>
             <textarea
               placeholder="Digite sua mensagem"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-[6px] px-2 
+              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
               md:text-[16px] md:w-[80%] md:mb-4 
-              lg:h-25 xl:text-xl xl:mt-1 xl:mb-0 xl:p-[10px]
-              2xl:w-[90%] 2xl:p-[12px] 2xl:text-xl 2xl:h-35"
+              lg:h-25 xl:text-xl xl:mt-1 xl:mb-0 xl:p-2.5
+              2xl:w-[90%] 2xl:p-3 2xl:text-xl 2xl:h-35"
             />
             <div className="flex justify-center py-3 xl:px-34.5 2xl:px-70">
               <button
@@ -163,8 +163,8 @@ export default function Contato() {
           placeholder="Digite sua mensagem"
           className="w-full border border-gray-200 rounded-[10px] p-2 gap-1 text-[14px] 
           sm:w-[70%] sm:h-25 
-          lg:w-[50%] lg:h-30 lg:py-3 lg:mt-1 
-          xl:w-[45%] xl:py-4 xl:px-2 lg:mt-1.5 
+          lg:w-[50%] lg:h-30 lg:py-3 lg:mt-1.5
+          xl:w-[45%] xl:py-4 xl:px-2
           2xl:text-xl 2xl:mt-1 2xl:py-2 2xl:h-45"
         ></textarea>
         <div className="py-3">
