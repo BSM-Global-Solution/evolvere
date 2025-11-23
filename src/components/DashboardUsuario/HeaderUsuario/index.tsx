@@ -1,12 +1,13 @@
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { HeaderUsuarioData } from "../../../data/headerUsuarioData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-export default function HeaderUsuario() {
+interface HeaderUsuarioProps {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-    const [open, setOpen] = useState<boolean>(false);
-
+export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
     return (
         <header className={`
         ${
