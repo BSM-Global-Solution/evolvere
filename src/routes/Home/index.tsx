@@ -209,21 +209,36 @@ export default function Home() {
       </section>
 
       {/* pitch */}
-      <section className="
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-white"
+        : "bg-black-dark"
+      }
       min-h-screen px-12.5 pt-14.5 pb-17.5
       max-[645px]:px-4
-      ">
+      `}>
         <header className="flex flex-col gap-5">
-          <h6 className="
-          font-instrument-sans text-6xl font-bold text-green-600
+          <h6 className={`
+          ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-tertiary-200"
+          }
+          font-instrument-sans text-6xl font-bold 
           max-[596px]:text-5xl
-          ">
+          `}>
             Conheça o Evolvere
           </h6>
-          <p className="
+          <p className={`
+          ${
+            theme == "light"
+            ? "text-black"
+            : "text-gray-200"
+          }
           font-instrument-sans font-light text-3xl
           max-[596px]:text-2xl
-          ">
+          `}>
             Assista ao nosso vídeo de apresentação e veja
             como o Evolvere conecta pessoas ao melhor caminho
             profissional:
@@ -233,10 +248,15 @@ export default function Home() {
         <VideoPitch />
 
         <div className="flex flex-col gap-3 pt-15 pb-20">
-            <p className="
+            <p className={`
+            ${
+              theme == "light"
+              ? "text-black"
+              : "text-gray-200"
+            }
             font-instrument-sans font-light text-3xl
             max-[596px]:text-2xl
-            ">
+            `}>
               Caso o vídeo não carregue,
               você pode assistir diretamente
               pelo YouTube:
