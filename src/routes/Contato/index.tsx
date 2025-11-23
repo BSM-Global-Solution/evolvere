@@ -6,7 +6,6 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { GrInstagram } from "react-icons/gr";
 import { FaYoutube } from "react-icons/fa";
 import { IoIosArrowDropright } from "react-icons/io";
-import { IoIosStarOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 export default function Contato() {
