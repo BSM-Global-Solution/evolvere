@@ -85,18 +85,24 @@ export default function Home() {
         ${
           theme === "light"
           ? "bg-white text-black"
-          : "bg-blue-200 text-white"
+          : "bg-black-dark text-white"
         }
         `} id="sobre">
           <CardIASobre />
 
           <div className="flex flex-col items-center gap-14 mt-20">
-             <h2 className="
-             text-7xl font-instrument-sans font-bold text-green-600
+             <h2 className={`
+             text-7xl font-instrument-sans font-bold 
+            ${
+              theme === "light"
+              ? "text-green-600"
+              : "text-cyan-300"
+            }
+             
              max-[560px]:text-5xl
              max-[500px]:text-4xl
              max-[400px]:text-3xl
-             ">
+             `}>
                 Sobre o Evolvere
               </h2>
              <p className="
@@ -105,10 +111,22 @@ export default function Home() {
              max-[560px]:text-3xl
              max-[500px]:text-xl
              ">
-              Unimos <span className="text-green-600 font-bold">Inteligência Artificial </span>
-              e <span className="text-green-600 font-bold">mentoria humana </span>para ajudar o usuário a 
+              Unimos <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>Inteligência Artificial </span>
+              e <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>mentoria humana </span>para ajudar o usuário a 
               evoluir suas hard e soft skills, acompanhando seu progresso e conectando-o 
-              a mentores de forma dinâmica e <span className="text-green-600 font-bold">personalizada.</span>
+              a mentores de forma dinâmica e <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>personalizada.</span>
               </p>
               <p className="
                  w-300 text-4xl font-inter
@@ -117,8 +135,16 @@ export default function Home() {
                  max-[500px]:text-xl
              ">
               Nosso objetivo é: destravar habilidades, abrir portas e 
-              <span className="text-green-600 font-bold"> impulsionar carreiras </span>
-              de verdade para o <span className="text-green-600 font-bold">futuro.</span>
+              <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}> impulsionar carreiras </span>
+              de verdade para o <span className={`${
+               theme === "light" 
+               ? "text-green-600"
+               : "text-cyan-300"
+              } font-bold`}>futuro.</span>
               </p>
           </div>
 
@@ -156,36 +182,63 @@ export default function Home() {
       </section>
 
       {/* mentor.IA */}
-      <section className="
-      flex h-screen bg-tertiary-100 border-t-5 border-green-400 pl-7.5 pr-12.5
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-tertiary-100 border-green-400"
+        : "bg-tertiary-700 border-green-500"
+      }
+      flex h-screen border-t-5 pl-7.5 pr-12.5
       max-[445px]:pr-2
       max-[445px]:pl-4
-      ">
+      `}>
         <CardMentor />
       </section>
 
       {/* plano de carreira */}
-      <section className="min-h-screen bg-green-400" id="planos-carreira">
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-green-400"
+        : "bg-green-500"
+      }
+      min-h-screen
+      `} id="planos-carreira">
         <CardPlanoCarreira />
         <CardCarreira />
       </section>
 
       {/* pitch */}
-      <section className="
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-white"
+        : "bg-black-dark"
+      }
       min-h-screen px-12.5 pt-14.5 pb-17.5
       max-[645px]:px-4
-      ">
+      `}>
         <header className="flex flex-col gap-5">
-          <h6 className="
-          font-instrument-sans text-6xl font-bold text-green-600
+          <h6 className={`
+          ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-tertiary-200"
+          }
+          font-instrument-sans text-6xl font-bold 
           max-[596px]:text-5xl
-          ">
+          `}>
             Conheça o Evolvere
           </h6>
-          <p className="
+          <p className={`
+          ${
+            theme == "light"
+            ? "text-black"
+            : "text-gray-200"
+          }
           font-instrument-sans font-light text-3xl
           max-[596px]:text-2xl
-          ">
+          `}>
             Assista ao nosso vídeo de apresentação e veja
             como o Evolvere conecta pessoas ao melhor caminho
             profissional:
@@ -195,10 +248,15 @@ export default function Home() {
         <VideoPitch />
 
         <div className="flex flex-col gap-3 pt-15 pb-20">
-            <p className="
+            <p className={`
+            ${
+              theme == "light"
+              ? "text-black"
+              : "text-gray-200"
+            }
             font-instrument-sans font-light text-3xl
             max-[596px]:text-2xl
-            ">
+            `}>
               Caso o vídeo não carregue,
               você pode assistir diretamente
               pelo YouTube:

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContextBase";
 
 export default function CardMentor() {
+
+  const { theme } = useTheme();
+
   return (
     <div
       className="
@@ -13,22 +17,32 @@ export default function CardMentor() {
       <div className="flex flex-col w-[70%] max-[710px]:w-full">
         <div>
           <h6
-            className="
-                font-instrument-sans font-bold text-5xl text-green-600
+            className={`
+                ${
+                  theme == "light"
+                  ? "text-green-600"
+                  : "text-teal-200"
+                }
+                font-instrument-sans font-bold text-5xl
                 max-[1200px]:text-4xl
                 max-[989px]:text-3xl
                 max-[765px]:text-2xl
                 max-[710px]:text-4xl
                 max-[556px]:text-3xl
                 max-[477px]:text-2xl
-                "
+                `}
           >
             Mentor.IA - sua evolução <br />
             começa com uma conversa.
           </h6>
           <p
-            className="
-                w-full text-3xl font-inter font-medium text-green-600 mt-5
+            className={`
+                ${
+                  theme == "light"
+                  ? "text-green-600"
+                  : "text-gray-200"
+                }
+                w-full text-3xl font-inter font-medium mt-5
                 max-[1200px]:text-2xl
                 max-[989px]:text-[19px]
                 max-[812px]:text-[16px]
@@ -37,7 +51,7 @@ export default function CardMentor() {
                 max-[528px]:text-[18px]
                 max-[486px]:text-[16px]
                 max-[445px]:text-[14px]
-                "
+                `}
           >
             Fale com nossa inteligência artificial, descubra suas habilidades e
             monte um plano de carreira - <br />
