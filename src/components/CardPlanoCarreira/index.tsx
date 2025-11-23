@@ -1,11 +1,21 @@
+import { useTheme } from "../../context/ThemeContextBase";
+
 export default function CardPlanoCarreira() {
+
+  const { theme } = useTheme();
+
   return (
     <article
-      className="
-        w-full bg-green-500 rounded-full
+      className={`
+        ${
+          theme == "light"
+          ? "bg-green-500"
+          : "bg-green-600"
+        }
+        w-full rounded-full
         text-center text-white absolute -mt-20
         max-md:-mt-10
-        "
+        `}
     >
       <h6
         className="

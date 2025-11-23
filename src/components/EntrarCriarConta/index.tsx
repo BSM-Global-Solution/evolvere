@@ -1,6 +1,6 @@
 import { MdOutlineDarkMode } from "react-icons/md";
 import LinkMenu from "../LinkMenu";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContextBase";
 import { FaSun } from "react-icons/fa";
 
 interface EntrarCriarConta {
@@ -19,7 +19,7 @@ export default function EntrarCriarConta({className}: EntrarCriarConta) {
         `}
     >
       <li>
-        <LinkMenu to="/" title="Clique aqui para entrar na conta"
+        <LinkMenu to="/entrarConta" title="Clique aqui para entrar na conta"
         classname="text-hover-cyan-70"
         >
           Entrar

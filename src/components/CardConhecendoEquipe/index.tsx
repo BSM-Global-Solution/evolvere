@@ -1,7 +1,11 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContextBase";
 
 export default function CardConhecendoEquipe() {
+
+  const { theme } = useTheme()
+
   return (
             <div className="
             flex justify-center
@@ -12,8 +16,13 @@ export default function CardConhecendoEquipe() {
               flex justify-center items-center text-end
               max-[624px]:justify-end
               ">
-                <h5 className="
-                  font-instrument-sans font-bold text-green-400 text-6xl
+                <h5 className={`
+                ${
+                  theme == "light"
+                  ? "text-green-400"
+                  : "text-tertiary-200"
+                }
+                  font-instrument-sans font-bold text-6xl
                   max-[1055px]:text-5xl
                   max-[881px]:text-4xl
                   max-[737px]:text-3xl
@@ -21,16 +30,27 @@ export default function CardConhecendoEquipe() {
                   max-[624px]:text-6xl
                   max-[490px]:text-5xl
                   max-[400px]:text-4xl
-                ">
+                `}>
                   Conheça <br /> nossa equipe!
                 </h5>
               </div>
-              <div className="w-0.5 bg-green-700 mx-6"></div>
+              <div className={`
+                ${
+                  theme == "light"
+                  ? "bg-green-700"
+                  : "bg-cyan-100"
+                }
+                w-0.5 mx-6`}></div>
               <div className="
               flex flex-col gap-3
               max-[624px]:items-end
               ">
-                <p className="
+                <p className={`
+                ${
+                  theme == "light"
+                  ? "text-green-600"
+                  : "text-tertiary-200"
+                }
                 text-3xl font-inter font-medium
                 max-[1055px]:text-2xl
                 max-[881px]:text-xl
@@ -39,7 +59,7 @@ export default function CardConhecendoEquipe() {
                 max-[517px]:text-xl
                 max-[429px]:text-[18px]
                 max-[400px]:text-[14px]
-                ">
+                `}>
                   Saiba quem são os responsáveis pela <br />
                   criação e desenvolvimento do Evolvere:
                 </p>
