@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import VoltarAoTopo from "./components/VoltarAoTopo"
+import Header from "./components/EvolvereApresentacao/Header"
+import Footer from "./components/EvolvereApresentacao/Footer"
+import VoltarAoTopo from "./components/EvolvereApresentacao/VoltarAoTopo"
 
 function App() {
   return (

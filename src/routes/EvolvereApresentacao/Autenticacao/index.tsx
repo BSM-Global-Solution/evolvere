@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineRefresh } from "react-icons/hi";
 import { IoIosArrowDropright } from "react-icons/io";
-import ContainerTransparente from "../../../components/ContainerTransparente/indeex";
-import ApiErro from "../../../components/ApiErro";
+import ContainerTransparente from "../../../components/EvolvereApresentacao/ContainerTransparente/indeex";
+import ApiErro from "../../../components/EvolvereApresentacao/ApiErro";
 import emailjs from "@emailjs/browser";
 import { confirmarCodigo, reenviarCodigo, } from "../../../service/api-auth";
-import StateErro from "../../../components/StateErro";
+import StateErro from "../../../components/EvolvereApresentacao/StateErro";
 
 interface LocationState {
   nome: string;
