@@ -1,14 +1,14 @@
-import ButtonFormVerde from "../../components/ButtonFormVerde";
-import ContainerTransparente from "../../components/ContainerTransparente/indeex";
+import ButtonFormVerde from "../../../components/ButtonFormVerde";
+import ContainerTransparente from "../../../components/ContainerTransparente/indeex";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { HiOutlineRefresh } from "react-icons/hi";
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { redefinirSenha } from "../../service/api-esqueci-senha";
-import ApiSucesso from "../../components/ApiSucesso";
-import ApiErro from "../../components/ApiErro";
+import { redefinirSenha } from "../../../service/api-esqueci-senha";
+import ApiSucesso from "../../../components/ApiSucesso";
+import ApiErro from "../../../components/ApiErro";
 
 const s = z
   .object({

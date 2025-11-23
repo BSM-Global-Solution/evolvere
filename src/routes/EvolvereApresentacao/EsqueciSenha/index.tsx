@@ -1,14 +1,14 @@
 import { IoIosArrowDropright } from "react-icons/io";
-import ButtonFormVerde from "../../components/ButtonFormVerde";
-import ContainerTransparente from "../../components/ContainerTransparente/indeex";
+import ButtonFormVerde from "../../../components/ButtonFormVerde";
+import ContainerTransparente from "../../../components/ContainerTransparente/indeex";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { solicitarRecuperacaoSenha } from "../../service/api-esqueci-senha";
-import ApiErro from "../../components/ApiErro";
-import ApiSucesso from "../../components/ApiSucesso";
+import { solicitarRecuperacaoSenha } from "../../../service/api-esqueci-senha";
+import ApiErro from "../../../components/ApiErro";
+import ApiSucesso from "../../../components/ApiSucesso";
 
 const s = z.object({
   email: z.string().email("E-mail inválido, use: exemplo@email.com"),

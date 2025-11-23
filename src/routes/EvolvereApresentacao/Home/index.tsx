@@ -1,18 +1,18 @@
 
 import { Link } from "react-router-dom";
-import CardIASobre from "../../components/CardIASobre";
+import CardIASobre from "../../../components/CardIASobre";
 import { IoSettingsOutline } from "react-icons/io5";
-import CardsSobreEvolvere from "../../components/CardsSobreEvolvere";
+import CardsSobreEvolvere from "../../../components/CardsSobreEvolvere";
 import { RiRobot2Line } from "react-icons/ri";
 import { FaHandsHelping } from "react-icons/fa";
-import CardConstruindoFuturo from "../../components/CardConstruindoFuturo";
-import CardConhecendoEquipe from "../../components/CardConhecendoEquipe";
-import CardMentor from "../../components/CardMentor";
-import CardPlanoCarreira from "../../components/CardPlanoCarreira";
-import CardCarreira from "../../components/CardCarreira/indes";
-import VideoPitch from "../../components/VideoPitch";
+import CardConstruindoFuturo from "../../../components/CardConstruindoFuturo";
+import CardConhecendoEquipe from "../../../components/CardConhecendoEquipe";
+import CardMentor from "../../../components/CardMentor";
+import CardPlanoCarreira from "../../../components/CardPlanoCarreira";
+import CardCarreira from "../../../components/CardCarreira/indes";
+import VideoPitch from "../../../components/VideoPitch";
 import { FaCirclePlay } from "react-icons/fa6";
-import { useTheme } from "../../context/ThemeContextBase";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function Home() {
 

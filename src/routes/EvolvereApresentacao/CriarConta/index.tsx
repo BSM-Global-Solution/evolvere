@@ -2,16 +2,16 @@ import { useForm } from "react-hook-form";
 import { FiUserPlus } from "react-icons/fi";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { criarContaData } from "../../data/criarContaData";
-import BannerLogoVerde from "../../components/BannerLogoVerde";
-import FormVerde from "../../components/FormVerde";
-import LinkFormVerde from "../../components/LinkFormVerde";
-import ButtonFormVerde from "../../components/ButtonFormVerde";
-import ApiErro from "../../components/ApiErro";
+import BannerLogoVerde from "../../../components/BannerLogoVerde";
+import FormVerde from "../../../components/FormVerde";
+import LinkFormVerde from "../../../components/LinkFormVerde";
+import ButtonFormVerde from "../../../components/ButtonFormVerde";
+import ApiErro from "../../../components/ApiErro";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import { iniciarRegistro } from "../../service/api-auth";
+import { iniciarRegistro } from "../../../service/api-auth";
+import { criarContaData } from "../../../data/criarContaData";
 
 const s = z.object({
     nome: z.string().min(3, "Nome deve ter no mínimo 3 caracteres"),

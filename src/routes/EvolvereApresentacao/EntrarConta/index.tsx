@@ -1,15 +1,15 @@
 import z from "zod";
-import BannerLogoVerde from "../../components/BannerLogoVerde";
+import BannerLogoVerde from "../../../components/BannerLogoVerde";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FiLogIn } from "react-icons/fi";
-import FormVerde from "../../components/FormVerde";
-import LinkFormVerde from "../../components/LinkFormVerde";
-import ButtonFormVerde from "../../components/ButtonFormVerde";
+import FormVerde from "../../../components/FormVerde";
+import LinkFormVerde from "../../../components/LinkFormVerde";
+import ButtonFormVerde from "../../../components/ButtonFormVerde";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ApiErro from "../../components/ApiErro";
-import { loginUsuario } from "../../service/api-entrar-conta";
+import ApiErro from "../../../components/ApiErro";
+import { loginUsuario } from "../../../service/api-entrar-conta";
 
 const s = z.object({
   email: z.email("E-mail inválido"),
