@@ -19,6 +19,7 @@ html {
     --color-green-600: #043732;
     --color-green-700: #011714;
     --color-green-800: #12403B;
+    --color-green-900: #011714;
     --color-green-178177: #178177;
 
     --color-tertiary-100: #E8FFFC;
@@ -28,6 +29,8 @@ html {
 
     --color-cyan-100: #66FEEC;
     --color-cyan-200: #64FEED;
+    --color-cyan-300: #1FAA9D;
+    --color-cyan-400: #00FFE6;
 
     --color-gray-100: #E3E8E7;
     --color-gray-200: #BBC0BF;
