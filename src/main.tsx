@@ -15,6 +15,7 @@ import RedefinirSenha from './routes/EvolvereApresentacao/RedefinirSenha/index.t
 import Error from './routes/EvolvereApresentacao/Error/index.tsx'
 import AppDashboardUsuario from './AppDashboardUsuario.tsx'
 import HomeUsuario from './routes/DashboardUsuario/HomeUsuario/index.tsx'
+import { UserProvider } from './context/UserContext.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -42,8 +43,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <UserProvider>
       <ThemeProvider>
         <RouterProvider router={router} />
       </ThemeProvider>
+      </UserProvider>
   </StrictMode>,
 )
