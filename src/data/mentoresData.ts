@@ -67,7 +67,7 @@ export const mentores = [
     nome: "John Ferreira",
     cargo: "Empreendedor",
     descricao: "Compartilha estratégias de negócios, validação de ideias e mentalidade empreendedora para quem quer tirar projetos do papel.",
-    foto: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763861095/mentor-empreendedor_xbjloi.jpgg"
+    foto: "https://res.cloudinary.com/dt26mfzpw/image/upload/v1763861095/mentor-empreendedor_xbjloi.jpg"
   },{
     id: 11,
     nome: "Juliana Prado",
