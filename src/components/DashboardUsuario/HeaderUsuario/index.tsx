@@ -12,11 +12,11 @@ export default function HeaderUsuario() {
         ${
             open ? "w-[300px]" : "w-[90px]"
         }
-         min-h-full bg-green-600
+         h-full bg-green-600
          pl-6 pr-5 pt-5 pb-7.5
-         duration-300
+         duration-300 fixed
          `}>
-            <nav className="flex flex-col h-full">
+            <nav className="flex flex-col min-h-full">
                 <button 
                 onClick={() => setOpen(!open)}
                 title={open ? "Fechar o menu" : "Abrir o menu"}
@@ -76,14 +76,14 @@ export default function HeaderUsuario() {
                         </ul>
                     </li>
                     <li>
-                        {HeaderUsuarioData.slice(5, 7).map((menu, i) => (
-                            <ul className="flex justify-end flex-col h-full w-full">
+                        <ul className="flex justify-end flex-col h-full w-full">
+                         {HeaderUsuarioData.slice(5, 6).map((menu, i) => (
                                 <li key={i}>
                                     <button 
                                     title={menu.title}
                                     className={`
                                         ${ open ? "" : "justify-center"}
-                                        w-full cursor-pointer
+                                        w-full cursor-pointer h-full
                                         flex items-center gap-2
                                         text-white font-light
                                         text-2xl font-inter py-2
@@ -96,28 +96,28 @@ export default function HeaderUsuario() {
                                     {open && <span>{menu.label}</span>}
                                     </button>
                                 </li>
-                                {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
-                                    <li key={i}>
-                                        <Link 
-                                        to={menu.link}
-                                        title={menu.title}
-                                        className={`
-                                        ${ open ? "" : "px-2" }
-                                        flex items-center gap-2
-                                        text-white font-light
-                                        text-2xl font-inter py-2
-                                        rounded-[10px]
-                                        hover:bg-green-500/50 duration-300
-                                        hover:text-green-200
-                                     `}
-                                        >
-                                        {menu.icon}
-                                        {open && <span>{menu.label}</span>}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        ))}
+                         ))}
+                        {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
+                            <li key={i} className="items-center justify-center">
+                                <Link 
+                                    to={menu.link}
+                                    title={menu.title}
+                                    className={`
+                                    ${ open ? "" : "px-2" }
+                                    flex items-center gap-2
+                                    text-white font-light
+                                    text-2xl font-inter py-2
+                                    rounded-[10px]
+                                    hover:bg-green-500/50 duration-300
+                                    hover:text-green-200
+                                    `}
+                                >
+                                {menu.icon}
+                                {open && <span>{menu.label}</span>}
+                                </Link>
+                            </li>
+                         ))}
+                        </ul>
                     </li>
                 </ul>
             </nav>
