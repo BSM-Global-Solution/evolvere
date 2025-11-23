@@ -1,7 +1,6 @@
 import { useTheme } from "../../../context/ThemeContextBase"
 import CardLink from "../../../components/DashboardUsuario/CardLink";
 import CardMensagens from "../../../components/DashboardUsuario/CardMensagens";
-import "react-calendar/dist/Calendar.css";
 import CardAnotacoes from "../../../components/DashboardUsuario/CardAnotacoes";
 import CardPerfil from "../../../components/DashboardUsuario/CardPerfil";
 import { useUser } from "../../../context/UserContext";

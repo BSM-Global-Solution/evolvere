@@ -1,6 +1,6 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { contatoDataGerais, contatoDataRedesSociais } from "../../data/contatoData";
+import { contatoDataGerais, contatoDataRedesSociais } from "../../../data/contatoData";
 
 export default function Contato() {
   return (

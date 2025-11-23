@@ -1,8 +1,8 @@
 import { useState } from "react";
-import IntegranteInicioCard from "../../components/CardIntegrantesInicio";
-import { cardIntegrantes } from "../../data/integrantesInicioData";
-import { cardsFinal } from "../../data/integrantesFinalData";
-import IntegranteFinalCard from "../../components/CardIntegrantesFinal";
+import { cardIntegrantes } from "../../../data/integrantesInicioData";
+import IntegranteInicioCard from "../../../components/EvolvereApresentacao/CardIntegrantesInicio";
+import IntegranteFinalCard from "../../../components/EvolvereApresentacao/CardIntegrantesFinal";
+import { cardsFinal } from "../../../data/integrantesFinalData";
 
 export default function Integrantes() {
   
