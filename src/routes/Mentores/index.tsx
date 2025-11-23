@@ -1,7 +1,9 @@
 export default function Mentores() {
+
     return (
         <section>
-            <h1>Página de mentores!</h1>
+            <h1>Conheça nossos Mentores</h1>
+            <p>Especialistas prontos para orientar você em sua jornada.</p>
         </section>
     )
 }
