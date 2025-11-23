@@ -86,7 +86,7 @@ export default function Contato() {
         Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma
         dúvida?
       </p>
-      <div className="bg-tertiary-100 border-1 rounded-[20px] border-cyan-300 flex flex-col">
+      <div className="bg-tertiary-100 border rounded-[20px] border-cyan-300 flex flex-col">
         <h2 className="text-green-500 font-semibold text-[16px] py-1 
         md:py-2 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
           Envie uma mensagem para nós!
@@ -135,7 +135,7 @@ export default function Contato() {
               <button
                 type="submit"
                 title="Clique aqui para enviar mensagem"
-                className="w-[80%] border-1 border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
+                className="w-[80%] border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
                 hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
                 sm:w-[40%] 
                 md:items-center md:w-full 
@@ -218,7 +218,7 @@ export default function Contato() {
           <Link
             to="/nossaEquipe"
             title="Clique aqui para seguir para a página de integrantes"
-            className="w-full border-1 border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
+            className="w-full border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
             hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
             sm:p-2 sm:mb-1 lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
           >
@@ -235,7 +235,7 @@ export default function Contato() {
           name="Mensagem"
           id="Mensagem"
           placeholder="Digite sua mensagem"
-          className="w-full border-1 border-gray-200 rounded-[10px] p-2 gap-1 text-[14px] 
+          className="w-full border border-gray-200 rounded-[10px] p-2 gap-1 text-[14px] 
           sm:w-[70%] sm:h-25 
           lg:w-[50%] lg:h-30 lg:py-3 lg:mt-1 
           xl:w-[45%] xl:py-4 xl:px-2 lg:mt-1.5 
@@ -245,7 +245,7 @@ export default function Contato() {
           <button
             type="submit"
             title="Clique aqui para enviar o feedback"
-            className="w-full border-1 border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
+            className="w-full border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
             hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
             lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
           >
