@@ -1,4 +1,4 @@
-import type { Form } from "../routes/CriarConta";
+import type { Form } from "../routes/EvolvereApresentacao/CriarConta";
 
 export type CriarContaField = {
   name: keyof Form;
