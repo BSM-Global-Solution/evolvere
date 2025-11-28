@@ -54,7 +54,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                         ${ open ? "" : "items-center"}
                         flex flex-col gap-1.5
                         `}>
-                            {HeaderUsuarioData.slice(0, 5).map((menu, i) => (
+                            {HeaderUsuarioData.slice(0, 6).map((menu, i) => (
                                 <li key={i} className="items-center justify-center">
                                     <Link 
                                      to={menu.link}
@@ -78,7 +78,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                     </li>
                     <li>
                         <ul className="flex justify-end flex-col h-full w-full">
-                         {HeaderUsuarioData.slice(5, 6).map((menu, i) => (
+                         {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
                                 <li key={i}>
                                     <button 
                                     title={menu.title}
@@ -98,7 +98,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                                     </button>
                                 </li>
                          ))}
-                        {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
+                        {HeaderUsuarioData.slice(7, 8).map((menu, i) => (
                             <li key={i} className="items-center justify-center">
                                 <Link 
                                     to={menu.link}
