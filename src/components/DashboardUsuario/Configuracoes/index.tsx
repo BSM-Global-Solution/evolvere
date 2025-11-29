@@ -3,6 +3,7 @@ import { CgCloseO, CgProfile } from "react-icons/cg";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { useUser } from "../../../context/UserContext";
+import TituloConfiguracoes from "../TituloConfiguracoes";
 
 interface ConfiguracoesProps {
     open: boolean
@@ -77,18 +78,7 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
                 </ul>
             </nav>
             <div className="font-inter w-full">
-                <div className="w-full">
-                     <div className="flex justify-end">
-                        <button 
-                        title="Fechar"
-                        onClick={onClose}
-                        className="text-green-500 cursor-pointer hover:text-green-500/40 duration-300">
-                            <CgCloseO size={30} />
-                        </button>
-                     </div>
-                     <h1 className="text-4xl text-green-500 font-bold">Perfil</h1>
-                     <hr className="border-2 border-green-500" />
-                </div>
+                <TituloConfiguracoes title="Perfil" onClose={onClose} />
                 <div className="flex pt-8">
                     <div className="flex flex-col gap-10 w-1/2 pt-2.5">
                         <div>
