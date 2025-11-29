@@ -105,6 +105,13 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
                             </span>
                         </div>
                     </div>
+                    <div>
+                        <img 
+                            src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif" 
+                            alt=""
+                            className="w-[280px] rounded-full border-2 border-green-500"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
