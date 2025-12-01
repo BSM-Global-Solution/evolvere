@@ -3,6 +3,7 @@ import { CgProfile } from "react-icons/cg";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import ConfigPerfil from "../ConfigPerfil";
+import ConfigConta from "../ConfigConta";
 
 interface ConfiguracoesProps {
     open: boolean
@@ -77,6 +78,9 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
             </nav>
         {
             active === "perfil" ? <ConfigPerfil onClose={onClose} /> : ""
+        }
+        {
+            active === "conta" ? <ConfigConta onClose={onClose} /> : ""
         }
         </div>
         </dialog>
