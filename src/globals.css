@@ -37,6 +37,8 @@ html {
     --color-gray-200: #BBC0BF;
     --color-gray-300: #959999;
 
+    --color-red-100: #FF0000;
+
     /* Fonts */
      --font-inter: "Inter";
      --font-instrument-sans: "Instrument Sans";
