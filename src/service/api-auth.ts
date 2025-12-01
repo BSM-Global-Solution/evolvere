@@ -31,7 +31,9 @@ export async function iniciarRegistro(data: RegistroDTO) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }
@@ -55,7 +57,9 @@ export async function reenviarCodigo(email: string) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }
@@ -79,7 +83,9 @@ export async function confirmarCodigo(data: ConfirmarCodigoDTO) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }
