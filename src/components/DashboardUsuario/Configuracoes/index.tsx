@@ -4,6 +4,7 @@ import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import ConfigPerfil from "../ConfigPerfil";
 import ConfigConta from "../ConfigConta";
+import ConfigAparencia from "../ConfigAparencia";
 
 interface ConfiguracoesProps {
     open: boolean
@@ -20,7 +21,7 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
             inset-0 w-full h-full bg-black/40
             flex justify-center items-center
         ">
-        <div className="bg-white flex gap-10 pl-4 pr-7 pt-9.5 pb-31 w-250 rounded-[20px]">
+        <div className="bg-white flex gap-10 pl-4 pr-7 pt-9.5 pb-31 w-250 min-h-150 rounded-[20px]">
             <nav>
                 <ul className="font-inter flex flex-col gap-7.5">
                     <li>
@@ -81,6 +82,9 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
         }
         {
             active === "conta" ? <ConfigConta onClose={onClose} /> : ""
+        }
+        {
+            active === "aparencia" ? <ConfigAparencia onClose={onClose} /> : ""
         }
         </div>
         </dialog>
