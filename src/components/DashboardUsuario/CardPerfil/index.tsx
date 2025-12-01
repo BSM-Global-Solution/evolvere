@@ -19,7 +19,7 @@ export default function CardPerfil() {
                     ${
                         theme == "light"
                         ? "bg-green-500 hover:bg-green-500/90 duration-300"
-                        : "bg-green-600 border border-cyan-100"
+                        : "bg-green-600 border border-cyan-100 hover:bg-green-700 duration-300"
                     }
                         w-full text-white font-inter rounded-[10px] cursor-pointer
                 `}
