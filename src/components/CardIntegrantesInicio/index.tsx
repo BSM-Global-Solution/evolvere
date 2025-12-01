@@ -1,7 +1,18 @@
 import { FaMinus } from "react-icons/fa";
 
+interface Pessoa {
+  img: string;
+  figcaption: string;
+  role: string;
+  rm: string;
+  turma: string;
+  github: string;
+  linkedin: string;
+  icon: React.ReactNode;
+}
+
 interface Props {
-  pessoa: any;
+  pessoa: Pessoa;
   ativo: boolean;
   onToggle: () => void;
   cortarNome: (nome: string) => string;
