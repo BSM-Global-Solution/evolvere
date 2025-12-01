@@ -39,7 +39,9 @@ export async function criarUsuario(data: CriarUsuarioDTO) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }
