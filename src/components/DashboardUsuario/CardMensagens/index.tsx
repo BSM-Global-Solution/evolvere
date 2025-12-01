@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function CardMensagens() {
+
+    const { theme } = useTheme()
+
     return (
-        <div className="
+        <div className={`
+            ${
+                theme == "light"
+                ? "bg-green-500"
+                : "bg-green-600 border-2 border-cyan-400"
+            }
             flex flex-col 
             w-full h-[219px] px-5 pt-2 pb-3
-            bg-green-500 text-white rounded-[10px]
-            ">
+             text-white rounded-[10px]
+            `}>
             <div className="flex justify-between items-center ">
                 <h4 className="font-semibold text-xl">
                     Minhas Conversas
