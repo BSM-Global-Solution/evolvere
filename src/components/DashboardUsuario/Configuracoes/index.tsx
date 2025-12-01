@@ -21,9 +21,19 @@ export default function Configuracoes({open, onClose}: ConfiguracoesProps) {
             inset-0 w-full h-full bg-black/40
             flex justify-center items-center
         ">
-        <div className="bg-white flex gap-10 pl-4 pr-7 pt-9.5 pb-31 w-250 min-h-150 rounded-[20px]">
+        <div className="
+        bg-white flex gap-10 pl-4 pr-7 pt-9.5 pb-31 w-250 min-h-150 rounded-[20px]
+        max-[821px]:flex-col
+        max-[821px]:w-150
+        max-[560px]:min-h-screen
+        ">
             <nav>
-                <ul className="font-inter flex flex-col gap-7.5">
+                <ul className="
+                font-inter flex flex-col gap-7.5
+                max-[821px]:flex-row
+                max-[821px]:flex-wrap
+                max-[580px]:items-center
+                ">
                     <li>
                         <button 
                         title="Ver perfil"
