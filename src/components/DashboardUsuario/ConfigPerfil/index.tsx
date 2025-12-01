@@ -19,6 +19,7 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                             <div className="
                             py-2 pl-3.5 w-[45%] bg-tertiary-400 rounded-[10px]
                             border-2 border-green-500
+                            max-[400px]:w-[75%]
                             ">
                                 <span className="font-inter text-xl">
                                     {usuario?.id}
@@ -42,7 +43,10 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                         <img 
                             src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif" 
                             alt=""
-                            className="w-[280px] rounded-full border-2 border-green-500"
+                            className="
+                            w-[280px] rounded-full border-2 border-green-500
+                            max-[500px]:w-[150px]
+                            "
                         />
                     </div>
                 </div>
