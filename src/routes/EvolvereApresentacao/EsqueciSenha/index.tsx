@@ -52,9 +52,13 @@ export default function EsqueciSenha() {
       );
 
       setSuccess("Enviamos um e-mail com o link para redefinir sua senha.");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      setApiError(err.message ?? "Erro inesperado.");
+      if (err instanceof Error) {
+        setApiError(err.message);
+      } else {
+        setApiError("Erro inesperado. Tente novamente.");
+      }
     } finally {
       setLoading(false);
     }
