@@ -71,10 +71,10 @@ export default function Autenticacao() {
       setTimeout(() => {
         navigate("/dashboardUsuario", { state: { usuario: usuarioCriado } });
       }, 1500);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
 
-      if (error.message) {
+      if (error instanceof Error) {
         setApiError(error.message);
       } else {
         setApiError("Erro ao confirmar o código.");
@@ -107,10 +107,10 @@ export default function Autenticacao() {
       );
 
       setMensagemSucesso("Novo código enviado para o seu e-mail.");
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
 
-      if (error.message) {
+      if (error instanceof Error) {
         setApiError(error.message);
       } else {
         setApiError("Erro ao reenviar o código.");
