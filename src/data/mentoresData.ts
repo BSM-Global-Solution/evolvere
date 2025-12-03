@@ -1,6 +1,6 @@
 interface MentoresProps {
   id: number
-  link?: string
+  link: string
   nome: string
   cargo: string
   descricao: string
