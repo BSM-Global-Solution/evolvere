@@ -4,7 +4,7 @@ import { mentores } from "../../data/mentoresData";
 export default function Mentores() {
   return (
     <section>
-      <header className="flex flex-col items-center pt-[140px] font-inter">
+      <header className="flex flex-col items-center gap-3 pt-[140px] font-inter">
         <h1 className="text-5xl font-bold text-green-500">
           Conheça nossos Mentores
         </h1>
