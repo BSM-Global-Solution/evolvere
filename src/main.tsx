@@ -16,6 +16,7 @@ import Error from './routes/EvolvereApresentacao/Error/index.tsx'
 import AppDashboardUsuario from './AppDashboardUsuario.tsx'
 import HomeUsuario from './routes/DashboardUsuario/HomeUsuario/index.tsx'
 import { UserProvider } from './context/UserContext.tsx'
+import Mentores from './routes/Mentores/index.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       {path: "/autenticacao", element: <Autenticacao/>},
       {path: "/esqueciSenha", element: <EsqueciSenha/>},
       {path: "/redefinirSenha", element: <RedefinirSenha/>},
+      {path: "/mentores", element: <Mentores />},
   ]},
   { 
     path: "/dashboardUsuario",
@@ -38,6 +40,12 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "/dashboardUsuario", element: <HomeUsuario />},
+      {path: "/nossaEquipe", element: <Integrantes />},
+      {path: "/entrarConta", element: <EntrarConta />},
+      {path: "/autenticacao", element: <Autenticacao />},
+      {path: "/esqueciSenha", element: <EsqueciSenha />},
+      {path: "/redefinirSenha", element: <RedefinirSenha />},
+      {path: "/mentores", element: <Mentores />},
   ]}
 ])
 
