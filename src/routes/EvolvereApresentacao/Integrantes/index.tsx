@@ -3,9 +3,11 @@ import { cardIntegrantes } from "../../../data/integrantesInicioData";
 import IntegranteInicioCard from "../../../components/EvolvereApresentacao/CardIntegrantesInicio";
 import IntegranteFinalCard from "../../../components/EvolvereApresentacao/CardIntegrantesFinal";
 import { cardsFinal } from "../../../data/integrantesFinalData";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function Integrantes() {
   
+  const { theme } = useTheme();
   const [cardAtivo, setCardAtivo] = useState<number | null>(null);
 
   const toggleCard = (index: number) => {
@@ -19,22 +21,50 @@ export default function Integrantes() {
 
   return (
     <>
-      <section className="bg-tertiary-100 pt-30 px-5 border-b-2 border-green-400
-      lg:pt-40">
+      <section className={`
+      ${
+        theme == "light"
+        ? "bg-tertiary-100"
+        : "bg-green-700"
+      }
+       pt-30 px-5 border-b-2 border-green-400 
+      lg:pt-40
+      `}>
         <div className="flex items-center gap-4 mb-3">
-          <h1 className="text-3xl font-bold text-green-600
+          <h1 className={`
+          ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-tertiary-200"
+          }
+          text-3xl font-bold 
           sm:text-4xl
-          xl:text-5xl">
+          xl:text-5xl
+          `}>
             Conheça nossa equipe!
           </h1>
-          <hr className="hidden border-green-600 border-2 rounded
+          <hr className={`
+          ${
+            theme == "light"
+            ? "border-green-600"
+            : "border-tertiary-200"
+          }
+          hidden  border-2 rounded
           sm:block sm:w-[32%]
           md:w-[44%]
-          lg:w-[59%]" />
+          lg:w-[59%]
+          `} />
         </div>
 
-        <p className="text-green-600 font-medium text-xl mb-5
-        lg:text-2xl">
+        <p className={`
+        ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-tertiary-200"
+        }
+        font-medium text-xl mb-5
+        lg:text-2xl
+        `}>
           Conheça os desenvolvedores por trás do projeto Evolvere:
         </p>
 
@@ -50,13 +80,26 @@ export default function Integrantes() {
         ))}
       </div>
 
-        <h3 className="text-3xl font-bold text-green-500 mt-10 mb-5
-        sm:text-4xl">
+        <h3 className={`
+        ${
+          theme == "light"
+          ? "text-green-600"
+          : "text-tertiary-200"
+        }
+        text-3xl font-bold mt-10 mb-5
+        sm:text-4xl`}>
           Porquê criamos o Projeto Evolvere?
         </h3>
-        <p className="text-lg text-green-500 font-medium mb-5
+        <p className={`
+        ${
+          theme == "light"
+          ? "text-green-600"
+          : "text-tertiary-200"
+        }
+        text-lg font-medium mb-5
         sm:text-xl
-        xl:text-2xl">
+        xl:text-2xl
+        `}>
           O <strong>Evolvere</strong> nasceu como resposta ao desafio da
           <strong> FIAP (Faculdade de Informática e Administração Paulista)</strong>.
           Nosso objetivo é ajudar pessoas a encontrarem caminhos profissionais mais conscientes,
@@ -64,14 +107,28 @@ export default function Integrantes() {
         </p>
       </section>
 
-      <section className=" flex flex-col gap-10 py-10 px-5">
+      <section className={`
+        ${
+            theme == "light"
+            ? ""
+            : "bg-black-dark"
+        }
+        flex flex-col gap-10 py-10 px-5
+      `}>
         <div className="flex flex-col gap-5 items-center
         sm:flex-row sm:justify-center
         xl:gap-10">
-          <h2 className="text-green-500 font-bold text-4xl text-center
+          <h2 className={`
+          ${
+            theme == "light"
+            ? "text-green-500"
+            : "text-tertiary-200"
+          }
+           font-bold text-4xl text-center
           sm:text-end sm:text-3xl
           md:text-4xl
-          xl:text-6xl">
+          xl:text-6xl
+          `}>
             Sobre o desafio - <br />
             Global Solution <br />
             2025
@@ -84,8 +141,15 @@ export default function Integrantes() {
           />
         </div>
 
-        <p className="text-green-600 text-2xl
-        xl:text-3xl">
+        <p className={`
+          ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-white"
+          }
+         text-2xl
+         xl:text-3xl
+        `}>
           O <strong>Global Solution</strong>, é um grande desafio que integra
           diversas áreas do conhecimento e incentiva os alunos a resolverem
           problemas reais usando tecnologia e impacto social.
@@ -95,16 +159,34 @@ export default function Integrantes() {
         lg:p-8
         ">
           <div className="flex items-center gap-4 mb-3">
-            <h3 className="text-3xl font-bold text-green-400
-            xl:text-4xl">O desafio</h3>
-            <hr className="w-[25%] border-green-400 border-2 rounded
+            <h3 className={`
+              ${
+                theme == "light"
+                ? "text-green-400"
+                : "text-tertiary-200"
+            }
+            text-3xl font-bold 
+            xl:text-4xl`}>O desafio</h3>
+            <hr className={`
+            ${
+              theme == "light"
+              ? "border-green-400"
+              : "border-tertiary-200"
+            }
+            w-[25%]  border-2 rounded
             sm:w-[70%]
             md:w-[75%]
-            lg:w-[80%]" />
+            lg:w-[80%]`} />
           </div>
 
-          <p className="text-green-600 text-xl
-          xl:text-2xl">
+          <p className={`
+          ${
+            theme == "light"
+            ? "text-green-600"
+            : "text-tertiary-200"
+          }
+           text-xl
+          xl:text-2xl`}>
             Imaginar como será o trabalho em um mundo onde a <strong>tecnologia </strong>
             está em todos os lugares, mas as <strong>relações humanas</strong> continuam no centro de tudo.
             O desafio é propor uma solução que use <strong>inovação, tecnologia e boas ideias </strong>
@@ -114,15 +196,34 @@ export default function Integrantes() {
         </div>
       </section>
 
-      <section className="py-10 px-5">
-        <h2 className="text-3xl font-bold text-green-600 mb-3
+      <section className={`
+        ${
+          theme == "light"
+          ? ""
+          : "bg-black-dark"
+        }
+        py-10 px-5
+        `}>
+        <h2 className={`
+        ${
+          theme == "light"
+          ? "text-green-600"
+          : "text-white"
+        }
+        text-3xl font-bold mb-3
         sm:text-4xl
-        xl:text-5xl">
+        xl:text-5xl`}>
           O time do Evolvere:
         </h2>
-        <p className="text-green-600 mb-8 text-xl
+        <p className={`
+          ${
+          theme == "light"
+            ? "text-green-600"
+            : "text-white"
+          }
+        mb-8 text-xl
         sm:text-2xl
-        xl:text-3xl">
+        xl:text-3xl`}>
           Entenda como cada integrante contribuiu para a construção do Evolvere.
         </p>
 
