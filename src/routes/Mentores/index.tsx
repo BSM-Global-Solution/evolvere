@@ -1,4 +1,4 @@
-import { CardMentores } from "../../components/CardMentores";
+import { Link } from "react-router-dom";
 import { mentores } from "../../data/mentoresData";
 
 export default function Mentores() {
@@ -13,17 +13,44 @@ export default function Mentores() {
         </p>
       </header>
 
-      {/* <div>
+      <ul className="
+      pt-[90px] px-12.5 pb-[70px]
+      flex justify-between flex-wrap
+      gap-20
+      ">
         {mentores.map((mentor) => (
-          <CardMentores
-            key={mentor.id}
-            foto={mentor.foto}
-            nome={mentor.nome}
-            cargo={mentor.cargo}
-            descricao={mentor.descricao}
-          />
+          <li key={mentor.id}>
+            <Link 
+            to={mentor.link}
+            title="Clique para ver mentor"
+            >
+              <figure className="
+                bg-green-400 w-[414px] min-h-[493px]
+                flex flex-col items-center gap-5
+                px-[26px] rounded-[25px] pb-5 pt-[30px]
+                text-white hover:bg-green-400/80 duration-300
+              ">
+                <img 
+                  src={mentor.foto} 
+                  alt="Uma fotografia do mentor"
+                  className="w-[220px] rounded-[10px]"
+                />
+                <div className="flex flex-col items-center gap-2.5">
+                  <figcaption className="font-bold text-2xl">
+                    {mentor.nome} - {mentor.cargo}
+                  </figcaption>
+                  <p className="">
+                    {mentor.descricao}
+                  </p>
+                </div>
+                <span className="border border-white py-2.5 px-4.5 rounded-[10px]">
+                  Ver Contato
+                </span>
+              </figure>
+            </Link>
+          </li>
         ))}
-      </div> */}
+      </ul>
     </section>
   );
 }
