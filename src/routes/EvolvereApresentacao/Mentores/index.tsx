@@ -1,23 +1,44 @@
 import { Link } from "react-router-dom";
 import { mentores } from "../../../data/mentoresData";
+import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function Mentores() {
+
+  const { theme } = useTheme();
+
   return (
-    <section className="max-[535px]:px-3">
+    <section className={`
+      ${
+        theme == "light"
+        ? ""
+        : "bg-black-dark"
+      }
+      max-[535px]:px-3
+    `}>
       <header className="flex flex-col items-center gap-3 pt-[140px] font-inter">
-        <h1 className="
-        text-5xl font-bold text-green-500
+        <h1 className={`
+        ${
+          theme == "light"
+          ? "text-green-500"
+          : "text-tertiary-200"
+        }
+        text-5xl font-bold 
         max-[765px]:text-4xl
         max-[535px]:text-center
-        ">
+        `}>
           Conheça nossos Mentores
         </h1>
-        <p className="
-        text-3xl text-green-500
+        <p className={`
+        ${
+          theme == "light"
+          ? "text-green-500"
+          : "text-tertiary-200"
+        }
+        text-3xl
         max-[765px]:text-2xl
         max-[614px]:text-xl
         max-[535px]:text-center
-        ">
+        `}>
           Especialistas prontos para orientar você em sua jornada.
         </p>
       </header>
@@ -34,14 +55,19 @@ export default function Mentores() {
             to={mentor.link}
             title="Clique para ver mentor"
             >
-              <figure className="
-                bg-green-400 w-[414px] min-h-[493px]
+              <figure className={`
+                ${
+                  theme == "light"
+                  ? "bg-green-400"
+                  : "bg-green-500 border-2 border-tertiary-150"
+                }
+                 w-[414px] min-h-[493px]
                 flex flex-col items-center gap-5
                 px-[26px] rounded-[25px] pb-5 pt-[30px]
                 text-white hover:bg-green-400/80 duration-300
                 max-[1008px]:w-[380px]
                 max-[940px]:w-[360px]
-              ">
+              `}>
                 <img 
                   src={mentor.foto} 
                   alt="Uma fotografia do mentor"
@@ -55,7 +81,14 @@ export default function Mentores() {
                     {mentor.descricao}
                   </p>
                 </div>
-                <span className="border border-white py-2.5 px-4.5 rounded-[10px]">
+                <span className={`
+                  ${
+                    theme == "light"
+                    ? "border-white"
+                    : "border-tertiary-100 text-tertiary-100"
+                  }
+                  border py-2.5 px-4.5 rounded-[10px]
+                  `}>
                   Ver Contato
                 </span>
               </figure>
