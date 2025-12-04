@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-export default function IntegranteFinalCard({ pessoa }: Props) {7
+export default function IntegranteFinalCard({ pessoa }: Props) {
 
   const { theme } = useTheme();
 
