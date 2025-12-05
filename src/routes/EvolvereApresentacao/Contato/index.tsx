@@ -1,3 +1,4 @@
+import { IoIosArrowDropright } from "react-icons/io";
 import { useTheme } from "../../../context/ThemeContextBase";
 
 export default function Contato() {
@@ -50,8 +51,8 @@ export default function Contato() {
             Envie uma mensagem para nós!
           </h2>
         </div>
-        <div className="mt-[50px]">
-          <form action="">
+        <div className="mt-[50px] flex">
+          <form action="" className="w-1/2">
             <div className="flex gap-7.5">
               <div className="flex flex-col gap-2.5 w-90">
                 <label 
@@ -110,6 +111,79 @@ export default function Contato() {
                 />
               </div>
             </div>
+            <div className="flex flex-col mt-10 gap-2.5">
+              <label 
+                htmlFor="assunto"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  Assunto *
+                </label>
+                <input 
+                  type="text"
+                  id="assunto"
+                  placeholder="Digite o assunto da mensagem"
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    `}
+                />
+            </div>
+            <div className="flex flex-col mt-10 gap-2.5">
+              <label 
+                htmlFor="mensagem"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  Sua mensagem *
+                </label>
+                <textarea 
+                  id="mensagem"
+                  placeholder="Digite sua mensagem"
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    resize-none h-55
+                    `}
+                />
+            </div>
+              <button 
+              title="Enviar mensagem"
+              className={`
+                ${
+                  theme == "light"
+                  ? "bg-green-400 hover:bg-green-400/80"
+                  : "bg-green-600 hover:bg-green-600/60"
+                }
+                flex items-center gap-2 text-white px-2.5 py-3
+                text-xl rounded-[15px] mt-[23px] duration-300
+                cursor-pointer
+              `}>
+                Enviar mensagem
+                <span>
+                  <IoIosArrowDropright size={30} />
+                </span>
+              </button>
           </form>
           <div></div>
         </div>
