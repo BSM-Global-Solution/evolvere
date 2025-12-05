@@ -51,10 +51,10 @@ export default function Contato() {
             Envie uma mensagem para nós!
           </h2>
         </div>
-        <div className="mt-[50px] flex">
-          <form action="" className="w-1/2">
+        <div className="mt-[50px] flex gap-6">
+          <form className="w-3/2">
             <div className="flex gap-7.5">
-              <div className="flex flex-col gap-2.5 w-90">
+              <div className="flex flex-col gap-2.5 w-1/2">
                 <label 
                 htmlFor="nome"
                 className={`
@@ -82,7 +82,7 @@ export default function Contato() {
                     `}
                 />
               </div>
-              <div className="flex flex-col gap-2.5 w-90">
+              <div className="flex flex-col gap-2.5 w-1/2">
                 <label 
                 htmlFor="email"
                 className={`
@@ -185,7 +185,17 @@ export default function Contato() {
                 </span>
               </button>
           </form>
-          <div></div>
+          <div className={`
+            ${
+              theme == "light"
+              ? "bg-green-400"
+              : "bg-green-600"
+            }
+            w-full rounded-[30px] pl-7.5 pt-7.5 pr-10 pb-9
+            border-3 border-green-600 shadow-[10px_10px_16px_#043732]
+          `}>
+              <h3>Contato</h3>
+          </div>
         </div>
       </section>
     </section>
