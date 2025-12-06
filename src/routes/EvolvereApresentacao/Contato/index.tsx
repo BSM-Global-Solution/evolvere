@@ -1,5 +1,7 @@
 import { IoIosArrowDropright } from "react-icons/io";
 import { useTheme } from "../../../context/ThemeContextBase";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
 
 export default function Contato() {
 
@@ -194,7 +196,37 @@ export default function Contato() {
             w-full rounded-[30px] pl-7.5 pt-7.5 pr-10 pb-9
             border-3 border-green-600 shadow-[10px_10px_16px_#043732]
           `}>
-              <h3>Contato</h3>
+            <div>
+              <h3 className="
+                text-white text-3xl font-semibold
+              ">
+                Contato
+              </h3>
+              <ul className="flex flex-col gap-7.5 pt-5">
+                <li className="flex items-center gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <FiPhone size={28} />
+                  </div>
+                  <p className="text-white text-xl">
+                    <b>Telefone:</b> (12) 3456-7891
+                  </p>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <MdOutlineMail size={28} />
+                  </div>
+                  <p className="text-white text-xl">
+                    <b>E-mail: </b> evolvere.contatos@gmail.com 
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
