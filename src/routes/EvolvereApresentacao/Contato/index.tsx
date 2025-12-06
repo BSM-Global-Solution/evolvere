@@ -2,6 +2,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 import { useTheme } from "../../../context/ThemeContextBase";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa";
 
 export default function Contato() {
 
@@ -195,6 +196,7 @@ export default function Contato() {
             }
             w-full rounded-[30px] pl-7.5 pt-7.5 pr-10 pb-9
             border-3 border-green-600 shadow-[10px_10px_16px_#043732]
+            flex flex-col gap-10
           `}>
             <div>
               <h3 className="
@@ -224,6 +226,40 @@ export default function Contato() {
                   <p className="text-white text-xl">
                     <b>E-mail: </b> evolvere.contatos@gmail.com 
                   </p>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-2.5">
+              <h3 className="
+                text-white text-3xl font-semibold
+              ">
+                Horários de Atendimento
+              </h3>
+              <ul className="flex flex-col gap-7.5 pt-5">
+                <li className="flex items-start gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <FaRegClock size={28} />
+                  </div>
+                  <ul className="flex flex-col ">
+                    <li>
+                      <p className="text-white text-xl">
+                        <b>Segunda à Sexta:</b> das 07h às 20h
+                      </p>
+                    </li>
+                    <li>
+                      <p className="text-white text-xl">
+                        <b>Sábados:</b> das 09h às 19h
+                      </p>
+                    </li>
+                    <li>
+                      <p className="text-white text-xl">
+                        <b>Domingos e feriados:</b> fechado
+                      </p>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
