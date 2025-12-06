@@ -2,7 +2,10 @@ import { IoIosArrowDropright } from "react-icons/io";
 import { useTheme } from "../../../context/ThemeContextBase";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
-import { FaRegClock } from "react-icons/fa";
+import { FaRegClock, FaYoutube } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
+import { GrInstagram } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export default function Contato() {
 
@@ -260,6 +263,51 @@ export default function Contato() {
                       </p>
                     </li>
                   </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="
+                text-white text-3xl font-semibold
+              ">
+                Siga-nos:
+              </h3>
+              <ul className="flex gap-7.5 pt-5">
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Twiter do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <RiTwitterXFill size={28} />
+                  </Link>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Instagram do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <GrInstagram size={28} />
+                  </Link>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Youtube do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <FaYoutube size={28} />
+                  </Link>
                 </li>
               </ul>
             </div>
