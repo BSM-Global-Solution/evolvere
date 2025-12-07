@@ -251,3 +251,9 @@ em atualização...
 * **Vídeo de Apresentação (YouTube): ...**
 
 ---
+
+## 🌐 Acesse o Projeto Online
+
+Você pode visualizar o projeto acessando o link abaixo:
+
+🔗 [Clique aqui para acessar o projeto!](https://evolvere-web.vercel.app/)
