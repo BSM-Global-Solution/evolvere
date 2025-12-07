@@ -11,7 +11,7 @@ interface FooterDataRedesSociaisProps {
 
 export const footerDataRedesSociais:FooterDataRedesSociaisProps[] = [
     {
-        link: "",
+        link: "https://x.com/Evolvere295579",
         title: "Ver o Twiter do Evolvere",
         icon: 
         <RiTwitterXFill className="
@@ -19,7 +19,7 @@ export const footerDataRedesSociais:FooterDataRedesSociaisProps[] = [
         "/> 
     },
     {
-        link: "",
+        link: "https://www.instagram.com/evolvere_evoluir?igsh=MTkyNHBsNzQ1MmRvZA==",
         title: "Ver o Instagram do Evolvere",
         icon: 
         <GrInstagram className="
@@ -27,7 +27,7 @@ export const footerDataRedesSociais:FooterDataRedesSociaisProps[] = [
         "/> 
     },
     {
-        link: "",
+        link: "https://www.youtube.com/@Evolvere-Channel",
         title: "Ver o Youtube do Evolvere",
         icon: 
         <FaYoutube className="
@@ -58,14 +58,14 @@ export const footerDataLinks: FooterDataLinksProps[] = [
     {
         title: "Contato",
         links: [
-            {name: "Nosso time", title: "Clique aqui para ver mais", link: ""},
-            {name: "Entrar em contato", title: "Clique aqui para ver mais", link: ""}
+            {name: "Nosso time", title: "Clique aqui para ver mais", link: "/nossaEquipe"},
+            {name: "Entrar em contato", title: "Clique aqui para ver mais", link: "/contato"}
         ]
     },
     {
         title: "Dúvidas",
         links: [
-            {name: "Envie uma mensagem", title: "Clique aqui para ver mais", link: ""},
+            {name: "Envie uma mensagem", title: "Clique aqui para ver mais", link: "/contato"},
         ]
     },
 ]
