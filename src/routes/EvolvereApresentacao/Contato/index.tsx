@@ -347,6 +347,10 @@ export default function Contato() {
 
       <section className={`
         min-h-screen pt-14 px-36.5 pb-17.5
+        max-[1250px]:px-20
+        max-[1162px]:px-10
+        max-[681px]:px-5
+        max-[641px]:px-2
       `}>
         <header className="text-center">
           <h4 className={`
@@ -356,6 +360,10 @@ export default function Contato() {
               : "text-tertiary-200"
             }
              font-bold text-6xl
+             max-[1082px]:text-5xl
+             max-[881px]:text-4xl
+             max-[620px]:text-3xl
+             max-[525px]:text-2xl
           `}>
             O que você achou do nosso projeto?
           </h4>
@@ -366,6 +374,11 @@ export default function Contato() {
                 : "text-tertiary-200"
               }
               pt-2.5 text-3xl font-light
+              max-[1082px]:text-2xl
+              max-[881px]:text-xl
+              max-[620px]:text-[16px]
+              max-[525px]:text-[14px]
+              max-[400px]:text-[12px]
           `}>
             Sua opinião é essencial para melhorarmos cada vez mais. <br />
             Conte pra gente como tem sido sua experiência com a Evolvere!
@@ -390,6 +403,9 @@ export default function Contato() {
                     text-[85px] cursor-pointer duration-200 
                     ${active >= star.value ? "text-yellow-300" : ""}
                     hover:text-yellow-300
+                    max-[881px]:text-[60px]
+                    max-[620px]:text-[40px]
+                    max-[525px]:text-[30px]
                   `}
                 />
               </li>
@@ -404,9 +420,19 @@ export default function Contato() {
                 : "text-tertiary-200"
               }
               text-center text-4xl
+              max-[881px]:text-3xl
+              max-[620px]:text-2xl
+              max-[525px]:text-xl
             `}>
               <span className="font-semibold">Gostaria de deixar um comentário? </span> <br />
-              <span className="font-light text-3xl">(Caso não queira, deixe este espaço em branco).</span> 
+              <span className="
+              font-light text-3xl
+              max-[881px]:text-2xl
+              max-[620px]:text-xl
+              max-[525px]:text-[16px]
+              ">
+                (Caso não queira, deixe este espaço em branco).
+              </span> 
             </h5>
             <textarea 
               placeholder="Digite sua mensagem"
@@ -433,6 +459,7 @@ export default function Contato() {
                   flex items-center gap-2 text-white px-2.5 py-3
                   text-xl rounded-[15px] mt-[23px] duration-300
                   cursor-pointer font-semibold
+                  max-[525px]:text-[16px]
                 `}>
                   Enviar feedback
                   <span>
