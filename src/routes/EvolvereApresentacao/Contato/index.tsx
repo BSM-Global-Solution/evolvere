@@ -110,7 +110,7 @@ export default function Contato() {
                     ${
                       theme == "light"
                       ? "placeholder:text-gray-300"
-                      : "placeholder:text-gray-200"
+                      : "placeholder:text-gray-200 text-white"
                     }
                     p-2.5 rounded-[10px] outline-none border border-gray-300
                     `}
@@ -410,11 +410,16 @@ export default function Contato() {
             </h5>
             <textarea 
               placeholder="Digite sua mensagem"
-              className="
+              className={`
+              ${
+                theme == "light"
+                ? ""
+                : "text-white"
+              }  
               placeholder:text-gray-200
               border border-gray-200 resize-none w-full
               outline-none px-4 py-3 rounded-[10px] min-h-37.5
-              "
+              `}
             ></textarea>
             <div className="flex justify-center">
               <button 
