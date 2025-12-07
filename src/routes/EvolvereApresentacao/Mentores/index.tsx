@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { mentores } from "../../../data/mentoresData";
 import { useTheme } from "../../../context/ThemeContextBase";
+import TituloHeader from "../../../components/EvolvereApresentacao/TituloHeader";
 
 export default function Mentores() {
 
@@ -15,36 +16,12 @@ export default function Mentores() {
       }
       max-[535px]:px-3
     `}>
-      <header className="flex flex-col items-center gap-3 pt-[140px] font-inter">
-        <h1 className={`
-        ${
-          theme == "light"
-          ? "text-green-500"
-          : "text-tertiary-200"
-        }
-        text-5xl font-bold 
-        max-[765px]:text-4xl
-        max-[535px]:text-center
-        `}>
-          Conheça nossos Mentores
-        </h1>
-        <p className={`
-        ${
-          theme == "light"
-          ? "text-green-500"
-          : "text-tertiary-200"
-        }
-        text-3xl
-        max-[765px]:text-2xl
-        max-[614px]:text-xl
-        max-[535px]:text-center
-        `}>
-          Especialistas prontos para orientar você em sua jornada.
-        </p>
-      </header>
-
+      <TituloHeader 
+        title="Conheça nossos Mentores"
+        subTitle="Especialistas prontos para orientar você em sua jornada."
+      />
       <ul className="
-      pt-[90px] px-12.5 pb-[70px]
+      pt-[50px] px-12.5 pb-[70px]
       flex justify-between flex-wrap
       gap-20
       max-[900px]:justify-center
