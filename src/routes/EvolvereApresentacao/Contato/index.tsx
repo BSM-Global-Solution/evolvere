@@ -2,15 +2,19 @@ import { IoIosArrowDropright } from "react-icons/io";
 import { useTheme } from "../../../context/ThemeContextBase";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
-import { FaRegClock, FaYoutube } from "react-icons/fa";
+import { FaRegClock, FaRegStar, FaYoutube } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import TituloHeader from "../../../components/EvolvereApresentacao/TituloHeader";
+import { useState } from "react";
+import { stars } from "../../../data/contatoData";
 
 export default function Contato() {
 
   const { theme } = useTheme();
+  const [ active, setActive ] = useState(0);
+  const [ratingLabel, setRatingLabel] = useState("");
 
   return (
     <section className={`
@@ -367,6 +371,31 @@ export default function Contato() {
             Conte pra gente como tem sido sua experiência com a Evolvere!
           </p>
         </header>
+        <div className="flex flex-col items-center">
+          <ul className="flex justify-between gap-10 py-12.5">
+            {stars.map((star) => (
+              <li key={star.value}>
+                <FaRegStar
+                  title={star.label}
+                  onClick={() => {
+                    setActive(star.value);
+                    setRatingLabel(star.label);
+                  }}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "text-green-600"
+                      : "text-white"
+                    }
+                    text-[85px] cursor-pointer duration-200 
+                    ${active >= star.value ? "text-yellow-300" : ""}
+                    hover:text-yellow-300
+                  `}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </section>
   );
