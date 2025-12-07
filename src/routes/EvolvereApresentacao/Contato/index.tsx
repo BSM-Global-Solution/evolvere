@@ -12,6 +12,7 @@ import { stars } from "../../../data/contatoData";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "@emailjs/browser";
 
 export default function Contato() {
 
@@ -36,21 +37,50 @@ export default function Contato() {
 
   type sMensagem = z.infer<typeof sMensagem>
 
-  const { register, handleSubmit, formState: { errors } } = useForm<sMensagem>({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<sMensagem>({
     resolver: zodResolver(sMensagem)
   })
 
   const onSubmitMensagem = async (data: sMensagem) => {
-    console.log(data)
+      try {
+      await emailjs.send(
+        "service_tstkgmf",
+        "template_q2lf6pd",
+        {
+          nome: data.nome,
+          email: data.email,
+          assunto: data.assunto,
+          mensagem: data.mensagem,
+        },
+        "6nP4M2BF2DeeYLffc"
+      );
+      reset()
+    } catch {
+      console.log("Erro no emailJS")
+    }
   }
 
   const { handleSubmit: handleSubmitAvaliacao } = useForm();
   const [avaliacaoMensagem, setAvaliacaoMensagem] = useState("");
 
-  const onSubmitAvaliacao = () => {
-    console.log("Estrelas:", active);
-    console.log("Label:", ratingLabel);
-    console.log("Mensagem:", avaliacaoMensagem);
+  const onSubmitAvaliacao = async () => {
+    try {
+      await emailjs.send(
+        "service_tstkgmf",
+        "template_ompa3dd",
+        {
+          active: active,
+          ratingLabel: ratingLabel,
+          avaliacaoMensagem: avaliacaoMensagem,
+        },
+        "6nP4M2BF2DeeYLffc"
+      );
+      setActive(0);
+      setRatingLabel("");
+      setAvaliacaoMensagem("");
+    } catch {
+      console.log("Erro no emailJS")
+    }
   };
 
   return (
