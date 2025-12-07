@@ -73,3 +73,16 @@ export const contatoDataRedesSociais: RedeSocial[] = [
       title: "Clique para visualizar o youtube do Evolvere",
     },
   ];
+
+interface StarsProps {
+  value: number
+  label: string
+}
+
+export const stars: StarsProps[] = [
+  { value: 1, label: "Não gostei", },
+  { value: 2, label: "Poderia ser melhor" },
+  { value: 3, label: "Está bom" },
+  { value: 4, label: "Gostei bastante" },
+  { value: 5, label: "Excelente!" },
+];
