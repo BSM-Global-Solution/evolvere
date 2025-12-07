@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
         <div className="pt-3 max-[600px]:pt-7">
             <Link 
-            to=""
+            to="/contato"
             title="Clique aqui para nos enviar uma mensagem"
             className="flex justify-end items-center gap-0.5 text-white text-hover-cyan-70">
                 <MdOutlineMail />
