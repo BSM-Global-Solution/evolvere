@@ -27,9 +27,7 @@ const router = createBrowserRouter([
     children: [
       {path: "/", element: <Home />},
       {path: "/contato", element: <Contato />},
-      {path: "/criarConta", element: <CriarConta />},
       {path: "/nossaEquipe", element: <Integrantes/>},
-      {path: "/entrarConta", element: <EntrarConta/>},
       {path: "/autenticacao", element: <Autenticacao/>},
       {path: "/esqueciSenha", element: <EsqueciSenha/>},
       {path: "/redefinirSenha", element: <RedefinirSenha/>},
@@ -41,6 +39,20 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "/dashboardUsuario", element: <HomeUsuario />},
+  ]},
+  { 
+    path: "/entrarConta",
+    element: <EntrarConta />,
+    errorElement: <Error />,
+    children: [
+      {path: "/entrarConta", element: <EntrarConta />},
+  ]},
+  { 
+    path: "/criarConta",
+    element: <CriarConta />,
+    errorElement: <Error />,
+    children: [
+      {path: "/criarConta", element: <CriarConta />},
   ]}
 ])
 
