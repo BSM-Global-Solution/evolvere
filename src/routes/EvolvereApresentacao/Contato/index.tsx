@@ -44,6 +44,9 @@ export default function Contato() {
           : "bg-green-500"
         }
          border-y-3 border-x border-tertiary-300 py-10 px-[51px]
+         max-[930px]:px-[31px]
+         max-[488px]:px-[21px]
+         max-[420px]:px-[11px]
       `}>
         <div className="flex justify-center">
           <h2 className={`
@@ -53,14 +56,19 @@ export default function Contato() {
               : "text-tertiary-200"
             }
             text-3xl font-semibold
+            max-[497px]:text-2xl
+            max-[422px]:text-center
             `}>
             Envie uma mensagem para nós!
           </h2>
         </div>
-        <div className="mt-[50px] flex gap-6">
-          <form className="w-3/2">
-            <div className="flex gap-7.5">
-              <div className="flex flex-col gap-2.5 w-1/2">
+        <div className="
+          mt-[50px] flex gap-6
+          max-[890px]:flex-col
+        ">
+          <form className="w-3/2 max-[1109px]:w-2/2 max-[1062px]:w-2/2">
+            <div className="flex gap-7.5 max-[1062px]:flex-col">
+              <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
                 <label 
                 htmlFor="nome"
                 className={`
@@ -88,7 +96,7 @@ export default function Contato() {
                     `}
                 />
               </div>
-              <div className="flex flex-col gap-2.5 w-1/2">
+              <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
                 <label 
                 htmlFor="email"
                 className={`
@@ -200,10 +208,14 @@ export default function Contato() {
             w-full rounded-[30px] pl-7.5 pt-7.5 pr-10 pb-9
             border-3 border-green-600 shadow-[10px_10px_16px_#043732]
             flex flex-col gap-10
+            max-[465px]:pr-8
+            max-[465px]:pl-5.5
+            max-[420px]:pl-4.5
           `}>
             <div>
               <h3 className="
                 text-white text-3xl font-semibold
+                max-[400px]:text-2xl
               ">
                 Contato
               </h3>
@@ -213,9 +225,12 @@ export default function Contato() {
                     bg-green-500 p-3 rounded-tl-[20px]
                      rounded-br-[20px] text-white
                   ">
-                    <FiPhone size={28} />
+                    <FiPhone className="text-[28px] max-[400px]:text-[24px]" />
                   </div>
-                  <p className="text-white text-xl">
+                  <p className="
+                  text-white text-xl
+                    max-[400px]:text-[16px]
+                  ">
                     <b>Telefone:</b> (12) 3456-7891
                   </p>
                 </li>
@@ -224,9 +239,12 @@ export default function Contato() {
                     bg-green-500 p-3 rounded-tl-[20px]
                      rounded-br-[20px] text-white
                   ">
-                    <MdOutlineMail size={28} />
+                    <MdOutlineMail className="text-[28px] max-[400px]:text-[24px]" />
                   </div>
-                  <p className="text-white text-xl">
+                  <p className="
+                  text-white text-xl
+                    max-[400px]:text-[16px]
+                  ">
                     <b>E-mail: </b> evolvere.contatos@gmail.com 
                   </p>
                 </li>
@@ -235,6 +253,7 @@ export default function Contato() {
             <div className="mt-2.5">
               <h3 className="
                 text-white text-3xl font-semibold
+                  max-[400px]:text-2xl
               ">
                 Horários de Atendimento
               </h3>
@@ -244,21 +263,39 @@ export default function Contato() {
                     bg-green-500 p-3 rounded-tl-[20px]
                      rounded-br-[20px] text-white
                   ">
-                    <FaRegClock size={28} />
+                    <FaRegClock className="text-[28px] max-[400px]:text-[24px]" />
                   </div>
                   <ul className="flex flex-col ">
                     <li>
-                      <p className="text-white text-xl">
+                      <p className="
+                      text-white text-xl
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
                         <b>Segunda à Sexta:</b> das 07h às 20h
                       </p>
                     </li>
                     <li>
-                      <p className="text-white text-xl">
+                      <p className="
+                      text-white text-xl 
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
                         <b>Sábados:</b> das 09h às 19h
                       </p>
                     </li>
                     <li>
-                      <p className="text-white text-xl">
+                      <p className="
+                      text-white text-xl 
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
                         <b>Domingos e feriados:</b> fechado
                       </p>
                     </li>
@@ -269,6 +306,7 @@ export default function Contato() {
             <div>
               <h3 className="
                 text-white text-3xl font-semibold
+                max-[400px]:text-2xl
               ">
                 Siga-nos:
               </h3>
@@ -282,7 +320,7 @@ export default function Contato() {
                      rounded-br-[20px] text-white
                      hover:bg-green-500/80 duration-300
                   ">
-                    <RiTwitterXFill size={28} />
+                    <RiTwitterXFill className="text-[28px] max-[400px]:text-[20px]" />
                   </Link>
                 </li>
                 <li className="flex items-center gap-2.5">
@@ -294,7 +332,7 @@ export default function Contato() {
                      rounded-br-[20px] text-white
                      hover:bg-green-500/80 duration-300
                   ">
-                    <GrInstagram size={28} />
+                    <GrInstagram className="text-[28px] max-[400px]:text-[20px]" />
                   </Link>
                 </li>
                 <li className="flex items-center gap-2.5">
@@ -306,7 +344,7 @@ export default function Contato() {
                      rounded-br-[20px] text-white
                      hover:bg-green-500/80 duration-300
                   ">
-                    <FaYoutube size={28} />
+                    <FaYoutube className="text-[28px] max-[400px]:text-[20px]" />
                   </Link>
                 </li>
               </ul>
