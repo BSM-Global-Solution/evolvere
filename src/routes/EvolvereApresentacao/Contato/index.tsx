@@ -9,12 +9,40 @@ import { Link } from "react-router-dom";
 import TituloHeader from "../../../components/EvolvereApresentacao/TituloHeader";
 import { useState } from "react";
 import { stars } from "../../../data/contatoData";
+import z from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function Contato() {
 
   const { theme } = useTheme();
   const [ active, setActive ] = useState(0);
   const [ratingLabel, setRatingLabel] = useState("");
+
+  const sMensagem = z.object({
+    nome: z
+    .string()
+    .min(2, "O nome deve ter no mínimo 2 caracteres."),
+    email: z.email({
+      message: "E-mail deve conter '@' e '.', insira um e-mail válido.",
+    }),
+    assunto: z
+    .string("Digite o assunto da mensagem")
+    .min(2, "Deve ter no mínimo 2 digitos"),
+    mensagem: z
+    .string("Digite a sua mensagem")
+    .min(5, "Digite no mínimo 5 caracteres")
+  })
+
+  type sMensagem = z.infer<typeof sMensagem>
+
+  const { register, handleSubmit, formState: { errors } } = useForm<sMensagem>({
+    resolver: zodResolver(sMensagem)
+  })
+
+  const onSubmitMensagem = async (data: sMensagem) => {
+    console.log(data)
+  }
 
   return (
     <section className={`
@@ -58,7 +86,10 @@ export default function Contato() {
           mt-[50px] flex gap-6
           max-[890px]:flex-col
         ">
-          <form className="w-3/2 max-[1109px]:w-2/2 max-[1062px]:w-2/2">
+          <form 
+            onSubmit={handleSubmit(onSubmitMensagem)}
+            className="w-3/2 max-[1109px]:w-2/2 max-[1062px]:w-2/2
+          ">
             <div className="flex gap-7.5 max-[1062px]:flex-col">
               <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
                 <label 
@@ -78,6 +109,7 @@ export default function Contato() {
                   type="text"
                   id="nome"
                   placeholder="Digite seu nome"
+                  {...register("nome")}
                   className={`
                     ${
                       theme == "light"
@@ -87,6 +119,11 @@ export default function Contato() {
                     p-2.5 rounded-[10px] outline-none border border-gray-300
                     `}
                 />
+                {errors.nome && (
+                  <span className="text-red-500">
+                    {errors.nome.message}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
                 <label 
@@ -106,6 +143,7 @@ export default function Contato() {
                   type="text"
                   id="email"
                   placeholder="exemplo@email.com"
+                  {...register("email")}
                   className={`
                     ${
                       theme == "light"
@@ -115,6 +153,13 @@ export default function Contato() {
                     p-2.5 rounded-[10px] outline-none border border-gray-300
                     `}
                 />
+                {
+                  errors.email && (
+                    <span className="text-red-500">
+                      {errors.email.message}
+                    </span>
+                  )
+                }
               </div>
             </div>
             <div className="flex flex-col mt-10 gap-2.5">
@@ -135,6 +180,7 @@ export default function Contato() {
                   type="text"
                   id="assunto"
                   placeholder="Digite o assunto da mensagem"
+                  {...register("assunto")}
                   className={`
                     ${
                       theme == "light"
@@ -144,6 +190,13 @@ export default function Contato() {
                     p-2.5 rounded-[10px] outline-none border border-gray-300
                     `}
                 />
+                {
+                  errors.assunto && (
+                    <span className="text-red-500">
+                      {errors.assunto.message}
+                    </span>
+                  )
+                }
             </div>
             <div className="flex flex-col mt-10 gap-2.5">
               <label 
@@ -162,6 +215,7 @@ export default function Contato() {
                 <textarea 
                   id="mensagem"
                   placeholder="Digite sua mensagem"
+                  {...register("mensagem")}
                   className={`
                     ${
                       theme == "light"
@@ -172,6 +226,13 @@ export default function Contato() {
                     resize-none h-55
                     `}
                 />
+                {
+                  errors.mensagem && (
+                    <span className="text-red-500">
+                      {errors.mensagem.message}
+                    </span>
+                  )
+                }
             </div>
               <button 
               title="Enviar mensagem"
