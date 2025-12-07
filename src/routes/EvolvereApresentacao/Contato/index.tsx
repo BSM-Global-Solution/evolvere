@@ -6,6 +6,7 @@ import { FaRegClock, FaYoutube } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import TituloHeader from "../../../components/EvolvereApresentacao/TituloHeader";
 
 export default function Contato() {
 
@@ -18,25 +19,12 @@ export default function Contato() {
         ? ""
         : "bg-black-dark"
       }
-      flex flex-col py-26 font-inter
+      flex flex-col font-inter
     `}>
-      <header className={`
-        ${
-          theme == "light"
-          ? "text-green-500"
-          : "text-tertiary-200"
-        }
-        text-center
-        `}>
-        <h1 className="text-2xl font-bold pb-1 md:text-4xl lg:text-5xl lg:py-4 xl:text-6xl xl:py-5 2xl:text-7xl 2xl:py-6">
-          Contate-nos
-        </h1>
-        <p className="text-[16px] pb-5 md:text-2xl md:px-14 lg:text-3xl lg:px-26 lg:mb-1 xl:px-32 2xl:text-4xl 2xl:px-70">
-          Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma
-          dúvida?
-        </p>
-      </header>
-
+     <TituloHeader 
+      title="Contate-nos"
+      subTitle="Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?"
+      />
       <section className={`
         ${
           theme == "light"
