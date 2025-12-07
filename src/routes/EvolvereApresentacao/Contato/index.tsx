@@ -44,6 +44,15 @@ export default function Contato() {
     console.log(data)
   }
 
+  const { handleSubmit: handleSubmitAvaliacao } = useForm();
+  const [avaliacaoMensagem, setAvaliacaoMensagem] = useState("");
+
+  const onSubmitAvaliacao = () => {
+    console.log("Estrelas:", active);
+    console.log("Label:", ratingLabel);
+    console.log("Mensagem:", avaliacaoMensagem);
+  };
+
   return (
     <section className={`
       ${
@@ -457,7 +466,9 @@ export default function Contato() {
             Conte pra gente como tem sido sua experiência com a Evolvere!
           </p>
         </header>
-        <form className="flex flex-col items-center">
+        <form 
+        onSubmit={handleSubmitAvaliacao(onSubmitAvaliacao)}
+        className="flex flex-col items-center">
           <ul className="flex justify-between gap-10 py-12.5">
             {stars.map((star) => (
               <li key={star.value}>
@@ -509,6 +520,8 @@ export default function Contato() {
             </h5>
             <textarea 
               placeholder="Digite sua mensagem"
+              value={avaliacaoMensagem}
+              onChange={(e) => setAvaliacaoMensagem(e.target.value)}
               className={`
               ${
                 theme == "light"
