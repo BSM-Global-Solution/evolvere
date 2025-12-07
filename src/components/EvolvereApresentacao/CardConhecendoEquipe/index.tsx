@@ -7,33 +7,33 @@ export default function CardConhecendoEquipe() {
   const { theme } = useTheme()
 
   return (
-            <div className="
-            flex justify-center
-            max-[624px]:flex-col
-            max-[624px]:gap-5
-            ">
-              <div className="
-              flex justify-center items-center text-end
-              max-[624px]:justify-end
-              ">
-                <h5 className={`
-                ${
-                  theme == "light"
-                  ? "text-green-400"
-                  : "text-tertiary-200"
-                }
-                  font-instrument-sans font-bold text-6xl
-                  max-[1055px]:text-5xl
-                  max-[881px]:text-4xl
-                  max-[737px]:text-3xl
-                  max-[664px]:text-2xl
-                  max-[624px]:text-6xl
-                  max-[490px]:text-5xl
-                  max-[400px]:text-4xl
-                `}>
-                  Conheça <br /> nossa equipe!
-                </h5>
-              </div>
+      <div className="
+        flex justify-center
+        max-[624px]:flex-col
+        max-[624px]:gap-5
+        ">
+          <div className="
+          flex justify-center items-center text-end
+          max-[624px]:justify-end
+          ">
+            <h5 className={`
+            ${
+              theme == "light"
+              ? "text-green-400"
+              : "text-tertiary-200"
+            }
+              font-instrument-sans font-bold text-6xl
+              max-[1055px]:text-5xl
+              max-[881px]:text-4xl
+              max-[737px]:text-3xl
+              max-[664px]:text-2xl
+              max-[624px]:text-6xl
+              max-[490px]:text-5xl
+              max-[400px]:text-4xl
+            `}>
+              Conheça <br /> nossa equipe!
+            </h5>
+        </div>
               <div className={`
                 ${
                   theme == "light"
@@ -64,7 +64,7 @@ export default function CardConhecendoEquipe() {
                   criação e desenvolvimento do Evolvere:
                 </p>
                 <Link 
-                to=""
+                to="/nossaEquipe"
                 title="Ir para a página de integrantes"
                 className="
                 w-[35%] flex justify-center py-2 gap-2 items-center bg-green-400
