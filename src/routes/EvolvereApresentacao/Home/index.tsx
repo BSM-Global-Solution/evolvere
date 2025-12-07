@@ -48,8 +48,8 @@ export default function Home() {
               <nav className="mt-50 mb-20">
               <ul className="flex gap-15 max-[396px]:flex-col">
                   <li>
-                      <Link 
-                      to=""
+                      <a 
+                      href="#sobre"
                       title="Clique aqui para saber mais"
                       className="
                       py-2 px-4 bg-green-400 rounded-[20px]
@@ -58,11 +58,11 @@ export default function Home() {
                       "
                       >
                           Saber Mais!
-                      </Link>
+                      </a>
                   </li>
                   <li>
                       <Link 
-                      to=""
+                      to="/entrarConta"
                       title="Clique aqui para fazer login"
                       className="
                       py-2 px-4 bg-none rounded-[20px]
@@ -276,7 +276,7 @@ export default function Home() {
             max-[481px]:w-[70%]
             max-[408px]:w-full
             ">
-              <a href="" className="border-b text-2xl">Assistir no Youtube</a>
+              <a href="https://youtu.be/_ypS0XZ_VIE" className="border-b text-2xl">Assistir no Youtube</a>
               <FaCirclePlay className="text-[30px]"/>
             </span>
         </div>

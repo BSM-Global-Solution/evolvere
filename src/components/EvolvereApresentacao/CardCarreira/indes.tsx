@@ -33,7 +33,7 @@ export default function CardCarreira() {
             <ul className="flex justify-between flex-wrap gap-5 max-[417px]:justify-center">
               {planoCategoria.planos.map((plano, indexPlano) => (
                 <li key={indexPlano}>
-                  <Link to="" title="Clique aqui para ver esse plano">
+                  <Link to="/entrarConta" title="Clique aqui para ver esse plano">
                     <figure
                       className="
                         w-108 h-80 bg-green-600 rounded-[20px]
