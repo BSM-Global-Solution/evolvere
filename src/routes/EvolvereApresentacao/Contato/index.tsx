@@ -116,7 +116,10 @@ export default function Contato() {
                       ? "placeholder:text-gray-300"
                       : "placeholder:text-gray-200 text-white"
                     }
-                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    ${
+                      errors.nome ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border 
                     `}
                 />
                 {errors.nome && (
@@ -150,7 +153,10 @@ export default function Contato() {
                       ? "placeholder:text-gray-300"
                       : "placeholder:text-gray-200 text-white"
                     }
-                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    ${
+                      errors.email ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border
                     `}
                 />
                 {
@@ -187,7 +193,10 @@ export default function Contato() {
                       ? "placeholder:text-gray-300"
                       : "placeholder:text-gray-200 text-white"
                     }
-                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    ${
+                      errors.assunto ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border
                     `}
                 />
                 {
@@ -221,6 +230,9 @@ export default function Contato() {
                       theme == "light"
                       ? "placeholder:text-gray-300"
                       : "placeholder:text-gray-200 text-white"
+                    }
+                    ${
+                      errors.mensagem ? "border-red-500" : "border-gray-300"
                     }
                     p-2.5 rounded-[10px] outline-none border border-gray-300
                     resize-none h-55
