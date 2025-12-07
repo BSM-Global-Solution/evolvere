@@ -340,6 +340,34 @@ export default function Contato() {
           </div>
         </div>
       </section>
+
+      <section className={`
+        h-screen pt-14 px-36.5 pb-17.5
+      `}>
+        <header className="text-center">
+          <h4 className={`
+            ${
+              theme == "light"
+              ? "text-green-500"
+              : "text-tertiary-200"
+            }
+             font-bold text-6xl
+          `}>
+            O que você achou do nosso projeto?
+          </h4>
+          <p className={`
+              ${
+                theme == "light"
+                ? "text-green-500"
+                : "text-tertiary-200"
+              }
+              pt-2.5 text-3xl font-light
+          `}>
+            Sua opinião é essencial para melhorarmos cada vez mais. <br />
+            Conte pra gente como tem sido sua experiência com a Evolvere!
+          </p>
+        </header>
+      </section>
     </section>
   );
 }
