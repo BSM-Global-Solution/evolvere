@@ -276,7 +276,7 @@ export default function Home() {
             max-[481px]:w-[70%]
             max-[408px]:w-full
             ">
-              <a href="" className="border-b text-2xl">Assistir no Youtube</a>
+              <a href="https://youtu.be/_ypS0XZ_VIE" className="border-b text-2xl">Assistir no Youtube</a>
               <FaCirclePlay className="text-[30px]"/>
             </span>
         </div>
