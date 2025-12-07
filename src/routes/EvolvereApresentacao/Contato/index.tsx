@@ -346,7 +346,7 @@ export default function Contato() {
       </section>
 
       <section className={`
-        h-screen pt-14 px-36.5 pb-17.5
+        min-h-screen pt-14 px-36.5 pb-17.5
       `}>
         <header className="text-center">
           <h4 className={`
@@ -371,7 +371,7 @@ export default function Contato() {
             Conte pra gente como tem sido sua experiência com a Evolvere!
           </p>
         </header>
-        <div className="flex flex-col items-center">
+        <form className="flex flex-col items-center">
           <ul className="flex justify-between gap-10 py-12.5">
             {stars.map((star) => (
               <li key={star.value}>
@@ -395,7 +395,48 @@ export default function Contato() {
               </li>
             ))}
           </ul>
-        </div>
+
+          <div className="flex flex-col gap-7.5 pt-5">
+            <h5 className={`
+              ${
+                theme == "light"
+                ? "text-green-500"
+                : "text-tertiary-200"
+              }
+              text-center text-4xl
+            `}>
+              <span className="font-semibold">Gostaria de deixar um comentário? </span> <br />
+              <span className="font-light text-3xl">(Caso não queira, deixe este espaço em branco).</span> 
+            </h5>
+            <textarea 
+              placeholder="Digite sua mensagem"
+              className="
+              placeholder:text-gray-200
+              border border-gray-200 resize-none w-full
+              outline-none px-4 py-3 rounded-[10px] min-h-37.5
+              "
+            ></textarea>
+            <div className="flex justify-center">
+              <button 
+                title="Enviar Feedback"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "bg-green-400 hover:bg-green-400/80"
+                    : "bg-green-600 hover:bg-green-600/60"
+                  }
+                  flex items-center gap-2 text-white px-2.5 py-3
+                  text-xl rounded-[15px] mt-[23px] duration-300
+                  cursor-pointer font-semibold
+                `}>
+                  Enviar feedback
+                  <span>
+                    <IoIosArrowDropright size={30} />
+                  </span>
+                </button>
+            </div>
+          </div>
+        </form>
       </section>
     </section>
   );
