@@ -1,7 +1,18 @@
 import { FaMinus } from "react-icons/fa";
 
+interface Pessoa {
+  img: string;
+  figcaption: string;
+  role: string;
+  rm: string;
+  turma: string;
+  github: string;
+  linkedin: string;
+  icon: React.ReactNode;
+}
+
 interface Props {
-  pessoa: any;
+  pessoa: Pessoa;
   ativo: boolean;
   onToggle: () => void;
   cortarNome: (nome: string) => string;
@@ -53,11 +64,11 @@ export default function IntegranteInicioCard({ pessoa, ativo, onToggle, cortarNo
 
           <div className="gap-3 flex flex-row py-4">
             <a href={pessoa.github} target="_blank">
-              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png" />
+              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756821/icon-github_y8ytrf.png" alt="Botão do Github" />
             </a>
 
             <a href={pessoa.linkedin} target="_blank">
-              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png" />
+              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1763756820/icon-linkedin_ueql1w.png" alt="Botão do Linkedin" />
             </a>
           </div>
         </div>

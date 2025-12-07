@@ -1,183 +1,590 @@
 import { IoIosArrowDropright } from "react-icons/io";
+import { useTheme } from "../../../context/ThemeContextBase";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
+import { FaRegClock, FaRegStar, FaYoutube } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
+import { GrInstagram } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import { contatoDataGerais, contatoDataRedesSociais } from "../../../data/contatoData";
+import TituloHeader from "../../../components/EvolvereApresentacao/TituloHeader";
+import { useState } from "react";
+import { stars } from "../../../data/contatoData";
+import z from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "@emailjs/browser";
 
 export default function Contato() {
+
+  const { theme } = useTheme();
+  const [ active, setActive ] = useState(0);
+  const [ratingLabel, setRatingLabel] = useState("");
+
+  const sMensagem = z.object({
+    nome: z
+    .string()
+    .min(2, "O nome deve ter no mínimo 2 caracteres."),
+    email: z.email({
+      message: "E-mail deve conter '@' e '.', insira um e-mail válido.",
+    }),
+    assunto: z
+    .string("Digite o assunto da mensagem")
+    .min(2, "Deve ter no mínimo 2 digitos"),
+    mensagem: z
+    .string("Digite a sua mensagem")
+    .min(5, "Digite no mínimo 5 caracteres")
+  })
+
+  type sMensagem = z.infer<typeof sMensagem>
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<sMensagem>({
+    resolver: zodResolver(sMensagem)
+  })
+
+  const onSubmitMensagem = async (data: sMensagem) => {
+      try {
+      await emailjs.send(
+        "service_tstkgmf",
+        "template_q2lf6pd",
+        {
+          nome: data.nome,
+          email: data.email,
+          assunto: data.assunto,
+          mensagem: data.mensagem,
+        },
+        "6nP4M2BF2DeeYLffc"
+      );
+      reset()
+    } catch {
+      console.log("Erro no emailJS")
+    }
+  }
+
+  const { handleSubmit: handleSubmitAvaliacao } = useForm();
+  const [avaliacaoMensagem, setAvaliacaoMensagem] = useState("");
+
+  const onSubmitAvaliacao = async () => {
+    try {
+      await emailjs.send(
+        "service_tstkgmf",
+        "template_ompa3dd",
+        {
+          active: active,
+          ratingLabel: ratingLabel,
+          avaliacaoMensagem: avaliacaoMensagem,
+        },
+        "6nP4M2BF2DeeYLffc"
+      );
+      setActive(0);
+      setRatingLabel("");
+      setAvaliacaoMensagem("");
+    } catch {
+      console.log("Erro no emailJS")
+    }
+  };
+
   return (
-    <section className="flex flex-col text-center py-26 px-10">
-      <h1 className="text-2xl text-green-500 font-bold pb-1 md:text-4xl lg:text-5xl lg:py-4 xl:text-6xl xl:py-5 2xl:text-7xl 2xl:py-6">
-        Contate-nos
-      </h1>
-      <p className="text-[16px] text-green-500 pb-5 md:text-2xl md:px-14 lg:text-3xl lg:px-26 lg:mb-1 xl:px-32 2xl:text-4xl 2xl:px-70">
-        Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma
-        dúvida?
-      </p>
-      <div className="bg-tertiary-100 border rounded-[20px] border-cyan-300 flex flex-col">
-        <h2 className="text-green-500 font-semibold text-[16px] py-1 
-        md:py-2 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-          Envie uma mensagem para nós!
-        </h2>
-        <div className="md:flex md:flex-row">
-          <div className="px-2 flex flex-col md:items-start md:w-[57.5%] md:pl-6 lg:w-[65%] xl:w-[70%] xl:mt-1 2xl:mt-12 2xl:w-full">
-            <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 
-            md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-              Nome *
-            </label>
-            <input
-              type="text"
-              placeholder="Digite seu nome"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
-              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
-            />
-            <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-              Email *
-            </label>
-            <input
-              type="text"
-              placeholder="Digite seu email"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
-              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
-            />
-            <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-              Assunto *
-            </label>
-            <input
-              type="text"
-              placeholder="Digite o assunto da mensagem"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
-              md:text-[16px] md:w-[80%] xl:p-2.5 2xl:w-[90%] 2xl:p-3 2xl:text-xl"
-            />
-            <label className="text-[16px] text-green-500 font-bold flex py-2 px-1 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
-              Sua mensagem *
-            </label>
-            <textarea
-              placeholder="Digite sua mensagem"
-              className="border-2 border-gray-200 rounded-[10px] text-[14px] text-gray-300 font-medium p-1.5 px-2 
-              md:text-[16px] md:w-[80%] md:mb-4 
-              lg:h-25 xl:text-xl xl:mt-1 xl:mb-0 xl:p-2.5
-              2xl:w-[90%] 2xl:p-3 2xl:text-xl 2xl:h-35"
-            />
-            <div className="flex justify-center py-3 xl:px-34.5 2xl:px-70">
-              <button
-                type="submit"
-                title="Clique aqui para enviar mensagem"
-                className="w-[80%] border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex justify-center gap-3 p-1.5
-                hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
-                sm:w-[40%] 
-                md:items-center md:w-full 
-                lg:mt-0 lg:p-3 
-                xl:p-4 xl:text-xl xl:mt-2 
-                2xl:mt-3 2xl:text-2xl 2xl:px-4 2xl:py-4.5"
-              >
-                Enviar mensagem <IoIosArrowDropright size={24} />
+    <section className={`
+      ${
+        theme == "light"
+        ? ""
+        : "bg-black-dark"
+      }
+      flex flex-col font-inter
+    `}>
+     <TituloHeader 
+      title="Contate-nos"
+      subTitle="Precisa de ajuda, encontrou algum problema no site, ou ficou com alguma dúvida?"
+      />
+      <section className={`
+        ${
+          theme == "light"
+          ? "bg-tertiary-100"
+          : "bg-green-500"
+        }
+         border-y-3 border-x border-tertiary-300 py-10 px-[51px]
+         max-[930px]:px-[31px]
+         max-[488px]:px-[21px]
+         max-[420px]:px-[11px]
+      `}>
+        <div className="flex justify-center">
+          <h2 className={`
+            ${
+              theme == "light"
+              ? "text-green-500"
+              : "text-tertiary-200"
+            }
+            text-3xl font-semibold
+            max-[497px]:text-2xl
+            max-[422px]:text-center
+            `}>
+            Envie uma mensagem para nós!
+          </h2>
+        </div>
+        <div className="
+          mt-[50px] flex gap-6
+          max-[890px]:flex-col
+        ">
+          <form 
+            onSubmit={handleSubmit(onSubmitMensagem)}
+            className="w-3/2 max-[1109px]:w-2/2 max-[1062px]:w-2/2
+          ">
+            <div className="flex gap-7.5 max-[1062px]:flex-col">
+              <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
+                <label 
+                htmlFor="nome"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  Nome *
+                </label>
+                <input 
+                  type="text"
+                  id="nome"
+                  placeholder="Digite seu nome"
+                  {...register("nome")}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    ${
+                      errors.nome ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border 
+                    `}
+                />
+                {errors.nome && (
+                  <span className="text-red-500">
+                    {errors.nome.message}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col gap-2.5 w-1/2 max-[1062px]:w-full">
+                <label 
+                htmlFor="email"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  E-mail *
+                </label>
+                <input 
+                  type="text"
+                  id="email"
+                  placeholder="exemplo@email.com"
+                  {...register("email")}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    ${
+                      errors.email ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border
+                    `}
+                />
+                {
+                  errors.email && (
+                    <span className="text-red-500">
+                      {errors.email.message}
+                    </span>
+                  )
+                }
+              </div>
+            </div>
+            <div className="flex flex-col mt-10 gap-2.5">
+              <label 
+                htmlFor="assunto"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  Assunto *
+                </label>
+                <input 
+                  type="text"
+                  id="assunto"
+                  placeholder="Digite o assunto da mensagem"
+                  {...register("assunto")}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    ${
+                      errors.assunto ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border
+                    `}
+                />
+                {
+                  errors.assunto && (
+                    <span className="text-red-500">
+                      {errors.assunto.message}
+                    </span>
+                  )
+                }
+            </div>
+            <div className="flex flex-col mt-10 gap-2.5">
+              <label 
+                htmlFor="mensagem"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "text-green-500"
+                    : "text-tertiary-200"
+                  }
+                  font-bold text-2xl
+                `}
+                >
+                  Sua mensagem *
+                </label>
+                <textarea 
+                  id="mensagem"
+                  placeholder="Digite sua mensagem"
+                  {...register("mensagem")}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "placeholder:text-gray-300"
+                      : "placeholder:text-gray-200 text-white"
+                    }
+                    ${
+                      errors.mensagem ? "border-red-500" : "border-gray-300"
+                    }
+                    p-2.5 rounded-[10px] outline-none border border-gray-300
+                    resize-none h-55
+                    `}
+                />
+                {
+                  errors.mensagem && (
+                    <span className="text-red-500">
+                      {errors.mensagem.message}
+                    </span>
+                  )
+                }
+            </div>
+              <button 
+              title="Enviar mensagem"
+              className={`
+                ${
+                  theme == "light"
+                  ? "bg-green-400 hover:bg-green-400/80"
+                  : "bg-green-600 hover:bg-green-600/60"
+                }
+                flex items-center gap-2 text-white px-2.5 py-3
+                text-xl rounded-[15px] mt-[23px] duration-300
+                cursor-pointer
+              `}>
+                Enviar mensagem
+                <span>
+                  <IoIosArrowDropright size={30} />
+                </span>
               </button>
+          </form>
+          <div className={`
+            ${
+              theme == "light"
+              ? "bg-green-400"
+              : "bg-green-600"
+            }
+            w-full rounded-[30px] pl-7.5 pt-7.5 pr-10 pb-9
+            border-3 border-green-600 shadow-[10px_10px_16px_#043732]
+            flex flex-col gap-10
+            max-[465px]:pr-8
+            max-[465px]:pl-5.5
+            max-[420px]:pl-4.5
+          `}>
+            <div>
+              <h3 className="
+                text-white text-3xl font-semibold
+                max-[400px]:text-2xl
+              ">
+                Contato
+              </h3>
+              <ul className="flex flex-col gap-7.5 pt-5">
+                <li className="flex items-center gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <FiPhone className="text-[28px] max-[400px]:text-[24px]" />
+                  </div>
+                  <p className="
+                  text-white text-xl
+                    max-[400px]:text-[16px]
+                  ">
+                    <b>Telefone:</b> (12) 3456-7891
+                  </p>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <MdOutlineMail className="text-[28px] max-[400px]:text-[24px]" />
+                  </div>
+                  <p className="
+                  text-white text-xl
+                    max-[400px]:text-[16px]
+                  ">
+                    <b>E-mail: </b> evolvere.contatos@gmail.com 
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-2.5">
+              <h3 className="
+                text-white text-3xl font-semibold
+                  max-[400px]:text-2xl
+              ">
+                Horários de Atendimento
+              </h3>
+              <ul className="flex flex-col gap-7.5 pt-5">
+                <li className="flex items-start gap-2.5">
+                  <div className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                  ">
+                    <FaRegClock className="text-[28px] max-[400px]:text-[24px]" />
+                  </div>
+                  <ul className="flex flex-col ">
+                    <li>
+                      <p className="
+                      text-white text-xl
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
+                        <b>Segunda à Sexta:</b> das 07h às 20h
+                      </p>
+                    </li>
+                    <li>
+                      <p className="
+                      text-white text-xl 
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
+                        <b>Sábados:</b> das 09h às 19h
+                      </p>
+                    </li>
+                    <li>
+                      <p className="
+                      text-white text-xl 
+                      max-[1185px]:text-lg
+                      max-[449px]:text-[16px]
+                      max-[400px]:text-sm
+                      max-[365px]:text-[12px]
+                      ">
+                        <b>Domingos e feriados:</b> fechado
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="
+                text-white text-3xl font-semibold
+                max-[400px]:text-2xl
+              ">
+                Siga-nos:
+              </h3>
+              <ul className="flex gap-7.5 pt-5">
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Twiter do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <RiTwitterXFill className="text-[28px] max-[400px]:text-[20px]" />
+                  </Link>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Instagram do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <GrInstagram className="text-[28px] max-[400px]:text-[20px]" />
+                  </Link>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Link 
+                  to=""
+                  title="Ver Youtube do Evolvere"
+                  className="
+                    bg-green-500 p-3 rounded-tl-[20px]
+                     rounded-br-[20px] text-white
+                     hover:bg-green-500/80 duration-300
+                  ">
+                    <FaYoutube className="text-[28px] max-[400px]:text-[20px]" />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-          <div
-            className="bg-green-400 rounded-[20px] flex flex-col items-center py-1
-                        sm:items-start md:mt-10 md:mb-3 md:mr-5 md:ml-5 lg:w-[40%] lg:mr-7 lg:mb-7 lg:py-3 xl:mr-9 xl:ml-9 xl:py-4 2xl:ml-14 2xl:mr-14 2xl:py-8 2xl:mt-14"
-          >
-            <h3 className="text-white text-2xl font-semibold flex px-4 lg:text-3xl xl:text-4xl 2xl:text-[40px]">
-              Contato
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {contatoDataGerais.map((cardsEvolvere, index) => (
-                <li className="flex hover:cursor-default" key={index}>
-                  <Link
-                    to={cardsEvolvere.link}
-                    className="w-full hover:cursor-default"
-                    title={cardsEvolvere.title}
-                  >
-                    <figure className="flex items-center gap-3 px-3 py-2">
-                      <div className="bg-green-500 hover:cursor-default rounded-[10px] p-3 text-white">
-                        {cardsEvolvere.icon}
-                      </div>
-                      <div className="flex flex-col gap-1 font-bold hover:cursor-default">
-                        <figcaption className="text-[14px] text-white mr-24.5 lg:text-xl xl:text-2xl 2xl:text-[22px] 2xl:mt-0 2xl:mr-65">
-                          {cardsEvolvere.figcaption}
-                        </figcaption>
-                        <p className="text-white text-[12px] xl:text-[14px] 2xl:text-[16px]">
-                          <span className="underline text-[12px] xl:text-[16px] hover:cursor-pointer 2xl:mr-26">
-                            {cardsEvolvere.span}
-                          </span>{" "}
-                          <text className="flex text-start">
-                            {cardsEvolvere.text} <br /> {cardsEvolvere.text1}{" "}
-                            <br /> {cardsEvolvere.text2}
-                          </text>
-                        </p>
-                      </div>
-                    </figure>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="text-white text-2xl font-semibold flex px-4 xl:text-3xl 2xl:text-[32px]">
-              Siga-nos
-            </h4>
-            <ul className="flex">
-              {contatoDataRedesSociais.map((rede, index) => (
-                <li className="flex" key={index}>
-                  <Link
-                    to={rede.link}
-                    className="w-full flex items-center gap-3 px-3 py-2 xl:p-3 2xl:py-3"
-                    title={rede.title}
-                  >
-                    <div className="bg-green-500 hover:bg-[#1aa194c4] hover:border-[#1aa194c4] hover:duration-300 rounded-[10px] p-3 text-white">
-                      {rede.icon}
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        </div>
+      </section>
+
+      <section className={`
+        min-h-screen pt-14 px-36.5 pb-17.5
+        max-[1250px]:px-20
+        max-[1162px]:px-10
+        max-[681px]:px-5
+        max-[641px]:px-2
+      `}>
+        <header className="text-center">
+          <h4 className={`
+            ${
+              theme == "light"
+              ? "text-green-500"
+              : "text-tertiary-200"
+            }
+             font-bold text-6xl
+             max-[1082px]:text-5xl
+             max-[881px]:text-4xl
+             max-[620px]:text-3xl
+             max-[525px]:text-2xl
+          `}>
+            O que você achou do nosso projeto?
+          </h4>
+          <p className={`
+              ${
+                theme == "light"
+                ? "text-green-500"
+                : "text-tertiary-200"
+              }
+              pt-2.5 text-3xl font-light
+              max-[1082px]:text-2xl
+              max-[881px]:text-xl
+              max-[620px]:text-[16px]
+              max-[525px]:text-[14px]
+              max-[400px]:text-[12px]
+          `}>
+            Sua opinião é essencial para melhorarmos cada vez mais. <br />
+            Conte pra gente como tem sido sua experiência com a Evolvere!
+          </p>
+        </header>
+        <form 
+        onSubmit={handleSubmitAvaliacao(onSubmitAvaliacao)}
+        className="flex flex-col items-center">
+          <ul className="flex justify-between gap-10 py-12.5">
+            {stars.map((star) => (
+              <li key={star.value}>
+                <FaRegStar
+                  title={star.label}
+                  onClick={() => {
+                    setActive(star.value);
+                    setRatingLabel(star.label);
+                  }}
+                  className={`
+                    ${
+                      theme == "light"
+                      ? "text-green-600"
+                      : "text-white"
+                    }
+                    text-[85px] cursor-pointer duration-200 
+                    ${active >= star.value ? "text-yellow-300" : ""}
+                    hover:text-yellow-300
+                    max-[881px]:text-[60px]
+                    max-[620px]:text-[40px]
+                    max-[525px]:text-[30px]
+                  `}
+                />
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col gap-7.5 pt-5">
+            <h5 className={`
+              ${
+                theme == "light"
+                ? "text-green-500"
+                : "text-tertiary-200"
+              }
+              text-center text-4xl
+              max-[881px]:text-3xl
+              max-[620px]:text-2xl
+              max-[525px]:text-xl
+            `}>
+              <span className="font-semibold">Gostaria de deixar um comentário? </span> <br />
+              <span className="
+              font-light text-3xl
+              max-[881px]:text-2xl
+              max-[620px]:text-xl
+              max-[525px]:text-[16px]
+              ">
+                (Caso não queira, deixe este espaço em branco).
+              </span> 
+            </h5>
+            <textarea 
+              placeholder="Digite sua mensagem"
+              value={avaliacaoMensagem}
+              onChange={(e) => setAvaliacaoMensagem(e.target.value)}
+              className={`
+              ${
+                theme == "light"
+                ? ""
+                : "text-white"
+              }  
+              placeholder:text-gray-200
+              border border-gray-200 resize-none w-full
+              outline-none px-4 py-3 rounded-[10px] min-h-37.5
+              `}
+            ></textarea>
+            <div className="flex justify-center">
+              <button 
+                title="Enviar Feedback"
+                className={`
+                  ${
+                    theme == "light"
+                    ? "bg-green-400 hover:bg-green-400/80"
+                    : "bg-green-600 hover:bg-green-600/60"
+                  }
+                  flex items-center gap-2 text-white px-2.5 py-3
+                  text-xl rounded-[15px] mt-[23px] duration-300
+                  cursor-pointer font-semibold
+                  max-[525px]:text-[16px]
+                `}>
+                  Enviar feedback
+                  <span>
+                    <IoIosArrowDropright size={30} />
+                  </span>
+                </button>
+            </div>
           </div>
-        </div>
-      </div>
-      <section className="flex flex-col items-center text-center p-4">
-        <h1 className="text-green-500 font-bold text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl 2xl:py-1">
-          Quer entrar em contato conosco?
-        </h1>
-        <p className="text-green-500 text-[16px] pb-5 lg:text-xl xl:text-2xl xl:px-60 2xl:text-3xl 2xl:px-70 2xl:mt-2">
-          Entre em contato diretamente com algum dos membros da equipe. <br />
-          Clique abaixo para ser direcionado à página de integrantes.
-        </p>
-        <div className="py-1">
-          <Link
-            to="/nossaEquipe"
-            title="Clique aqui para seguir para a página de integrantes"
-            className="w-full border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
-            hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
-            sm:p-2 sm:mb-1 lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
-          >
-            Ver integrantes
-          </Link>
-        </div>
-        <h2 className="text-green-500 font-bold text-xl pb-3 lg:text-2xl xl:text-3xl 2xl:text-4xl">
-          Gostaria de deixar um comentário? <br />
-          <span className="font-normal text-[16px] lg:text-xl xl:text-[22px] 2xl:text-[26px]">
-            (Caso não queira, deixe este espaço em branco).
-          </span>
-        </h2>
-        <textarea
-          name="Mensagem"
-          id="Mensagem"
-          placeholder="Digite sua mensagem"
-          className="w-full border border-gray-200 rounded-[10px] p-2 gap-1 text-[14px] 
-          sm:w-[70%] sm:h-25 
-          lg:w-[50%] lg:h-30 lg:py-3 lg:mt-1.5
-          xl:w-[45%] xl:py-4 xl:px-2
-          2xl:text-xl 2xl:mt-1 2xl:py-2 2xl:h-45"
-        ></textarea>
-        <div className="py-3">
-          <button
-            type="submit"
-            title="Clique aqui para enviar o feedback"
-            className="w-full border border-green-400 bg-green-400 rounded-[15px] text-[18px] text-white flex gap-3 p-1.5 
-            hover:bg-[#158277c0] hover:border-[#158277c0] hover:duration-300
-            lg:p-3 lg:mt-1 xl:px-4 xl:py-3.5 xl:text-xl 2xl:text-2xl 2xl:p-4 2xl:items-center"
-          >
-            Enviar feedback <IoIosArrowDropright size={24} />
-          </button>
-        </div>
+        </form>
       </section>
     </section>
   );

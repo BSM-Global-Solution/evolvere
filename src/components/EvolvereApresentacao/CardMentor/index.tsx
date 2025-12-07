@@ -59,7 +59,7 @@ export default function CardMentor() {
           </p>
         </div>
         <Link
-          to=""
+          to="/entrarConta"
           title="Clique aqui para ver o Mentor.IA"
           className="
             w-[50%] font-inter font-bold text-2xl mt-19 text-center

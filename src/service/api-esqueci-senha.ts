@@ -31,7 +31,9 @@ export async function solicitarRecuperacaoSenha(data: EsqueciSenhaDTO) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }
@@ -56,7 +58,9 @@ export async function redefinirSenha(data: RedefinirSenhaDTO) {
       const errorData = await response.json();
       if (errorData.erro) erroMensagem = errorData.erro;
       if (errorData.mensagem) erroMensagem = errorData.mensagem;
-    } catch (e) {}
+    } catch (e) {
+      console.warn("Resposta não era JSON ou estava inválida", e);
+    }
 
     throw new Error(erroMensagem);
   }

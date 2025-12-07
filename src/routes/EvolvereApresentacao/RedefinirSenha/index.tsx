@@ -68,8 +68,12 @@ export default function RedefinirSenha() {
       setTimeout(() => {
         navigate("/entrarConta");
      }, 1500);
-    } catch (err: any) {
-      setApiError(err.message ?? "Erro inesperado ao redefinir senha.");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setApiError(err.message);
+      } else {
+        setApiError("Erro inesperado ao redefinir senha.")
+      }
     } finally {
       setLoading(false);
     }
