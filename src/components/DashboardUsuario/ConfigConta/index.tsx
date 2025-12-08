@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../../../context/UserContext";
 import TituloConfiguracoes from "../TituloConfiguracoes";
+import { excluirUsuario } from "../../../service/api-entrar-conta";
 
 interface ConfigContaProps {
     onClose: () => void
@@ -7,7 +9,20 @@ interface ConfigContaProps {
 
 export default function ConfigConta({onClose}: ConfigContaProps) {
 
-    const { usuario } = useUser()
+    const { usuario, logout } = useUser()
+    const navigate = useNavigate();
+
+     async function handleExcluir() {
+        if(!usuario) return;
+
+        try {
+        await excluirUsuario(usuario.id); 
+            logout();                        
+            navigate("/");                   
+        } catch (error) {
+            console.error("Erro ao excluir:", error);
+        }
+    }
 
     return (
         <div className="w-full font-inter">
@@ -19,6 +34,7 @@ export default function ConfigConta({onClose}: ConfigContaProps) {
                 <h2 className="text-green-500 font-bold text-2xl mb-2.5 pt-10">Excluir conta:</h2>
                 <p>Esta ação é permanente e todos os seus dados, conversas e preferências serão removidos de forma definitiva.</p>
                 <button 
+                onClick={handleExcluir}
                 title="Excluir conta"
                 className="
                 bg-red-100/10 text-red-100 shadow-[2px_4px_10px_#ff0000]
