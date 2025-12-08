@@ -1,6 +1,8 @@
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { HeaderUsuarioData } from "../../../data/headerUsuarioData";
 import { Link } from "react-router-dom";
+import Configuracoes from "../Configuracoes";
+import { useState } from "react";
 
 interface HeaderUsuarioProps {
     open: boolean;
@@ -8,7 +10,11 @@ interface HeaderUsuarioProps {
 }
 
 export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
+
+    const [configOpen, setConfigOpen] = useState(false);
+
     return (
+        <>
         <header className={`
         ${
             open ? "w-[300px] max-[800px]:w-[250px]" : "w-[90px]"
@@ -78,10 +84,11 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                     </li>
                     <li>
                         <ul className="flex justify-end flex-col h-full w-full">
-                         {HeaderUsuarioData.slice(7, 8).map((menu, i) => (
+                         {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
                                 <li key={i}>
                                     <button 
                                     title={menu.title}
+                                    onClick={() => setConfigOpen(prev => !prev)}
                                     className={`
                                         ${ open ? "" : "justify-center"}
                                         w-full cursor-pointer h-full
@@ -98,7 +105,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                                     </button>
                                 </li>
                          ))}
-                        {HeaderUsuarioData.slice(6, 7).map((menu, i) => (
+                        {HeaderUsuarioData.slice(7, 8).map((menu, i) => (
                             <li key={i} className="items-center justify-center">
                                 <Link 
                                     to={menu.link}
@@ -123,5 +130,7 @@ export default function HeaderUsuario({ open, setOpen }: HeaderUsuarioProps) {
                 </ul>
             </nav>
         </header>
+            <Configuracoes open={configOpen} onClose={() => setConfigOpen(false)} />
+        </>
     )
 }

@@ -26,6 +26,7 @@ html {
     --color-tertiary-100: #E8FFFC;
     --color-tertiary-150: #66FEEC;
     --color-tertiary-200: #BDFDF4;
+    --color-tertiary-400: #41B3A8;
     --color-tertiary-300: #53DED0;
     --color-tertiary-600: #12403B;
     --color-tertiary-700: #12403B;
@@ -38,6 +39,8 @@ html {
     --color-gray-100: #E3E8E7;
     --color-gray-200: #BBC0BF;
     --color-gray-300: #959999;
+
+    --color-red-100: #FF0000;
 
     /* Fonts */
      --font-inter: "Inter";
