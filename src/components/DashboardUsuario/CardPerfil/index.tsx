@@ -37,10 +37,13 @@ export default function CardPerfil() {
                     max-[685px]:flex-col
                     ">
                         <img 
-                            src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif"
+                            src={
+                                usuario?.foto ||
+                                "https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif"
+                            }
                             alt="Coloque sua foto"
                             className="
-                            w-[150px] rounded-full
+                            w-[150px] h-[150px] object-cover rounded-full
                             max-[1230px]:w-[120px]
                             max-[1160px]:w-[100px]
                             "
