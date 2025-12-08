@@ -28,9 +28,6 @@ const router = createBrowserRouter([
       {path: "/", element: <Home />},
       {path: "/contato", element: <Contato />},
       {path: "/nossaEquipe", element: <Integrantes/>},
-      {path: "/autenticacao", element: <Autenticacao/>},
-      {path: "/esqueciSenha", element: <EsqueciSenha/>},
-      {path: "/redefinirSenha", element: <RedefinirSenha/>},
       {path: "/mentores", element: <Mentores />},
   ]},
   { 
@@ -39,6 +36,27 @@ const router = createBrowserRouter([
     errorElement: "erro",
     children: [
       {path: "/dashboardUsuario", element: <HomeUsuario />},
+  ]},
+  { 
+    path: "/autenticacao",
+    element: <Autenticacao />,
+    errorElement: <Error />,
+    children: [
+      {path: "/autenticacao", element: <Autenticacao />},
+  ]},
+  { 
+    path: "/esqueciSenha",
+    element: <EsqueciSenha />,
+    errorElement: <Error />,
+    children: [
+      {path: "/esqueciSenha", element: <EsqueciSenha />},
+  ]},
+  { 
+    path: "/redefinirSenha",
+    element: <RedefinirSenha />,
+    errorElement: <Error />,
+    children: [
+      {path: "/redefinirSenha", element: <RedefinirSenha />},
   ]},
   { 
     path: "/entrarConta",
