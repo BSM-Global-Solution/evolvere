@@ -56,3 +56,14 @@ export async function loginUsuario(data: LoginDTO): Promise<Usuario> {
 
   return usuarioFinal;
 }
+
+// Deletando usuário
+export async function excluirUsuario(id: number): Promise<void> {
+  const response = await fetch(`${BASE_URL}/usuarios/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Erro ao excluir usuário");
+  }
+}
