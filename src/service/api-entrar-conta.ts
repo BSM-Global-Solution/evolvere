@@ -8,6 +8,7 @@ export interface Usuario {
   nome: string;
   email: string;
   dataDeNascimento: string;
+  foto?: string;
 }
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL_JAVA;
