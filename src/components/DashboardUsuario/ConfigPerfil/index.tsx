@@ -1,5 +1,6 @@
 import TituloConfiguracoes from "../TituloConfiguracoes";
 import { useUser } from "../../../context/UserContext";
+import { useState } from "react";
 
 interface ConfigPerfilProps {
     onClose: () => void
@@ -7,7 +8,28 @@ interface ConfigPerfilProps {
 
 export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
 
-    const {usuario} = useUser();
+    const {usuario, atualizarUsuario} = useUser();
+    const [preview, setPreview] = useState(usuario?.foto);
+
+    function handleFoto(e: React.ChangeEvent<HTMLInputElement>) {
+        const file = e.target.files?.[0];
+        if (!file || !usuario) return;
+
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            const base64 = reader.result as string;
+
+            setPreview(base64);
+
+            atualizarUsuario({
+            ...usuario,
+            foto: base64
+            });
+        };
+
+        reader.readAsDataURL(file);
+    }
 
     return (
         <div className="font-inter w-full">
@@ -39,14 +61,25 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                             </span>
                         </div>
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center">
                         <img 
-                            src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif" 
-                            alt=""
+                            src={
+                                preview ||
+                                "https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif"
+                            } 
+                            alt="Sua Foto"
                             className="
-                            w-[280px] rounded-full border-2 border-green-500
+                            w-[280px] h-[280px] rounded-full object-cover 
+                            border-2 border-green-500
                             max-[500px]:w-[150px]
                             "
+                        />
+
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFoto}
+                            className="mt-4 bg-green-300 text-white"
                         />
                     </div>
                 </div>
