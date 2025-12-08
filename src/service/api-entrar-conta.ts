@@ -43,5 +43,16 @@ export async function loginUsuario(data: LoginDTO): Promise<Usuario> {
     throw new Error(erroMensagem);
   }
 
-  return await response.json();
+  // Mesclando Localstorage com o backend
+  const usuarioDaAPI = await response.json();
+
+  const saved = localStorage.getItem("usuario");
+  const usuarioLocal = saved ? JSON.parse(saved) as Usuario : null;
+
+  const usuarioFinal: Usuario = {
+    ...usuarioDaAPI,
+    foto: usuarioLocal?.foto || usuarioDaAPI.foto,
+  };
+
+  return usuarioFinal;
 }
