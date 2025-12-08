@@ -5,6 +5,7 @@ interface UserContextType {
   usuario: Usuario | null;
   setUsuario: (user: Usuario | null) => void;
   atualizarUsuario: (user: Usuario) => void;
+  logout: () => void
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -20,8 +21,13 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("usuario", JSON.stringify(user));
   }
 
+  function logout() {
+    setUsuario(null);
+    localStorage.removeItem("usuario");
+  }
+
   return (
-    <UserContext.Provider value={{ usuario, setUsuario, atualizarUsuario }}>
+    <UserContext.Provider value={{ usuario, setUsuario, atualizarUsuario, logout }}>
       {children}
     </UserContext.Provider>
   );
