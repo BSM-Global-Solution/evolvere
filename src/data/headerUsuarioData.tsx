@@ -13,6 +13,6 @@ export const HeaderUsuarioData = [
     {icon: <LuPlaneTakeoff size={30} />, label: "Planos de Carreira", link: "/planosDeCarreira", title: "Ir para os Planos de Carreira"},
     {icon: <RiWechatLine size={30} />, label: "Chats", link: "/chats", title: "Ir para os Chats"},
     {icon: <BsPeople size={30} />, label: "Mentores", link: "/mentores", title: "Ir para os Mentores"},
-    {icon: <IoMdLogOut size={30} />, label: "Sair", link: "/", title: "Sair"},
     {icon: <IoSettingsOutline size={30} />, label: "Configurações", link: "/mentores", title: "Abrir as configurações"},
+    {icon: <IoMdLogOut size={30} />, label: "Sair", link: "/", title: "Sair"},
 ]
