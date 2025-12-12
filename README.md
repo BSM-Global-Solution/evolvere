@@ -169,7 +169,7 @@ em atualização...
     <td>
       <b>👨‍💻 Moisés Barsoti Andrade de Oliveira</b><br/>
       🆔 <b>RM:</b> 565049 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
-      💼 <b>Função:</b> Desenvolvimento Fullstack / DBA / IA
+      💼 <b>Função:</b> Desenvolvimento Fullstack / DBA / IA / Java
     </td>
   </tr>
 
@@ -191,7 +191,7 @@ em atualização...
     <td>
       <b>⚙️ Felipe Kirschner Modesto</b><br/>
       🆔 <b>RM:</b> 561810 &nbsp;&nbsp;|&nbsp;&nbsp; 🏫 <b>Turma:</b> 1TDSPG - FIAP <br/>
-      💼 <b>Função:</b> Integração com APIs Java
+      💼 <b>Função:</b> Documentação
     </td>
   </tr>
 </table>
@@ -251,3 +251,10 @@ em atualização...
 * **Vídeo de Apresentação (YouTube): ...**
 
 ---
+
+## 🌐 Acesse o Projeto Online
+
+Você pode visualizar o projeto acessando o link abaixo:
+
+🔗 [Clique aqui para acessar o projeto!](https://evolvere-web.vercel.app/)
+
