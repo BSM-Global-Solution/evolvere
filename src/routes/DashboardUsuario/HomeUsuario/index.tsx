@@ -61,7 +61,10 @@ export default function HomeUsuario() {
                 flex flex-col gap-10 items-center w-3/5
                 max-[1140px]:w-full
                 ">
-                    <ul className="flex justify-center gap-15 ">
+                    <ul className="
+                    flex justify-center gap-15 
+                    max-[480px]:flex-col
+                    ">
                         <li>
                             <CardLink label="Iniciar uma conversa com o" labelNegrito="Mentor.IA"/>
                         </li>
