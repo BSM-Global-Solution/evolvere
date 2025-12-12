@@ -1,7 +1,17 @@
+import { useTheme } from "../../../context/ThemeContextBase"
+
 export default function CardAnotacoes() {
+
+    const { theme } = useTheme();
+
     return (
         <div className={`
-            flex flex-col items-center bg-green-500 h-full
+            ${
+                theme == "light"
+                ? "bg-green-500"
+                : "bg-green-600 border-2 border-cyan-400"
+            }
+            flex flex-col items-center  h-full
             px-5 pt-4 pb-5 rounded-[20px]
         `}>
             <h5 className="text-xl text-white">

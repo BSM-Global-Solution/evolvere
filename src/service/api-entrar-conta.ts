@@ -8,6 +8,7 @@ export interface Usuario {
   nome: string;
   email: string;
   dataDeNascimento: string;
+  foto?: string;
 }
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL_JAVA;
@@ -42,5 +43,27 @@ export async function loginUsuario(data: LoginDTO): Promise<Usuario> {
     throw new Error(erroMensagem);
   }
 
-  return await response.json();
+  // Mesclando Localstorage com o backend
+  const usuarioDaAPI = await response.json();
+
+  const saved = localStorage.getItem("usuario");
+  const usuarioLocal = saved ? JSON.parse(saved) as Usuario : null;
+
+  const usuarioFinal: Usuario = {
+    ...usuarioDaAPI,
+    foto: usuarioLocal?.foto || usuarioDaAPI.foto,
+  };
+
+  return usuarioFinal;
+}
+
+// Deletando usuário
+export async function excluirUsuario(id: number): Promise<void> {
+  const response = await fetch(`${BASE_URL}/usuarios/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Erro ao excluir usuário");
+  }
 }
