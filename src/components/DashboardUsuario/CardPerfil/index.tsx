@@ -34,21 +34,31 @@ export default function CardPerfil() {
                     </div>
                     <figure className="
                     flex items-center gap-3 pl-5 pb-5
-                    max-[685px]:flex-col
+                    max-[500px]:flex-col
+                    max-[500px]:items-start
                     ">
-                        <img 
-                            src={
-                                usuario?.foto ||
-                                "https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif"
-                            }
-                            alt="Coloque sua foto"
-                            className="
-                            w-[150px] h-[150px] object-cover rounded-full
-                            max-[1230px]:w-[120px]
-                            max-[1160px]:w-[100px]
-                            "
-                            />
-                        <div className="flex flex-col items-start gap-1 font-inter">
+                        <div className="
+                        max-[500px]:flex
+                        max-[500px]:justify-center
+                        max-[500px]:w-full
+                        ">
+                            <img 
+                                src={
+                                    usuario?.foto ||
+                                    "https://res.cloudinary.com/dtbgsboo5/image/upload/v1764299508/icone-simples-do-usuario-3d-isolado_169241-6922_mm1dis.avif"
+                                }
+                                alt="Coloque sua foto"
+                                className="
+                                w-[150px] h-[150px] object-cover rounded-full
+                                max-[1230px]:w-[120px] max-[1230px]:h-[120px]
+                                max-[1160px]:w-[100px] max-[1160px]:h-[100px]
+                                max-[550px]:w-[110px] max-[550px]:h-[110px]
+                                "
+                                />
+                        </div>
+                        <div className="
+                        flex flex-col items-start gap-1 font-inter
+                        ">
                             <figcaption className="
                             text-xl font-semibold
                             max-[1350px]:text-lg
