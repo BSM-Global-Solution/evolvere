@@ -29,7 +29,7 @@ export default function HomeUsuario() {
                         }
                         text-7xl font-inter font-bold
                         max-[1160px]:text-6xl    
-                        
+                        max-[400px]:text-5xl    
                     `}>
                         Olá {usuario?.nome || "Usuário"}
                     </h1>
@@ -42,6 +42,8 @@ export default function HomeUsuario() {
                         text-4xl font-light font-inter pt-5
                         max-[1307px]:text-3xl
                         max-[1160px]:text-2xl
+                        max-[400px]:text-xl
+                        max-[400px]:pt-2
                     `}>
                         Quais são os planos para hoje?
                     </p>
