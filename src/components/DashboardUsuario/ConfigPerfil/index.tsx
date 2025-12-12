@@ -34,14 +34,21 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
     return (
         <div className="font-inter w-full">
             <TituloConfiguracoes title="Perfil" onClose={onClose} />
-                <div className="flex pt-8">
-                    <div className="flex flex-col gap-10 w-1/2 pt-2.5">
+                <div className="
+                flex pt-8
+                max-[905px]:flex-col
+                ">
+                    <div className="
+                    flex flex-col gap-10 w-1/2 pt-2.5
+                    max-[905px]:flex-row
+                    max-[905px]:w-full
+                    ">
                         <div>
                             <h2 className="text-green-500 font-bold text-2xl mb-2.5">Id do usuário:</h2>
                             <div className="
                             py-2 pl-3.5 w-[45%] bg-tertiary-400 rounded-[10px]
                             border-2 border-green-500
-                            max-[400px]:w-[75%]
+                            max-[905px]:w-full
                             ">
                                 <span className="font-inter text-xl">
                                     {usuario?.id}
@@ -51,7 +58,7 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                         <div>
                             <h2 className="text-green-500 font-bold text-2xl mb-2.5">Nome</h2>
                             <span className="font-inter text-xl">
-                                Usuário: {usuario?.nome}
+                                {usuario?.nome}
                             </span>
                         </div>
                         <div>
@@ -61,7 +68,7 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                             </span>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center ">
                         <img 
                             src={
                                 preview ||
@@ -71,7 +78,8 @@ export default function ConfigPerfil({onClose}: ConfigPerfilProps) {
                             className="
                             w-[280px] h-[280px] rounded-full object-cover 
                             border-2 border-green-500
-                            max-[500px]:w-[150px]
+                            max-[905px]:w-[150px]
+                            max-[905px]:h-[150px]
                             "
                         />
 
