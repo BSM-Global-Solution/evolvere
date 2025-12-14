@@ -4,13 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
-  transition: 
-    background-color 0.3s ease-in-out,
-    color 0.3s ease-in-out,
-    border-color 0.3s ease-in-out,
-}
-
 @theme {
     --color-green-200: #29D5C4;
     --color-green-300: #318B82;
